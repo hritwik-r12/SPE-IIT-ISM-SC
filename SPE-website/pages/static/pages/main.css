@@ -1,6 +1,6 @@
 nav {
     background-color: #0D4C92;
-    height: 82px;
+    height: 90px;
     font-size: 28px;
     font-family: calibri;
 }
@@ -8,3 +8,4 @@ nav {
 .navbar-nav > li {
     padding-right: 40px;
 }
+
