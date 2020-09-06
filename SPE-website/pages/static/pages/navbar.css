@@ -11,3 +11,9 @@ nav {
 a.nav-link:hover {
     opacity: 0.8;
 }
+
+/* Dropdown Menu */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+/* Dropdown Menu */
