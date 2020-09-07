@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load crispy_forms_tags %}
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'user/signup.css' %}">
+
+</head>
+
+<body>
+
+    <div class="content-section mx-auto d-block">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <img id='spe-logo' class="mx-auto d-block" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/SPE_Logo_Clear_Bright.png">
+                <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary waves-effect">Register</button>
+            </div>
+        </form>
+    </div>
+
+</body>
