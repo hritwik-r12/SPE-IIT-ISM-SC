@@ -1,9 +1,26 @@
 {% extends "pages/base.html" %}
+{%load static%}
+
+{% block content-blog %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
+{% endblock %}
+
 {% block content%}
-<h1>SPE blog!</h1>
-    {%for post in posts%}
-        <h1>{{ post.title }}</h1>
-        <p>By {{post.author}}</p>
-        <p>{{post.content}}</p>
-    {%endfor%}
+    <div class="col-md-8">
+        <p> </p>
+        <h1>SPE blog</h1>
+        <hr>
+        {%for post in posts%}
+        <article class="media content-section">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ post.author }}</a>
+                <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
+        {%endfor%}
+    </div>
 {%endblock content%}
