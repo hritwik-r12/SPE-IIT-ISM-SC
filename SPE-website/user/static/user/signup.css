@@ -6,7 +6,7 @@ body {
 div.content-section {
     width:600px;
     padding: 50px;
-    margin: 80px;
+    margin: 60px;
     background-color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
 }
@@ -15,4 +15,13 @@ div.content-section {
 img#spe-logo {
     width: 300px;
     height: 192px;
+    margin-bottom: 20px;
+}
+
+hr.accent-2 {
+    background-color: #0d4c92;
+    width: 500px;
+    margin: 20px;
+    height: 1px;
+
 }
