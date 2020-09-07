@@ -1,0 +1,16 @@
+body {
+    box-sizing: border-box;
+}
+
+div.content-section {
+    width:600px;
+    border: 2px solid black;
+    padding: 50px;
+    margin: 80px;
+}
+
+
+img#spe-logo {
+    width: 300px;
+    height: 192px;
+}

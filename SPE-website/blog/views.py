@@ -20,4 +20,4 @@ def home(request):
     context = {
         'posts': posts
     }
-    return render(request, 'blog/blog-page.html', context)
+    return render(request, 'blog/home.html', context)
