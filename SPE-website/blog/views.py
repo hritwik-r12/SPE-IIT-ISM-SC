@@ -1,23 +1,17 @@
 from django.shortcuts import render
 
-posts = [
-    {
-        'author': 'Shirin Kaul',
-        'title': 'BP-1',
-        'content': 'First post content',
-        'date_posted': '6 Sept 2020'
-    },
-    {
-        'author': 'XYZ ABC',
-        'title': 'BP-2',
-        'content': 'Second post content',
-        'date_posted': '6 Sept 2020'
-    },
-]
+from django.views.generic import ListView, DetailView
+from .models import Post
 
 
-def home(request):
-    context = {
-        'posts': posts
-    }
-    return render(request, 'blog/home.html', context)
+
+class PostListView(ListView):
+    model= Post
+    template_name='blog/home.html'
+    context_object_name='posts'
+    order=['-date_posted']
+
+class PostDetailView(DetailView):
+    model= Post
+
+    
