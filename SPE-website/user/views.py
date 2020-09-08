@@ -15,3 +15,5 @@ def signup(request):
         form = UserSignUpForm()
     context = {'form': form}
     return render(request, 'user/signup.html', context)
+
+

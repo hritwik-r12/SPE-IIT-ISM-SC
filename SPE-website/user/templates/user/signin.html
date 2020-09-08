@@ -34,8 +34,8 @@
 
             <!-- Sign Up Button -->
             <div class="form-group">
-                <button type="submit" id="SignUpBtn" class="btn btn-outline-primary waves-effect"
-                style="margin-top: 0px;">Sign Up</button>
+                <button  id="SignInBtn" type="submit" class="btn btn-outline-primary waves-effect d-block mx-auto">
+                    Sign In</button>
             </div>
             <!-- Sign Up Button -->
 
@@ -45,11 +45,12 @@
         <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
         <!-- Horizontal Divider -->
 
-        <!-- Sign In Link -->
-        <p id="LogInLink" class="text-muted">
-            Already have an account? <a class="ml-2" href="{% url 'signin-page' %}">Sign In</a>
-        </p>
-        <!-- Sign In Link -->
+        <!-- Sign Up Link -->
+        <a id="SignUpAnchor" href="{% url 'signup-page' %}">
+            <button type="submit" id="SignUpBtn" class="btn btn-outline-primary waves-effect d-block mx-auto">
+                Create a new account</button>
+        </a>
+        <!-- Sign Up Link -->
 
     </div>
 
