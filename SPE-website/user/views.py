@@ -10,7 +10,7 @@ def signup(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created successfully for {username}')
-            return redirect('home-page')
+            return redirect('homepage')
     else:
         form = UserSignUpForm()
     context = {'form': form}
