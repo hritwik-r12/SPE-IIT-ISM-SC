@@ -10,13 +10,14 @@ class PostListView(ListView):
     context_object_name = 'posts'
     order_by = ['-date_posted']
     paginate_by = 2
-    
+
     def get_queryset(self):
         return Post.objects.order_by('-id')
 
 
 class PostDetailView(DetailView):
     model = Post
+
 
 class UserPostListView(ListView):
     model = Post
@@ -27,4 +28,3 @@ class UserPostListView(ListView):
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-id')
-        

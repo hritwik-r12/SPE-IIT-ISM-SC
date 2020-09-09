@@ -1,26 +1,29 @@
 {% extends "pages/base.html" %}
-{%load static%}
+{% load static %}
 
-{% block content-blog %}
-<link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
-{% endblock %}
+    <!-- Adding stylesheet to base template -->
+    {% block content-blog %}
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
+    {% endblock %}
+    <!-- Adding stylesheet to base template -->
 
-{% block content%}
-    <div class="col-md-9" style="padding-left: 10%;">
-    <p> </p>
-    <div class="media-body">
-    <h1 class="article-title">{{ object.title }}</h2>
-    <hr>
-    <p> </p>
-    <div class="article-metadata">
-        Author: 
-        <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
-        <small class="text-muted">{{ object.date_posted|date:"M j, Y"}}</small>
-    </div>
+    {% block content %}
 
-    <img style="width: 80%;"src ="{{ object.image.url }}">
-    
-    <p class="article-content">{{ object.content }}</p>
-    </div>
-    </div>
-{%endblock content%}
+        <!-- Post Body -->
+        <div class="col-md-9" style="padding-left: 10%;">
+            <div class="media-body">
+                <h1 class="article-title">{{ object.title }}</h1>
+                <hr>
+                <div class="article-metadata">Author:
+                    <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+                    <small class="text-muted">{{ object.date_posted|date:"M j, Y"}}</small>
+                </div>
+
+                <img style="width: 80%;" src ="{{ object.image.url }}">
+
+                <p class="article-content">{{ object.content }}</p>
+            </div>
+        </div>
+        <!-- Post Body -->
+
+    {% endblock content %}
