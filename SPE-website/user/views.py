@@ -20,7 +20,7 @@ def signup(request):
 
 def logout(request):
     auth.logout(request)
-    messages.warning(request, f'You have logged out of your current session.')
+    messages.warning(request, f'You have been logged out of your current session.')
     return redirect('homepage')
 
 
