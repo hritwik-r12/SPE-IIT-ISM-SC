@@ -4,6 +4,7 @@
     <!-- Adding stylesheet to base template -->
     {% block content-blog %}
         <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-card.css' %}">
     {% endblock content-blog %}
     <!-- Adding stylesheet to base template -->
 
@@ -12,20 +13,49 @@
             <h1>SPE blog</h1>
             <hr>
 
-            <!-- Blog Post body -->
+<!--            &lt;!&ndash; Blog Post body &ndash;&gt;-->
+<!--            {% for post in posts %}-->
+<!--                <article class="media content-section">-->
+<!--                    <div class="media-body">-->
+<!--                    <div class="article-metadata">-->
+<!--                        <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>-->
+<!--                        <small class="text-muted">{{ post.date_posted|date:"M j, Y"}}</small>-->
+<!--                    </div>-->
+<!--                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>-->
+<!--                    <p class="article-content">{{ post.content }}</p>-->
+<!--                    </div>-->
+<!--                </article>-->
+<!--            {% endfor %}-->
+<!--            &lt;!&ndash; Blog Post body &ndash;&gt;-->
+
+            <!-- Blog Post Card -->
+            <div class="row">
             {% for post in posts %}
-                <article class="media content-section">
-                    <div class="media-body">
-                    <div class="article-metadata">
-                        <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
-                        <small class="text-muted">{{ post.date_posted|date:"M j, Y"}}</small>
+                <div class="col">
+                    <div class="card col-lg-8">
+
+                      <!-- Card image -->
+                      <img class="card-img-top d-block mx-auto" src="{{ post.image.url }}" alt="Card image cap">
+
+                      <!-- Card content -->
+                      <div class="card-body">
+
+                        <!-- Title -->
+                        <h4 class="card-title"><a>{{ post.title }}</a></h4>
+
+                        <!-- Text -->
+                        <p class="card-text">{{ post.overview }}</p>
+
+                        <!-- Button -->
+                        <a href="{% url 'post-detail' post.id %}" class="btn btn-primary">View entire Blog</a>
+
+                      </div>
+
                     </div>
-                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-                    <p class="article-content">{{ post.content }}</p>
-                    </div>
-                </article>
+                </div>
             {% endfor %}
-            <!-- Blog Post body -->
+            </div>
+            <!-- Blog Post Card -->
 
         <!-- Next/Previous Button Group -->
         <div style = "text-align:center;">
