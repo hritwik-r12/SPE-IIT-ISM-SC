@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/body.css' %}">
@@ -19,33 +18,79 @@
     <!-- to load header files for blog -->
     {% block content-blog %} {% endblock content-blog %}
     <!-- to load header files for blog -->
-    
+
 </head>
 
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#26416c;">
+        <div class="container-fluid">
+            <a href="https://www.spe.org/en/" class="navbar-brand">
+                <img src="https://cdn.asp.events/CLIENT_SPE__29FE44FF_5056_B733_49EC4D60A02A6A7D/sites/Asia-Pacific-Oil-Gas-2020/media/logos/SPE_Logo_2.png" width="170px" height="80px">
+            </a>
 
-        <!-- SPE logo -->
-        <a class="navbar-brand" href="#">
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                </button>
+
+            <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="{% url 'homepage' %}" class="nav-item nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-item nav-link">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="{% url 'blog-home' %}" class="nav-item nav-link" data-toggle="dropdown">Resources</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">SPE News</a>
+                            <a href="#" class="dropdown-item">Spectacular Stories</a>
+                            <a href="#" class="dropdown-item">Fact Friday</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="nav-item nav-link">Events</a></li>
+                    <li><a href="#" class="nav-item nav-link">Gallery</a></li>
+                    <li><a href="#" class="nav-item nav-link">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="#" class="nav-item nav-link" href="{% url 'signout-page' %}">Sign Out</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'signin-page' %}" class="nav-item nav-link">Sign In</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark"> -->
+
+    <!-- SPE logo -->
+    <!-- <a class="navbar-brand" href="#">
             <img src="https://cdn.asp.events/CLIENT_SPE__29FE44FF_5056_B733_49EC4D60A02A6A7D/sites/Asia-Pacific-Oil-Gas-2020/media/logos/SPE_Logo_2.png"
                  width="170px" height="80px">
-        </a>
-        <!-- SPE logo -->
+        </a> -->
+    <!-- SPE logo -->
 
     <!--not works properly still in testing-->
     <!--to add toggle button-->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="collapse navbar-collapse" id="navbarToggle"> -->
     <!--to add button end-->
     <!--/not works properly.-->
 
-        <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-            <ul class="navbar-nav ml-auto">
+    <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+    <!-- <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-item nav-link" href="{% url 'homepage' %}">Home</a>
                 <li class="nav-item active">
@@ -59,9 +104,9 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">About Us</a>
-                </li>
+                </li> -->
 
-                {% if user.is_authenticated %}
+    <!-- {% if user.is_authenticated %}
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'signout-page' %}">Sign Out</a>
                     </li>
@@ -73,26 +118,23 @@
 
             </ul>
         </div>
-    </nav>
+    </nav> -->
     <!-- Navbar -->
 
     <!-- Messages -->
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
+    {% if messages %} {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %} {% endif %}
     <!-- Messages -->
 
     <!-- Page Content -->
-    {% block content %}
-    {% endblock content %}
+    {% block content %} {% endblock content %}
     <!-- Page Content -->
 
     <!-- Scroll to top Button -->
-        <button id="back-to-top-btn">
+    <button id="back-to-top-btn">
             <i class="material-icons">arrow_upward</i>
         </button>
     <!-- Scroll to top Button -->
@@ -144,12 +186,9 @@
                         <!-- Content -->
                         <h6 class="text-uppercase font-weight-bold">SPE IIT ISM SC</h6>
                         <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis gravida dolor.
-                            Nullam maximus velit non dui faucibus, et eleifend lorem ultrices. Aliquam erat volutpat.
-                            Donec non finibus dui. Curabitur non elit ac augue hendrerit facilisis. Nulla ipsum tellus,
-                            tempor sit amet ligula luctus, ornare fermentum dolor. Pellentesque habitant morbi tristique
-                            senectus et netus et malesuada fames ac turpis egestas. In commodo magna leo, sit amet pharetra
-                            orci pellentesque eu.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis gravida dolor. Nullam maximus velit non dui faucibus, et eleifend lorem ultrices. Aliquam erat volutpat. Donec non finibus dui. Curabitur non elit ac augue hendrerit
+                            facilisis. Nulla ipsum tellus, tempor sit amet ligula luctus, ornare fermentum dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In commodo magna leo, sit amet pharetra orci
+                            pellentesque eu.</p>
                         <!-- Content -->
                     </div>
                     <!-- Grid column -->
@@ -177,15 +216,45 @@
 
     <!-- Javascript -->
     <script type="text/javascript" src="{% static 'pages/top-button.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        jQuery(function($) {
+            $(window).on('scroll', function() {
+                if ($(this).scrollTop() >= 200) {
+                    $('.navbar').addClass('fixed-top');
+                } else if ($(this).scrollTop() == 0) {
+                    $('.navbar').removeClass('fixed-top');
+                }
+            });
+
+            function adjustNav() {
+                var winWidth = $(window).width(),
+                    dropdown = $('.dropdown'),
+                    dropdownMenu = $('.dropdown-menu');
+
+                if (winWidth >= 768) {
+                    dropdown.on('mouseenter', function() {
+                        $(this).addClass('show')
+                            .children(dropdownMenu).addClass('show');
+                    });
+
+                    dropdown.on('mouseleave', function() {
+                        $(this).removeClass('show')
+                            .children(dropdownMenu).removeClass('show');
+                    });
+                } else {
+                    dropdown.off('mouseenter mouseleave');
+                }
+            }
+
+            $(window).on('resize', adjustNav);
+
+            adjustNav();
+        });
+    </script>
 
 </body>
 
