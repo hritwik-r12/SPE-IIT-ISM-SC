@@ -1,0 +1,50 @@
+/* Container for all Posts */
+#PostContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+/* Container for all Posts */
+
+/* Blog Post Body */
+#PostBody {
+    width: 750px;
+    height: 420px;
+    margin-left: 50px;
+    margin-bottom: 60px;
+    box-shadow: 9px 12px 20px -10px rgba(0,0,0,0.39);
+}
+
+#PostImage {
+    width: 350px;
+    margin: 20px;
+    float: right;
+}
+
+#ArticleTitle {
+    font-family: lobster;
+    font-size: 3em;
+    margin-left: 20px;
+}
+
+div#ArticleMetaData {
+    font-size: 1.25em;
+    margin-left: 20px;
+}
+
+hr#Underline {
+    width: 30%;
+}
+
+p.article-content {
+    margin: 20px;
+    font-family: 'Oxygen', sans-serif;
+}
+
+button.btn {
+    width: 150px;
+    height: 50px;
+    font-size: 1.5em;
+    margin: 20px;
+    float: right;
+}
+/* Blog Post Body */

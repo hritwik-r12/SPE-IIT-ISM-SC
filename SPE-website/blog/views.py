@@ -9,7 +9,7 @@ class PostListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     order_by = ['-date_posted']
-    paginate_by = 2
+    paginate_by = 4
 
     def get_queryset(self):
         return Post.objects.order_by('-id')
