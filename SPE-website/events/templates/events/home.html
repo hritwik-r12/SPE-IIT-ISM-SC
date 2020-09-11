@@ -17,7 +17,7 @@
     {% for event in events %}
         <article class="media content-section">
             <div class="media-body">
-            <h2><a class="article-title" href="#">{{ event.title }}</a></h2>
+            <h2><a class="article-title" href="{% url 'events-detail' event.id %}">{{ event.title }}</a></h2>
             <hr>
             <p class="article-content">{{ event.description }}</p>
             <p class="article-content">Last date to register: {{ event.reg_date }}</p>
