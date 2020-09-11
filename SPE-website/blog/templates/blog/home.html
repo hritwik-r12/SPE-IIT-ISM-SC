@@ -3,85 +3,68 @@
 
     <!-- Adding stylesheet to base template -->
     {% block content-blog %}
+        <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-card.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
     {% endblock content-blog %}
     <!-- Adding stylesheet to base template -->
 
     {% block content %}
-        <div class="col-md-8" style="padding-left: 5%;">
+        <div class="d-block mx-auto">
             <h1>SPE blog</h1>
             <hr>
 
-<!--            &lt;!&ndash; Blog Post body &ndash;&gt;-->
-<!--            {% for post in posts %}-->
-<!--                <article class="media content-section">-->
-<!--                    <div class="media-body">-->
-<!--                    <div class="article-metadata">-->
-<!--                        <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>-->
-<!--                        <small class="text-muted">{{ post.date_posted|date:"M j, Y"}}</small>-->
-<!--                    </div>-->
-<!--                    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>-->
-<!--                    <p class="article-content">{{ post.content }}</p>-->
-<!--                    </div>-->
-<!--                </article>-->
-<!--            {% endfor %}-->
-<!--            &lt;!&ndash; Blog Post body &ndash;&gt;-->
-
-            <!-- Blog Post Card -->
-            <div class="row">
-            {% for post in posts %}
-                <div class="col">
-                    <div class="card col-lg-8">
-
-                      <!-- Card image -->
-                      <img class="card-img-top d-block mx-auto" src="{{ post.image.url }}" alt="Card image cap">
-
-                      <!-- Card content -->
-                      <div class="card-body">
-
-                        <!-- Title -->
-                        <h4 class="card-title"><a>{{ post.title }}</a></h4>
-
-                        <!-- Text -->
-                        <p class="card-text">{{ post.overview }}</p>
-
-                        <!-- Button -->
-                        <a href="{% url 'post-detail' post.id %}" class="btn btn-primary">View entire Blog</a>
-
-                      </div>
-
+            <div id="PostContainer">
+                <!-- Blog Post body -->
+                {% for post in posts %}
+                    <div id="PostBody" class="media content-section">
+                        <div class="media-body">
+                            <img id="PostImage" src="{{ post.image.url }}">
+                            <h1 id="ArticleTitle">{{ post.title }}</h1>
+                            <div id="ArticleMetaData">
+                                <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                                <small class="text-muted">{{ post.date_posted|date:"M j, Y"}}</small>
+                                <hr id="Underline" align="left">
+                            </div>
+                            <p class="article-content">{{ post.overview }}</p>
+                            <a href="{% url 'post-detail' post.id %}">
+                                <button type="button" class="btn btn-primary">Read More</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
-            </div>
-            <!-- Blog Post Card -->
-
-        <!-- Next/Previous Button Group -->
-        <div style = "text-align:center;">
-            {% if is_paginated %}
-
-                {% if page_obj.has_previous %}
-                    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                {% endif %}
-
-                {% for num in page_obj.paginator.page_range %}
-                    {% if page_obj.number == num %}
-                        <a class="btn btn-info mb-4" href="?page={{ num }}">{{num}}</a>
-                    {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
-                        <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{num}}</a>
-                    {% endif %}
                 {% endfor %}
-
-                {% if page_obj.has_next %}
-                    <a class="btn btn-outline-info mb-4" href="?page={{page_obj.next_page_number}}">Next</a>
-                    <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                {% endif %}
-
-            {% endif %}
+                <!-- Blog Post body -->
             </div>
-        </div>
-    <!-- Next/Previous Button Group -->
+
+            <!-- Next/Previous Button Group -->
+            <div class="d-flex justify-content-center">
+                {% if is_paginated %}
+
+                    {% if page_obj.has_previous %}
+                        <a class="btn btn-grp mb-4" href="?page={{ page_obj.previous_page_number }}">
+                            <span class="material-icons">arrow_back_ios</span>
+                        </a>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <a class="btn btn-grp mb-4" href="?page={{ num }}">{{num}}</a>
+                        {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
+                            <a class="btn btn-grp mb-4" href="?page={{ num }}">{{num}}</a>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                        <a class="btn btn-grp mb-4" href="?page={{page_obj.next_page_number}}">
+                            <span class="material-icons">arrow_forward_ios</span>
+                        </a>
+                    {% endif %}
+
+                {% endif %}
+                </div>
+            </div>
+            <!-- Next/Previous Button Group -->
 
     {% endblock content %}
