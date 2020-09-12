@@ -55,6 +55,9 @@ body {
     width: 100%;
     transition: 0.6s ease-in;
     z-index: 99999;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
 }
 
 .navbar .navbar-brand {
