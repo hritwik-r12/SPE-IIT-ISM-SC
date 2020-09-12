@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'pages/scroll-to-top-button.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/footer.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- to load header files for blog -->
     {% block content-blog %} {% endblock content-blog %}
@@ -146,19 +148,19 @@
         <div class="footer-top">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-3 footer-about">
+                    <div class="col-md-3 footer-about" data-aos="fade-up-right" data-aos-duration="1500">
                         <img src="https://cdn.asp.events/CLIENT_SPE__29FE44FF_5056_B733_49EC4D60A02A6A7D/sites/Asia-Pacific-Oil-Gas-2020/media/logos/SPE_Logo_2.png" alt="logo-footer">
                         <!-- <p>
                             SPE IIT(ISM) Student Chapter
                         </p> -->
                     </div>
-                    <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
+                    <div class="col-md-4 offset-md-1 footer-contact" data-aos="fade-down" data-aos-duration="1500">
                         <h3>Contact</h3>
                         <p><i class="fas fa-map-marker-alt"></i> Department of Petroleum Engineering, IIT (ISM) Dhanbad (695.89 km) 826004 Dhanbad, Jharkhand, India</p>
                         <p><i class="fas fa-phone"></i> Phone: 087098 43266</p>
                         <p><i class="fas fa-envelope"></i> Email: <a href="#">speiitismsc@domain.com</a></p>
                     </div>
-                    <div class="col-md-4 footer-links wow fadeInUp">
+                    <div class="col-md-4 footer-links" data-aos="fade-up-left" data-aos-duration="1500">
                         <div class="row">
                             <div class="col">
                                 <h3>Links</h3>
@@ -189,10 +191,9 @@
                     </div>
                     <div class="col-md-6 footer-social">
                         <p style="display: inline;">Follow us on : </p>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/speismsc/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/spe_iitism/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/spe-iit-ism-sc/"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -318,6 +319,9 @@
 
             adjustNav();
         });
+    </script>
+    <script>
+        AOS.init();
     </script>
 
 </body>
