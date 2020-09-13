@@ -28,7 +28,8 @@ urlpatterns = [
     path('SignUp/', user_views.signup, name='signup-page'),
     path('SignIn/', auth_views.LoginView.as_view(template_name='user/signin.html'), name='signin-page'),
     path('SignOut/', user_views.logout, name='signout-page'),
-    path('Events/', include('events.urls'))
+    path('Events/', include('events.urls')),
+    path('markdownx/', include('markdownx.urls'))
 ]
 
 # only works in debug mode

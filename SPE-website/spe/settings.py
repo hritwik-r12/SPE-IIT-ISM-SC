@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'user.apps.UserConfig',
     'crispy_forms',
-    'events.apps.EventsConfig'
+    'events.apps.EventsConfig',
+    'markdownx'
 ]
 
 MIDDLEWARE = [

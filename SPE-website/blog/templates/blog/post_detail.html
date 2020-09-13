@@ -1,4 +1,5 @@
 {% extends "pages/base.html" %}
+{% load markdown_extras %}
 {% load static %}
 
     <!-- Adding stylesheet to base template -->
@@ -21,9 +22,10 @@
 
                 <img style="width: 80%;" src ="{{ object.image.url }}">
 
-                <p class="article-content">{{ object.content }}</p>
+                <p class="article-content">{{ object.content | markdown | safe }}</p>
             </div>
         </div>
         <!-- Post Body -->
+        <hr>
 
     {% endblock content %}
