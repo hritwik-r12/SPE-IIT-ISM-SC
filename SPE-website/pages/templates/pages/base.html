@@ -50,6 +50,8 @@
                             <a href="#" class="dropdown-item">SPE News</a>
                             <a href="#" class="dropdown-item">Spectacular Stories</a>
                             <a href="#" class="dropdown-item">Fact Friday</a>
+                            <a href="{% url 'blog-home' %}" class="dropdown-item">Blogs</a>
+
                         </div>
                     </li>
                     <li><a href="{% url 'events-home' %}" class="nav-item nav-link">Events</a></li>
@@ -57,11 +59,11 @@
                     <li><a href="#" class="nav-item nav-link">Contact</a></li>
                     {% if user.is_authenticated %}
                     <li>
-                        <a href="#" class="nav-item nav-link" href="{% url 'signout-page' %}">Sign Out</a>
+                        <a class="nav-item nav-link" href="{% url 'signout-page' %}">Sign Out</a>
                     </li>
                     {% else %}
                     <li>
-                        <a href="{% url 'signin-page' %}" class="nav-item nav-link">Sign In</a>
+                        <a href="{% url 'signup-page' %}" class="nav-item nav-link">Sign In</a>
                     </li>
                     {% endif %}
                 </ul>
