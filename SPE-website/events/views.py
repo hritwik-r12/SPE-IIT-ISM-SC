@@ -14,7 +14,7 @@ class EventListView(ListView):
     template_name = 'events/home.html'
     context_object_name = 'events'
     order_by = ['-reg_date']
-    paginate_by = 1
+    paginate_by = 3
 
     def get_queryset(self):
         return Events.objects.order_by('-id')
