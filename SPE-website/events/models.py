@@ -6,7 +6,8 @@ class Events(models.Model):
     description = models.CharField(max_length=300)
     reg_date = models.DateField()
     content = models.TextField()
-    image = models.ImageField(upload_to='event_poster')
+    image = models.ImageField(null=True, blank=True,upload_to='event_poster')
+    google_doc_url = models.URLField(max_length=500)
 
     def __str__(self):
         return self.title
