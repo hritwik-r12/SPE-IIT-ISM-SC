@@ -21,13 +21,13 @@ class Events(models.Model):
 
 class Registeration(models.Model):
     event= models.ForeignKey(Events, on_delete=models.CASCADE)
-    first_user = models.ForeignKey(User, on_delete=models.CASCADE)
-    user2 = models.CharField(max_length=300,null=True, blank=True)
-    user3 = models.CharField(max_length=300,null=True, blank=True)
-    user4 = models.CharField(max_length=300,null=True, blank=True)
-    phone = models.IntegerField()
-    email = models.EmailField(max_length=200)
     team_name= models.CharField(max_length=300,null=True, blank=True)
+    Member_1 = models.ForeignKey(User, on_delete=models.CASCADE)
+    Mobile_number = models.IntegerField()
+    email = models.EmailField(max_length=200)
+    Member_2 = models.CharField(max_length=300,null=True, blank=True)
+    Member_3 = models.CharField(max_length=300,null=True, blank=True)
+    Member_4 = models.CharField(max_length=300,null=True, blank=True)
 
     def __str__(self):
-        return f'{self.first_user.username} regestration'
+        return f'{self.Member_1.username} regestration'
