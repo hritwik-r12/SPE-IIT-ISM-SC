@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Events
+from .models import Events, Registeration
 from django.views.generic import ListView, DetailView
 import datetime
+from .forms import RegisterForm
 
 
 def home(request):
@@ -38,3 +39,11 @@ class PastEventListView(ListView):
         date_1=date_1 + datetime.timedelta(days=-1)
         return Events.objects.filter(reg_date__lte=date_1,
                                      reg_date__gte=datetime.date(2019,1,1)).order_by('-id')
+
+def EventRegisterView(request, pk):
+    r_form = RegisterForm()
+
+    context={
+        'r_form': r_form
+    }
+    return render(request, 'events/registration_details.html', context)
