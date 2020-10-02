@@ -10,9 +10,21 @@
 
 {%block content%}
 <div class="col-md-8" style="padding-left: 5%;">
-    <h1>Events...</h1>
+    {% if not events %}
+        <h1>Upcomming Events...</h1>
+    {% elif events.first.has_happened %}
+        <h1>Past Events...</h1>
+    {% else %}
+        <h1>Upcomming Events...</h1>
+    {%endif%}
     <hr>
-
+    {% if not events %}
+        <h3>No upcomming Events</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+    {%endif%}
     <!-- Blog Post body -->
     {% for event in events %}
         <article class="media content-section">
