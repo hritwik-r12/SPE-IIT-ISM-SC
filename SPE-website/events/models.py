@@ -21,7 +21,7 @@ class Events(models.Model):
 
 class Registeration(models.Model):
     event= models.ForeignKey(Events, on_delete=models.CASCADE)
-    first_user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_user = models.ForeignKey(User, on_delete=models.CASCADE)
     user2 = models.CharField(max_length=300,null=True, blank=True)
     user3 = models.CharField(max_length=300,null=True, blank=True)
     user4 = models.CharField(max_length=300,null=True, blank=True)
