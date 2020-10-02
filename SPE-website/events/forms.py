@@ -5,4 +5,4 @@ from .models import Registeration
 class RegisterForm(forms.ModelForm):
     class Meta:
         model = Registeration
-        fields=['first_user','user2','user3','user4','phone','email','team_name']
+        fields=['event','team_name','Member_1','Mobile_number','email','Member_2','Member_3','Member_4']
