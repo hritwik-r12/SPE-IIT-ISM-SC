@@ -7,179 +7,330 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/body.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/navbar.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'pages/top-button.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/scroll-to-top-button.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/footer.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!--to load header files for blog-->
-    {% block content-blog %}{% endblock %}
-    
+    <!-- to load header files for blog -->
+    {% block content-blog %} {% endblock content-blog %}
+    <!-- to load header files for blog -->
+
 </head>
 
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#26416c;">
+        <div class="container-fluid">
+            <a href="{% url 'homepage' %}" class="navbar-brand">
+                <img src="https://cdn.asp.events/CLIENT_SPE__29FE44FF_5056_B733_49EC4D60A02A6A7D/sites/Asia-Pacific-Oil-Gas-2020/media/logos/SPE_Logo_2.png" width="170px" height="80px">
+            </a>
 
-        <!-- SPE logo -->
-        <a class="navbar-brand" href="#">
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                </button>
+
+            <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="{% url 'homepage' %}" class="nav-item nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-item nav-link">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="{% url 'blog-home' %}" class="nav-item nav-link" data-toggle="dropdown">Resources</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">SPE News</a>
+                            <a href="#" class="dropdown-item">Spectacular Stories</a>
+                            <a href="#" class="dropdown-item">Fact Friday</a>
+                            <a href="{% url 'blog-home' %}" class="dropdown-item">Blogs</a>
+
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-item nav-link" data-toggle="dropdown">Events</a>
+                        <div class="dropdown-menu">
+                            <a href="{% url 'events-home' %}" class="dropdown-item">Upcoming</a>
+                            <a href="{% url 'events-past' %}" class="dropdown-item">Past</a>
+                        </div>
+                    </li>
+                    <li><a href="#" class="nav-item nav-link">Gallery</a></li>
+                    <li><a href="#" class="nav-item nav-link">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="nav-item nav-link" href="{% url 'signout-page' %}">Sign Out</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'signup-page' %}" class="nav-item nav-link">Sign In</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="padding-top:100px;"></div>
+
+
+
+
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark"> -->
+
+    <!-- SPE logo -->
+    <!-- <a class="navbar-brand" href="#">
             <img src="https://cdn.asp.events/CLIENT_SPE__29FE44FF_5056_B733_49EC4D60A02A6A7D/sites/Asia-Pacific-Oil-Gas-2020/media/logos/SPE_Logo_2.png"
                  width="170px" height="80px">
-        </a>
-        <!-- SPE logo -->
+        </a> -->
+    <!-- SPE logo -->
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+    <!--not works properly still in testing-->
+    <!--to add toggle button-->
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle"> -->
+    <!--to add button end-->
+    <!--/not works properly.-->
+
+    <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+    <!-- <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
-                </li>
+                    <a class="nav-item nav-link" href="{% url 'homepage' %}">Home</a>
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'blog-home' %}">Blog</a>
                 </li>
-                <!-- Events Dropdown Menu -->
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Events
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Event 1</a>
-                        <a class="dropdown-item" href="#">Event 2</a>
-                        <a class="dropdown-item" href="#">Event 3</a>
-                        <a class="dropdown-item" href="#">Event 4</a>
-                        <a class="dropdown-item" href="#">Event 5</a>
-                    </div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Events</a>
                 </li>
-                <!-- Events Dropdown Menu -->
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Gallery</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'signup-page' %}">Sign In</a>
-                </li>
+                </li> -->
+
+    <!-- {% if user.is_authenticated %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'signout-page' %}">Sign Out</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'signin-page' %}">Sign In</a>
+                    </li>
+                {% endif %}
+
             </ul>
         </div>
-    </nav>
+    </nav> -->
     <!-- Navbar -->
 
     <!-- Messages -->
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-        {% endfor %}
-    {% endif %}
+    {% if messages %} {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %} {% endif %}
     <!-- Messages -->
 
     <!-- Page Content -->
-    {% block content %}
-    {% endblock content %}
+    {% block content %} {% endblock content %}
     <!-- Page Content -->
 
     <!-- Scroll to top Button -->
-        <button id="back-to-top-btn">
+    <button id="back-to-top-btn">
             <i class="material-icons">arrow_upward</i>
         </button>
     <!-- Scroll to top Button -->
 
     <!-- Footer -->
-    <footer class="page-footer font-small unique-color-dark">
 
-        <div id="upper-footer">
+    <footer>
+        <div class="footer-top">
+            <div class="container-fluid">
+                <div class="row" style="overflow: hidden">
+                    <div class="col-md-3 footer-about" data-aos="fade-up-right" data-aos-duration="1500">
+                        <img src="https://cdn.asp.events/CLIENT_SPE__29FE44FF_5056_B733_49EC4D60A02A6A7D/sites/Asia-Pacific-Oil-Gas-2020/media/logos/SPE_Logo_2.png" alt="logo-footer">
+                        <!-- <p>
+                            SPE IIT(ISM) Student Chapter
+                        </p> -->
+                    </div>
+                    <div class="col-md-4 offset-md-1 footer-contact" data-aos="fade-down" data-aos-duration="1500">
+                        <h3>Contact</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Department of Petroleum Engineering, IIT (ISM) Dhanbad (695.89 km) 826004 Dhanbad, Jharkhand, India</p>
+                        <p><i class="fas fa-phone"></i> Phone: 087098 43266</p>
+                        <p><i class="fas fa-envelope"></i> Email: <a href="#">speiitismsc@domain.com</a></p>
+                    </div>
+                    <div class="col-md-4 footer-links" data-aos="fade-up-left" data-aos-duration="1500">
+                        <div class="row">
+                            <div class="col">
+                                <h3>Links</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><a class="scroll-link" href="{% url 'homepage' %}">Home</a></p>
+                                <p><a href="#">About us</a></p>
+                                <p><a href="#">Resources</a></p>
+                                <p><a href="#">Events</a></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><a href="#">Gallery</p>
+                                <p><a href="#">Contact</a></p>
+                                <p><a href="#">Our Team</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
             <div class="container">
-
-                <!-- Grid row-->
-                <div class="row py-4 d-flex align-items-center">
-
-                    <!-- Grid column -->
-                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                        <h6 class="mb-0">Get connected with us on social networks!</h6>
+                <div class="row">
+                    <div class="col-md-6 footer-copyright">
+                        Copyright © 2020 All rights reserved | SPE IIT(ISM) Student Chapter
                     </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column social media icons -->
-                    <div class="col-md-6 col-lg-7 text-center text-md-right">
-                        <a class="fb-ic" href="#">
-                            <i class="fa fa-facebook-f"> </i>
-                        </a>
-                        <a class="li-ic" href="#">
-                            <i class="fa fa-linkedin"> </i>
-                        </a>
-                        <a class="ins-ic" href="#">
-                            <i class="fa fa-instagram"></i>
-                        </a>
+                    <div class="col-md-6 footer-social">
+                        <p style="display: inline;">Follow us on : </p>
+                        <a href="https://www.facebook.com/speismsc/" style="color:white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/spe_iitism/" style="color:white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/spe-iit-ism-sc/" style="color: white;"><i class="fab fa-linkedin"></i></a>
                     </div>
-                    <!-- Grid column social media icons -->
-
                 </div>
-                <!-- Grid row-->
-
             </div>
         </div>
-
-        <!-- Footer Links -->
-        <div id="lower-footer">
-            <div class="container text-center text-md-left mt-5">
-
-                <!-- Grid row -->
-                <div class="row mt-3">
-
-                    <!-- Grid column -->
-                    <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
-                        <!-- Content -->
-                        <h6 class="text-uppercase font-weight-bold">SPE IIT ISM SC</h6>
-                        <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis gravida dolor.
-                            Nullam maximus velit non dui faucibus, et eleifend lorem ultrices. Aliquam erat volutpat.
-                            Donec non finibus dui. Curabitur non elit ac augue hendrerit facilisis. Nulla ipsum tellus,
-                            tempor sit amet ligula luctus, ornare fermentum dolor. Pellentesque habitant morbi tristique
-                            senectus et netus et malesuada fames ac turpis egestas. In commodo magna leo, sit amet pharetra
-                            orci pellentesque eu.</p>
-                        <!-- Content -->
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                        <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                        <p><i class="fa fa-home mr-3"></i> Dhanbad, India </p>
-                        <p><i class="fa fa-envelope mr-3"></i> developers@mail.com </p>
-                        <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88 </p>
-                    </div>
-                    <!-- Grid column -->
-
-                </div>
-                <!-- Grid row -->
-
-            </div>
-        </div>
-        <!-- Footer Links -->
-
     </footer>
+
+
+
+
+
+    <!-- <footer class="page-footer font-small unique-color-dark"> -->
+
+    <!-- <div id="upper-footer">
+            <div class="container"> -->
+
+    <!-- Grid row -->
+    <!-- <div class="row py-4 d-flex align-items-center"> -->
+
+    <!-- Grid column -->
+    <!-- <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+            <h6 class="mb-0">Get connected with us on social networks!</h6>
+        </div> -->
+    <!-- Grid column -->
+
+    <!-- Grid column social media icons -->
+    <!-- <div class="col-md-6 col-lg-7 text-center text-md-right">
+            <a class="fb-ic" href="#">
+                <i class="fa fa-facebook-f"> </i>
+            </a>
+            <a class="li-ic" href="#">
+                <i class="fa fa-linkedin"> </i>
+            </a>
+            <a class="ins-ic" href="#">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div> -->
+    <!-- Grid column social media icons -->
+    <!-- 
+    </div> -->
+    <!-- Grid row-->
+    <!-- 
+    </div>
+    </div> -->
+
+    <!-- Footer Links -->
+    <!-- <div id="lower-footer">
+        <div class="container text-center text-md-left mt-5"> -->
+
+    <!-- Grid row -->
+    <!-- <div class="row mt-3"> -->
+
+    <!-- Grid column -->
+    <!-- <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4"> -->
+    <!-- Content -->
+    <!-- <h6 class="text-uppercase font-weight-bold">SPE IIT ISM SC</h6>
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quis gravida dolor. Nullam maximus velit non dui faucibus, et eleifend lorem ultrices. Aliquam erat volutpat. Donec non finibus dui. Curabitur non elit ac augue hendrerit
+                        facilisis. Nulla ipsum tellus, tempor sit amet ligula luctus, ornare fermentum dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In commodo magna leo, sit amet pharetra orci pellentesque
+                        eu.
+                    </p> -->
+    <!-- Content -->
+    <!-- </div> -->
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <!-- <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4"> -->
+    <!-- Links -->
+    <!-- <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p><i class="fa fa-home mr-3"></i> Dhanbad, India </p>
+                    <p><i class="fa fa-envelope mr-3"></i> developers@mail.com </p>
+                    <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88 </p>
+                </div> -->
+    <!-- Grid column -->
+
+    <!-- </div> -->
+    <!-- Grid row -->
+
+    <!-- </div>
+    </div> -->
+    <!-- Footer Links -->
+
+    <!-- </footer> -->
     <!-- Footer -->
 
     <!-- Javascript -->
     <script type="text/javascript" src="{% static 'pages/top-button.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        jQuery(function($) {
+            $(window).on('scroll', function() {
+                if ($(this).scrollTop() >= 200) {
+                    $('.navbar').addClass('fixed-top');
+                } else if ($(this).scrollTop() == 0) {
+                    $('.navbar').removeClass('fixed-top');
+                }
+            });
+
+            function adjustNav() {
+                var winWidth = $(window).width(),
+                    dropdown = $('.dropdown'),
+                    dropdownMenu = $('.dropdown-menu');
+
+                if (winWidth >= 768) {
+                    dropdown.on('mouseenter', function() {
+                        $(this).addClass('show')
+                            .children(dropdownMenu).addClass('show');
+                    });
+
+                    dropdown.on('mouseleave', function() {
+                        $(this).removeClass('show')
+                            .children(dropdownMenu).removeClass('show');
+                    });
+                } else {
+                    dropdown.off('mouseenter mouseleave');
+                }
+            }
+
+            $(window).on('resize', adjustNav);
+
+            adjustNav();
+        });
+    </script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

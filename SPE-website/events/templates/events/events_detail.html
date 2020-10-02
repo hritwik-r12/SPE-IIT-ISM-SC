@@ -1,0 +1,29 @@
+{% extends "pages/base.html" %}
+{% load markdown_extras %}
+{% load static %}
+
+    <!-- Adding stylesheet to base template -->
+    {% block content-blog %}
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
+    {% endblock %}
+    <!-- Adding stylesheet to base template -->
+
+    {% block content %}
+
+        <!-- Post Body -->
+        <div class="col-md-9" style="padding-left: 10%;">
+            <div class="media-body">
+                <p> </p>
+                <h1 class="article-title">{{ object.title }}</h1>
+                <hr>
+                {%if object.image%}
+                <img style="width: 80%;" src ="{{ object.image.url }}">
+                {%endif%}
+                <p class="article-content">{{ object.content| markdown |safe }}</p>
+                <p> Last date to register : {{ object.reg_date|date:"M j, Y"}} </p>
+                <a class="btn btn-info mb-4" href="{{ object.google_doc_url }}">Register now!</a>
+            </div>
+        </div>
+        <!-- Post Body -->
+
+    {% endblock content %}

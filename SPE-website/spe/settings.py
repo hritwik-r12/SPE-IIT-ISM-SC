@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'blog.apps.BlogConfig',
     'user.apps.UserConfig',
-    'crispy_forms'
+    'crispy_forms',
+    'events.apps.EventsConfig',
+    'markdownx'
 ]
 
 MIDDLEWARE = [
@@ -124,8 +126,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# uploaded images
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL = '/media/'
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'homepage'
+LOGOUT_REDIRECT_URL = 'homepage'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

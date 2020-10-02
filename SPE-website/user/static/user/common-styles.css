@@ -1,0 +1,45 @@
+/* contains the common files for the SignUp and SignIn page */
+
+/* Background Image */
+body {
+    box-sizing: border-box;
+    background-image: url('https://texashillcountry.com/wp-content/uploads/Texas-Oil-Field-Wiki-commons.jpg')
+}
+/* Background Image */
+
+/* form container */
+div.content-section {
+    width:600px;
+    padding: 30px 30px 10px 30px;
+    margin: 40px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+}
+/* form container */
+
+/* SPE logo */
+img#spe-logo {
+    width: 300px;
+    height: 192px;
+    margin-bottom: 20px;
+}
+/* SPE logo */
+
+/* Horizontal Divider */
+hr.accent-2 {
+    background-color: #0d4c92;
+    width: 500px;
+    margin: 20px;
+    height: 1px;
+}
+/* Horizontal Divider */
+
+a#SignUpAnchor {
+    text-decoration: none;
+}
+
+button#SignUpBtn, button#SignInBtn {
+    width: 500px;
+    font-size: 25px;
+    margin: 20px;
+}
