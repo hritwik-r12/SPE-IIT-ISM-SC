@@ -8,13 +8,14 @@
         <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
     {% endblock content-blog %}
     <!-- Adding stylesheet to base template -->
 
     {% block content %}
         <div class="d-block mx-auto">
-            <h1>SPE blog</h1>
-            <hr>
+            <h1 class="d-flex justify-content-center" id="PageTitle">SPE Blogs</h1>
+            <hr class="d-flex justify-content-center" id="UnderlineTitle">
 
             <div id="PostContainer">
                 <!-- Blog Post body -->

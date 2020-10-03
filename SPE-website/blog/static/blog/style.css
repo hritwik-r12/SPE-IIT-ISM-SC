@@ -1,0 +1,11 @@
+#PageTitle {
+    font-family: 'adam.cg pro';
+    font-size: 60px;
+}
+
+#UnderlineTitle {
+    height: 0.8px;
+    width: 250px;
+    background-color: #007bff;
+    margin-bottom: 50px;
+}
