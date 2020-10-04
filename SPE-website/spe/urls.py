@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from user import views as user_views
+from pages import views as pages_views
 # to display static files during dev, change when in production.
 from django.conf import settings
 from django.conf.urls.static import static
@@ -24,6 +25,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
+    path('AboutUs/', pages_views.about, name='about-page'),
     path('Blogs/', include('blog.urls')),
     path('SignUp/', user_views.signup, name='signup-page'),
     path('SignIn/', auth_views.LoginView.as_view(template_name='user/signin.html'), name='signin-page'),

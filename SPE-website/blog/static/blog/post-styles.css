@@ -1,0 +1,34 @@
+/* Post Container */
+#PostContainer {
+    margin: 40px;
+}
+/* Post Container */
+
+/* Post Title */
+#PostTitle {
+    font-family: 'adam.cg pro';
+    font-size: 60px;
+}
+/* Post Title */
+
+/* Post Underline */
+#PostUnderline {
+    width: 200px;
+    height: 1.5px;
+    background-color: #007bff;
+    margin-bottom: 20px;
+}
+/* Post Underline */
+
+/* Post Author and Date */
+#PostAuthDate {
+    font-size: 0.85em;
+}
+/* Post Author and Date */
+
+/* Post Image */
+#PostImage {
+    width: 800px;
+    margin: 20px;
+}
+/* Post Image */

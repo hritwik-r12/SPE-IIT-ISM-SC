@@ -4,28 +4,43 @@
 
     <!-- Adding stylesheet to base template -->
     {% block content-blog %}
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
-    {% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-styles.css' %}">
+    {% endblock content-blog %}
     <!-- Adding stylesheet to base template -->
 
     {% block content %}
 
         <!-- Post Body -->
-        <div class="col-md-9" style="padding-left: 10%;">
-            <div class="media-body">
-                <h1 class="article-title">{{ object.title }}</h1>
-                <hr>
-                <div class="article-metadata">Author:
-                    <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
-                    <small class="text-muted">{{ object.date_posted|date:"M j, Y"}}</small>
+        <div class="d-flex justify-content-center">
+            <div id="PostContainer" class="col-md-10">
+                <div class="media-body">
+
+                    <!-- Post Title -->
+                    <h1 id="PostTitle" class="article-title d-flex justify-content-center">{{ object.title }}</h1>
+                    <!-- Post Title -->
+                    <hr id="PostUnderline" class="d-flex justify-content-center">
+
+                    <!-- Post author and Date -->
+                    <div id="PostAuthDate" class="d-flex justify-content-center">
+                        <div class="article-metadata">Author:
+                            <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+                            <small class="text-muted">{{ object.date_posted|date:"M j, Y"}}</small>
+                        </div>
+                    </div>
+                    <!-- Post author and Date -->
+
+                    <!-- Post Image -->
+                    <img id="PostImage" src ="{{ object.image.url }}">
+                    <!-- Post Image -->
+
+                    <!-- Post Content -->
+                    <p class="article-content">{{ object.content | markdown | safe }}</p>
+                    <!-- Post Content -->
+
                 </div>
-
-                <img style="width: 80%;" src ="{{ object.image.url }}">
-
-                <p class="article-content">{{ object.content | markdown | safe }}</p>
             </div>
         </div>
         <!-- Post Body -->
-        <hr>
 
     {% endblock content %}
