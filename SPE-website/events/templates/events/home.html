@@ -33,7 +33,10 @@
             <hr>
             <p class="article-content">{{ event.description }}</p>
             <p class="article-content">Last date to register: {{ event.reg_date }}</p>
+            {% if event.has_happened %}<p> </p>
+            {% else %}
             <a class="btn btn-info mb-4" href="#">Register now!</a>
+            {%endif%}
         </article>
     {% endfor %}
     <!-- Blog Post body -->

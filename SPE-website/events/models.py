@@ -31,3 +31,12 @@ class Registeration(models.Model):
 
     def __str__(self):
         return f'{self.Member_1.username} regestration'
+
+class SingleRegistration(models.Model):
+    event=models.ForeignKey(Events,on_delete=models.CASCADE)
+    Member_1=Member_1 = models.ForeignKey(User, on_delete=models.CASCADE)
+    Mobile_number= models.IntegerField()
+    email = models.EmailField(max_length=200)
+
+    def __str__(self):
+        return f'{self.Member_1.username} single regestration'
