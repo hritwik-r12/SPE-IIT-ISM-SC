@@ -64,8 +64,12 @@
                     <li><a href="#" class="nav-item nav-link">Gallery</a></li>
                     <li><a href="#" class="nav-item nav-link">Contact</a></li>
                     {% if user.is_authenticated %}
-                    <li>
-                        <a class="nav-item nav-link" href="{% url 'signout-page' %}">Sign Out</a>
+                    <li class="dropdown">
+                        <a><span class="material-icons" id="AccountCircle" >account_circle</span></a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Profile</a>
+                            <a href="{% url 'signout-page' %}" class="dropdown-item">Sign Out</a>
+                        </div>
                     </li>
                     {% else %}
                     <li>

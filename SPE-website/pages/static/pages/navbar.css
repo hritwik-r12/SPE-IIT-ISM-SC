@@ -21,9 +21,6 @@
   display: block;
 } */
 
-
-/* Dropdown Menu */
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 html {
@@ -34,8 +31,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
     font-weight: 400;
+    box-sizing: border-box;
 }
-
 
 /* .overlay::after {
     content: '';
@@ -219,7 +216,7 @@ body {
         transform: scaleX(1);
     }
     .dropdown-menu {
-        min-width: 200px;
+        min-width: 100px;
         -webkit-animation: dropdown-animation 0.3s;
         animation: dropdown-animation 0.3s;
         -webkit-transform-origin: top;
@@ -293,6 +290,14 @@ body {
         transform: scaleY(1);
     }
 }
+
+/* Account Circle */
+#AccountCircle {
+    color: white;
+    font-size: 50px;
+    margin: 11px 20px 0px 15px;
+}
+/* Account Circle */
 
 .footer-top {
     padding: 60px 0;
