@@ -1,5 +1,9 @@
-{% extends 'pages/base.html' %}
+{% extends 'pages/base.html' %} {% load static %} {% block content-blog %}
+<link rel="stylesheet" type="text/css" href="{% static 'pages/about.css' %}"> {% endblock content-blog %} {% block content %}
 
-{% block content %}
-    <h1>About Us</h1>
+<div class="hero-image" style="margin-top: -14px;">
+    <div class="hero-text">
+        <h1 style="font-size:50px">I am John Doe</h1>
+    </div>
+</div>
 {% endblock content %}
