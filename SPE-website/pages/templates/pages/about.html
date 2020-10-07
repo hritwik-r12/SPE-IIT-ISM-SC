@@ -1,9 +1,24 @@
 {% extends 'pages/base.html' %} {% load static %} {% block content-blog %}
 <link rel="stylesheet" type="text/css" href="{% static 'pages/about.css' %}"> {% endblock content-blog %} {% block content %}
-
-<div class="hero-image" style="margin-top: -14px;">
+<div class="hero-image" style="margin-top: -14px; overflow: hidden;">
     <div class="hero-text">
-        <h1 style="font-size:50px">I am John Doe</h1>
+        <h1 style="font-size:50px">About us</h1>
     </div>
+    <span class="container" style="height: 24px; width: 24px; position: relative; left: 50%; top: 60%;">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <!-- <a class="down" href="#">Scroll down</a> -->
+    </span>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $(".down").click(function() {
+            $('html, body').animate({
+                scrollTop: $(".up").offset().top
+            }, 1500);
+        });
+    });
+</script>
 {% endblock content %}
