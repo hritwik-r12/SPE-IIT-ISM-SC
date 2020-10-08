@@ -1,10 +1,14 @@
 @import "bourbon";
-@import url(https://fonts.googleapis.com/css?family=Martel+Sans:200,300,400,800,900);
+@import url('https://fonts.googleapis.com/css?family=Martel+Sans:200,300,400,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body,
 html {
     height: 100%;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    background-color: #051631 !important;
 }
 
 .hero-image {
@@ -137,3 +141,136 @@ html {
         opacity: 1;
     }
 }
+
+
+/* Typewriting effect text1 */
+
+.typewriter-text1 {
+    border-right: solid 3px rgba(0, 255, 0, .75);
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 300%;
+    letter-spacing: 3.5px;
+    font-weight: 400;
+}
+
+
+/* Animation */
+
+.typewriter-text1 {
+    animation: animated-text 2s steps(19, end) 1s 1 normal both, animated-cursor 600ms steps(29, end) infinite;
+}
+
+
+/* text animation */
+
+@keyframes animated-text {
+    from {
+        width: 0;
+    }
+    to {
+        width: 330px;
+    }
+}
+
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+    from {
+        border-right-color: rgba(0, 255, 0, .75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+
+/* Typewriter text2 */
+
+.typewriter-text2 {
+    border-right: solid 3px rgba(0, 255, 0, .75);
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 300%;
+    letter-spacing: 3.5px;
+    font-weight: 400;
+}
+
+
+/* Animation */
+
+.typewriter-text2 {
+    animation: animated-text2 5s steps(29, end) 1s 1 normal both, animated-cursor2 600ms steps(29, end) infinite;
+}
+
+
+/* text animation */
+
+@keyframes animated-text2 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 480px;
+    }
+}
+
+
+/* cursor animations */
+
+@keyframes animated-cursor2 {
+    from {
+        border-right-color: rgba(0, 255, 0, .75);
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+
+/* letter effect */
+
+
+/* 
+.letter {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 26px auto 0;
+    max-width: 550px;
+    min-height: 300px;
+    padding: 24px;
+    position: relative;
+    width: 80%;
+}
+
+.letter:before,
+.letter:after {
+    content: "";
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.letter:before {
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+}
+
+.letter:after {
+    background: #f6f6f6;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+} */
