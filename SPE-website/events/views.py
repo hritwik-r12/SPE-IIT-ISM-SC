@@ -51,7 +51,7 @@ def TeamEventRegisterView(request):
         if r_form.is_valid():
             r_form.save()
             messages.success(request, f'You have been registered for the event.')
-            return redirect('/')
+            return redirect('events-home')
 
     else:
         r_form = RegisterForm(instance=request.user)
@@ -69,12 +69,12 @@ def EventRegisterView(request):
         if single_form.is_valid():
             single_form.save()
             messages.success(request, f'You have been registered for the event.')
-            return redirect('/')
+            return redirect('events-home')
 
     else:
         single_form = SingleRegisterForm(instance=request.user)
 
     context={
-        'r_form': single_form
+        'single_form': single_form
     }
     return render(request, 'events/registration_details.html', context)

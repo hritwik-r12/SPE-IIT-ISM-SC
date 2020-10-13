@@ -30,7 +30,7 @@ class Registeration(models.Model):
     Member_4 = models.CharField(max_length=300,null=True, blank=True)
 
     def __str__(self):
-        return f'{self.Member_1.username} regestration'
+        return f'{self.Member_1.username} {self.event.title} regestration'
 
 class SingleRegistration(models.Model):
     event=models.ForeignKey(Events,on_delete=models.CASCADE)
@@ -39,4 +39,4 @@ class SingleRegistration(models.Model):
     email = models.EmailField(max_length=200)
 
     def __str__(self):
-        return f'{self.Member_1.username} single regestration'
+        return f'{self.Member_1.username} {self.event.title} single regestration'
