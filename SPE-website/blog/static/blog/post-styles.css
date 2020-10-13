@@ -32,3 +32,19 @@
     margin: 20px;
 }
 /* Post Image */
+
+/* Blogs by User Heading */
+#UserBlogTitle {
+    font-family: 'adam.cg pro';
+    font-size: 45px;
+}
+/* Blogs by User Heading */
+
+/* Blogs by User title Underline */
+#UserPostTitleUnderline {
+    height: 0.8px;
+    width: 430px;
+    background-color: #007bff;
+    margin-bottom: 50px;
+}
+/* Blogs by User title Underline */

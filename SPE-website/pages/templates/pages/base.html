@@ -16,6 +16,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'pages/footer.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- to load header files for blog -->
@@ -28,7 +31,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#26416c;">
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#26416c; box-shadow: none !important;">
         <div class="container-fluid">
             <a href="{% url 'homepage' %}" class="navbar-brand">
                 <img src="https://cdn.asp.events/CLIENT_SPE__29FE44FF_5056_B733_49EC4D60A02A6A7D/sites/Asia-Pacific-Oil-Gas-2020/media/logos/SPE_Logo_2.png" width="170px" height="80px">
@@ -64,8 +67,12 @@
                     <li><a href="#" class="nav-item nav-link">Gallery</a></li>
                     <li><a href="#" class="nav-item nav-link">Contact</a></li>
                     {% if user.is_authenticated %}
-                    <li>
-                        <a class="nav-item nav-link" href="{% url 'signout-page' %}">Sign Out</a>
+                    <li class="dropdown">
+                        <a><span class="material-icons" id="AccountCircle" >account_circle</span></a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Profile</a>
+                            <a href="{% url 'signout-page' %}" class="dropdown-item">Sign Out</a>
+                        </div>
                     </li>
                     {% else %}
                     <li>
