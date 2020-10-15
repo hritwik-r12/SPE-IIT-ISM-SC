@@ -10,4 +10,4 @@ class UserSignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['email', 'spe_id', 'IIT_ISM_registration_number', 'password1', 'password2']
+        fields = ['username', 'email', 'spe_id', 'IIT_ISM_registration_number', 'password1', 'password2']
