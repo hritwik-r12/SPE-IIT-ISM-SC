@@ -6,6 +6,7 @@
     <!-- Adding stylesheet to base template -->
     {% block content-blog %}
         <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
+        
     {% endblock %}
     <!-- Adding stylesheet to base template -->
 
@@ -18,8 +19,7 @@
                 <legend class="border-bottom mb-4">
                     Registraion Form
                 </legend>
-                {{r_form| crispy}}
-                {{single_form| crispy}}
+                {{r_form | crispy}}
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-info" type="submit">Register</button>

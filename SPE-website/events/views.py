@@ -6,8 +6,8 @@ from .forms import RegisterForm, SingleRegisterForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-#     IMPORTANT ! ! !
-#Positivly update EventListView's QuerySet by 2040!
+#   ! ! !  IMPORTANT ! ! !
+#Positivly update EventListView's get_querySet function by 2040!
 
 def home(request):
     context = {
@@ -46,7 +46,7 @@ class PastEventListView(ListView):
 @login_required
 def TeamEventRegisterView(request):
     if request.method == 'POST':
-        r_form = RegisterForm(request.POST,instance=request.user)
+        r_form = RegisterForm(request.POST)
 
         if r_form.is_valid():
             r_form.save()
@@ -54,7 +54,7 @@ def TeamEventRegisterView(request):
             return redirect('events-home')
 
     else:
-        r_form = RegisterForm(instance=request.user)
+        r_form = RegisterForm()
 
     context={
         'r_form': r_form
@@ -64,7 +64,7 @@ def TeamEventRegisterView(request):
 @login_required
 def EventRegisterView(request):
     if request.method == 'POST':
-        single_form = SingleRegisterForm(request.POST,instance=request.user)
+        single_form = SingleRegisterForm(request.POST)
 
         if single_form.is_valid():
             single_form.save()
@@ -72,9 +72,9 @@ def EventRegisterView(request):
             return redirect('events-home')
 
     else:
-        single_form = SingleRegisterForm(instance=request.user)
+        single_form = SingleRegisterForm()
 
     context={
-        'single_form': single_form
+        'r_form': single_form
     }
     return render(request, 'events/registration_details.html', context)

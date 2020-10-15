@@ -35,7 +35,7 @@
             <p class="article-content">Last date to register: {{ event.reg_date }}</p>
             {% if event.has_happened %}<p> </p>
             {% else %}
-            <a class="btn btn-info mb-4" href="#">Register now!</a>
+            <a class="btn btn-info mb-4" href="{{event.google_doc_url}}">Register now!</a>
             {%endif%}
         </article>
     {% endfor %}
