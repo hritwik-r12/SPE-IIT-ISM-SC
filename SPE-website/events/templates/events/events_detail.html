@@ -21,7 +21,14 @@
                 {%endif%}
                 <p class="article-content">{{ object.content| markdown |safe }}</p>
                 <p> Last date to register : {{ object.reg_date|date:"M j, Y"}} </p>
-                <a class="btn btn-info mb-4" href="{{ object.google_doc_url }}">Register now!</a>
+                <!--if event has happened, dont display registration button-->
+                {% if object.has_happened %}
+                    <p></p>
+                {% else %}
+                    <a href="{{object.google_doc_url}}">
+                        <button type="button" class="btn btn-primary">Register</button>
+                    </a>
+                {% endif %}
             </div>
         </div>
         <!-- Post Body -->

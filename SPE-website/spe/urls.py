@@ -18,9 +18,11 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from user import views as user_views
 from pages import views as pages_views
+from blog import views as blog_views
 # to display static files during dev, change when in production.
 from django.conf import settings
 from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,10 +31,15 @@ urlpatterns = [
     path('Blogs/', include('blog.urls')),
     path('SignUp/', user_views.signup, name='signup-page'),
     path('SignIn/', auth_views.LoginView.as_view(template_name='user/signin.html'), name='signin-page'),
+    path('password-reset/', auth_views.PasswordResetView.as_view(template_name='user/password_reset.html'), name='password_reset'),
+    path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='user/password_reset_complete.html'), name='password_reset_complete'),
+    path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='user/password_reset_done.html'), name='password_reset_done'),
+    path('password-reset_confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='user/password_reset_confirm.html'), name='password_reset_confirm'),
     path('SignOut/', user_views.logout, name='signout-page'),
     path('Events/', include('events.urls')),
     path('markdownx/', include('markdownx.urls')),
-    path('Profile/', pages_views.profile, name='profile-page')
+    path('user/<str:username>/', blog_views.UserBlog, name='user-posts')
+    #path('user/<str:username>/', blog_views.UserBlog, name='user-blogs')#new profile page, not functioning right now
 ]
 
 # only works in debug mode

@@ -38,7 +38,7 @@
             <div id="PostBody" style="margin: 10px 30px 50px 10px;" class="media content-section">
                 <div class="media-body">
                     <img id="PostImage" src="{{ event.image.url }}">
-                    <h1 id="ArticleTitle">{{ event.title }}</h1>
+                    <h1 id="ArticleTitle"><a href="{% url 'events-detail' event.id %}" style="color: black;">{{ event.title }}</a></h1>
                     <div id="ArticleMetaData">
                         <hr id="Underline" align="left">
                     </div>
