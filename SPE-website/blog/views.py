@@ -31,12 +31,12 @@ class UserPostListView(ListView):
         return Post.objects.filter(author=user).order_by('-id')
 
 
-#figure out pagination and use this as main profile page.
-def UserBlog(request,username):
+# figure out pagination and use this as main profile page.
+def user_blog(request, username):
     req_user = get_object_or_404(User, username=username)
 
     posts = req_user.post_set.all().order_by('-id')
-    paginator = Paginator(posts, 4) # Show 4 blogs per page.
+    paginator = Paginator(posts, 4)  # Show 4 blogs per page.
 
     page_number = request.GET.get('page', 1)
     try:
@@ -49,6 +49,6 @@ def UserBlog(request,username):
     context = {
         'req_user': req_user,
         'posts': page_obj,
-        #'page_obj': page_obj,
+        # 'page_obj': page_obj,
     }
-    return render(request, 'blog/user_posts.html',context)
+    return render(request, 'blog/user_posts.html', context)

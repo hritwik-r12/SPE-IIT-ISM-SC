@@ -38,7 +38,7 @@ urlpatterns = [
     path('SignOut/', user_views.logout, name='signout-page'),
     path('Events/', include('events.urls')),
     path('markdownx/', include('markdownx.urls')),
-    path('user/<str:username>/', blog_views.UserBlog, name='user-posts')
+    path('user/<str:username>/', blog_views.user_blog, name='user-posts')
 ]
 
 # only works in debug mode

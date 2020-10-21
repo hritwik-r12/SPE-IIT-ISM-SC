@@ -3,7 +3,7 @@ from .views import (
     PostListView,
     PostDetailView,
     UserPostListView,
-    UserBlog
+    user_blog
 )
 
 urlpatterns = [
