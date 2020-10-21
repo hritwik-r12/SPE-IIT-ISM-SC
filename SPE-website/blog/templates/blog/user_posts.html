@@ -19,6 +19,8 @@
         {% if req_user == user %}
             <h1>Username: {{user.username}}</h1>
             <h2>Email: {{user.email}}</h2>
+            <h2>SPE-ID: {{user.foobar.SPE_ID}}</h2>
+            <h2>Registration Number: {{user.foobar.institute_registration_number}}</h2>
             <!--add other fields here when models are created-->
         {% endif %}
         <!--end user info-->

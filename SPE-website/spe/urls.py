@@ -29,7 +29,7 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('AboutUs/', pages_views.about, name='about-page'),
     path('Blogs/', include('blog.urls')),
-    path('SignUp/', user_views.signup, name='signup-page'),
+    path('SignUp/', user_views.CreateUserView.as_view(template_name='user/signup.html'), name='signup-page'),
     path('SignIn/', auth_views.LoginView.as_view(template_name='user/signin.html'), name='signin-page'),
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name='user/password_reset.html'), name='password_reset'),
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='user/password_reset_complete.html'), name='password_reset_complete'),
@@ -39,7 +39,6 @@ urlpatterns = [
     path('Events/', include('events.urls')),
     path('markdownx/', include('markdownx.urls')),
     path('user/<str:username>/', blog_views.UserBlog, name='user-posts')
-    #path('user/<str:username>/', blog_views.UserBlog, name='user-blogs')#new profile page, not functioning right now
 ]
 
 # only works in debug mode
