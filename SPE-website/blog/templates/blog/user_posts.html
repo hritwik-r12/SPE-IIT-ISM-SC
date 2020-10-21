@@ -14,11 +14,22 @@
 
     {% block content%}
 
+        <!--User info only visible to logged in user-->
+        <!--style it-->
+        {% if req_user == user %}
+            <h1>Username: {{user.username}}</h1>
+            <h2>Email: {{user.email}}</h2>
+            <h2>SPE-ID: {{user.foobar.SPE_ID}}</h2>
+            <h2>Registration Number: {{user.foobar.institute_registration_number}}</h2>
+            <!--add other fields here when models are created-->
+        {% endif %}
+        <!--end user info-->
+
         <div class="d-block mx-auto">
 
             <!-- Heading for this page -->
             <h1 class="mb-3 d-flex justify-content-center" id="UserBlogTitle">
-                Blogs by {{ view.kwargs.username }}    ({{ page_obj.paginator.count }})
+                Blogs by {{ view.kwargs.username }} {{req_user.username}}    ({{ posts.paginator.count }})
             </h1>
             <!-- Heading for this page -->
 
@@ -48,23 +59,23 @@
 
             <!-- Next/Previous Buttons -->
             <div class="d-flex justify-content-center">
-                {% if is_paginated %}
+                {% if posts.has_other_pages %}
 
-                    {% if page_obj.has_previous %}
+                    {% if posts.has_previous %}
                         <a class="btn btn-grp mb-4" href="?page={{ page_obj.previous_page_number }}">
                             <span class="material-icons">arrow_back_ios</span>
                         </a>
                     {% endif %}
 
-                    {% for num in page_obj.paginator.page_range %}
-                        {% if page_obj.number == num %}
+                    {% for num in posts.paginator.page_range %}
+                        {% if posts.number == num %}
                             <a class="btn btn-grp mb-4" href="?page={{ num }}">{{num}}</a>
-                        {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
+                        {% elif num > posts.number|add:'-2' and num < posts.number|add:'2' %}
                             <a class="btn btn-grp mb-4" href="?page={{ num }}">{{num}}</a>
                         {% endif %}
                     {% endfor %}
 
-                    {% if page_obj.has_next %}
+                    {% if posts.has_next %}
                         <a class="btn btn-grp mb-4" href="?page={{page_obj.next_page_number}}">
                             <span class="material-icons">arrow_forward_ios</span>
                         </a>

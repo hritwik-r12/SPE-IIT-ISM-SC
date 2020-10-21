@@ -1,71 +1,91 @@
 {% extends "pages/base.html" %}
 {% load static %}
 
-
 <!-- Adding stylesheet to base template -->
 {% block content-blog %}
-<link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
 {% endblock content-blog %}
 <!-- Adding stylesheet to base template -->
 
 {%block content%}
-<div class="col-md-8" style="padding-left: 5%;">
+<div class="col-md-11" style="padding-left: 5%;">
+
     {% if not events %}
-        <h1>Upcomming Events...</h1>
+        <h1>Upcoming Events...</h1>
     {% elif events.first.has_happened %}
         <h1>Past Events...</h1>
     {% else %}
-        <h1>Upcomming Events...</h1>
-    {%endif%}
-    <hr>
-    {% if not events %}
-        <h3>No upcomming Events</h3>
-        <br>
-        <br>
-        <br>
-        <br>
-    {%endif%}
-    <!-- Blog Post body -->
-    {% for event in events %}
-        <article class="media content-section">
-            <div class="media-body">
-            <h2><a class="article-title" href="{% url 'events-detail' event.id %}">{{ event.title }}</a></h2>
-            <hr>
-            <p class="article-content">{{ event.description }}</p>
-            <p class="article-content">Last date to register: {{ event.reg_date }}</p>
-            {% if event.has_happened %}<p> </p>
-            {% else %}
-            <a class="btn btn-info mb-4" href="{{event.google_doc_url}}">Register now!</a>
-            {%endif%}
-        </article>
-    {% endfor %}
-    <!-- Blog Post body -->
-
-<!-- Next/Previous Button Group -->
-<div style = "text-align:center;">
-    {% if is_paginated %}
-
-        {% if page_obj.has_previous %}
-            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% endif %}
-
-        {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-                <a class="btn btn-info mb-4" href="?page={{ num }}">{{num}}</a>
-            {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
-                <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{num}}</a>
-            {% endif %}
-        {% endfor %}
-
-        {% if page_obj.has_next %}
-            <a class="btn btn-outline-info mb-4" href="?page={{page_obj.next_page_number}}">Next</a>
-            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-        {% endif %}
-
+        <h1>Upcoming Events...</h1>
     {% endif %}
+
+    <hr>
+
+    {% if not events %}
+        <h3>No Upcoming Events</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+    {% endif %}
+
+    <div id="PostContainer">
+        <!-- Event List body -->
+        {% for event in events %}
+            <div id="PostBody" style="margin: 10px 30px 50px 10px;" class="media content-section">
+                <div class="media-body">
+                    <img id="PostImage" src="{{ event.image.url }}">
+                    <h1 id="ArticleTitle"><a href="{% url 'events-detail' event.id %}" style="color: black;">{{ event.title }}</a></h1>
+                    <div id="ArticleMetaData">
+                        <hr id="Underline" align="left">
+                    </div>
+                    <p class="article-content">{{ event.description }}</p>
+                    <p class="article-content">Last date to register: {{ event.reg_date }}</p>
+                    {% if event.has_happened %}
+                        <p></p>
+                    {% else %}
+                    <a href="{{event.google_doc_url}}">
+                        <button type="button" class="btn btn-primary">Register</button>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        <!-- Event List body -->
     </div>
+
+    <!-- Next/Previous Button Group -->
+    <div class="d-flex justify-content-center">
+        {% if is_paginated %}
+
+            {% if page_obj.has_previous %}
+                <a class="btn btn-grp mb-4" href="?page={{ page_obj.previous_page_number }}">
+                    <span class="material-icons">arrow_back_ios</span>
+                </a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                    <a class="btn btn-grp mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
+                    <a class="btn btn-grp mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <a class="btn btn-grp mb-4" href="?page={{ page_obj.next_page_number }}">
+                <span class="material-icons">arrow_forward_ios</span>
+            </a>
+            {% endif %}
+
+        {% endif %}
+    </div>
+    <!-- Next/Previous Button Group -->
+
 </div>
-<!-- Next/Previous Button Group -->
+
 
 {% endblock content %}
