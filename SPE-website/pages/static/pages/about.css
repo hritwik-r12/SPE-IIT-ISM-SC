@@ -1,18 +1,21 @@
 @import "bourbon";
-@import url('https://fonts.googleapis.com/css?family=Martel+Sans:200,300,400,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body,
 html {
     height: 100%;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: #051631 !important;
 }
 
+
+/* HEADER STYLES */
+
 .hero-image {
-    background-image: linear-gradient(rgba(2, 17, 43, 0.5), rgba(2, 17, 43, 0.5)), url("https://i2.wp.com/enterpriseiotinsights.com/wp-content/uploads/2016/07/12453234_l.jpg?fit=2048%2C1365&ssl=1");
+    /* linear-gradient(rgba(2, 17, 43, 0.5), rgba(2, 17, 43, 0.5)), */
+    background-image: url("https://niice.org.np/wp-content/uploads/2020/10/oilene2.jpeg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,292 +146,7 @@ html {
 }
 
 
-/* Typewriting effect text1 */
-
-.typewriter-text1 {
-    border-right: solid 3px rgba(0, 255, 0, .75);
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 0 auto;
-    color: white;
-    font-family: 'Balsamiq Sans', cursive;
-    font-size: 300%;
-    letter-spacing: 3.5px;
-    font-weight: 400;
-}
-
-
-/* Animation */
-
-.typewriter-text1 {
-    animation: animated-text 2s steps(19, end) 1s 1 normal both, animated-cursor 1000ms steps(29, end) infinite;
-}
-
-
-/* text animation */
-
-@keyframes animated-text {
-    from {
-        width: 0;
-    }
-    to {
-        width: 330px;
-    }
-}
-
-
-/* cursor animations */
-
-@keyframes animated-cursor {
-    from {
-        border-right-color: rgba(0, 255, 0, .75);
-    }
-    to {
-        border-right-color: transparent;
-    }
-}
-
-
 /* Aim of the chapter */
-
-
-/* Aim section image */
-
-
-/* Aim of the chapter text */
-
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.card-container {
-    width: 100%;
-    min-height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* 
-.card-container .center {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-} */
-
-.aim-card {
-    background-color: white;
-    width: auto !important;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 20px;
-    margin: 5px;
-    -webkit-box-shadow: -20px -20px 0px 0px #fb968b;
-    box-shadow: -20px -20px 0px 0px #fb968b;
-    border-radius: 10px;
-    -webkit-animation-name: shadow-show;
-    /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 1.5s;
-    /* Safari 4.0 - 8.0 */
-    animation-name: shadow-show;
-    animation-duration: 1.5s;
-    -webkit-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
-    -o-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
-    transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
-    /* custom */
-}
-
-.aim-card h1,
-.aim-card h2,
-.aim-card h3,
-.aim-card h4,
-.aim-card h5 {
-    margin: 0px;
-    padding: 0px 0px 15px 0px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 30px;
-    color: #282828;
-}
-
-.aim-card hr {
-    display: block;
-    border: none;
-    height: 3px;
-    background-color: salmon;
-    margin: 0px;
-    -webkit-animation-name: line-show;
-    /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 0.3s;
-    /* Safari 4.0 - 8.0 */
-    animation-name: line-show;
-    animation-duration: 0.3s;
-    -webkit-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
-    -o-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
-    transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
-    /* custom */
-}
-
-.aim-card p {
-    margin: 15px 0px 0px 0px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 100;
-    letter-spacing: -0.25px;
-    line-height: 1.25;
-    font-size: 16px;
-    word-break: break-all;
-    word-wrap: pre-wrap;
-    color: #282828;
-    -webkit-animation-name: p-show;
-    /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 1.5s;
-    /* Safari 4.0 - 8.0 */
-    animation-name: p-show;
-    animation-duration: 1.5s;
-}
-
-
-/* Safari 4.0 - 8.0 */
-
-@-webkit-keyframes line-show {
-    from {
-        margin: 0px 100px;
-    }
-    to {
-        margin: 0px;
-    }
-}
-
-
-/* Standard syntax */
-
-@keyframes line-show {
-    from {
-        margin: 0px 100px;
-    }
-    to {
-        margin: 0px;
-    }
-}
-
-
-/* Safari 4.0 - 8.0 */
-
-@-webkit-keyframes p-show {
-    from {
-        color: white;
-    }
-    to {
-        color: #282828;
-    }
-}
-
-
-/* Standard syntax */
-
-@keyframes p-show {
-    from {
-        color: white;
-    }
-    to {
-        color: #282828;
-    }
-}
-
-
-/* Safari 4.0 - 8.0 */
-
-@-webkit-keyframes shadow-show {
-    from {
-        -webkit-box-shadow: 0px 0px 0px 0px #e0e0e0;
-        box-shadow: 0px 0px 0px 0px #e0e0e0;
-    }
-    to {
-        -webkit-box-shadow: -20px -20px 0px 0px #fb968b;
-        box-shadow: -20px -20px 0px 0px #fb968b;
-    }
-}
-
-
-/* Standard syntax */
-
-@keyframes shadow-show {
-    from {
-        -webkit-box-shadow: 0px 0px 0px 0px #e0e0e0;
-        box-shadow: 0px 0px 0px 0px #e0e0e0;
-    }
-    to {
-        -webkit-box-shadow: -20px -20px 0px 0px #fb968b;
-        box-shadow: -20px -20px 0px 0px #fb968b;
-    }
-}
-
-
-/* NEON FONT */
-
-
-/* html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: table;
-} */
-
-
-/* @font-face {
-    font-family: 'Balsamiq Sans', cursive !important;
-    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
-} */
-
-
-/* .container-neon {
-    display: table-cell;
-    text-align: center !important;
-    vertical-align: middle;
-} */
-
-.neon {
-    font-family: 'Balsamiq Sans', cursive !important;
-    color: #FB4264;
-    font-size: 6rem;
-    line-height: 1;
-    text-shadow: 0 0 3vw #F40A35;
-    text-align: center !important;
-}
-
-.neon {
-    animation: neon 1s ease infinite;
-    -moz-animation: neon 1s ease infinite;
-    -webkit-animation: neon 1s ease infinite;
-}
-
-@keyframes neon {
-    0%,
-    100% {
-        text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
-        color: #FED128;
-    }
-    50% {
-        text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
-        color: #806914;
-    }
-}
 
 
 /* vertical timeline */
@@ -436,21 +154,6 @@ body {
 section {
     padding: 100px 0;
 }
-
-
-/* html,
-body {
-    overflow-x: hidden;
-} */
-
-
-/* 
-body {
-    font-family: 'Roboto';
-    font-size: 17px;
-    font-weight: 400;
-    background-color: #eee;
-} */
 
 .timeline {
     position: relative;
