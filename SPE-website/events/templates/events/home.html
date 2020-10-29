@@ -11,18 +11,21 @@
 {% endblock content-blog %}
 <!-- Adding stylesheet to base template -->
 
-{%block content%}
+{% block content %}
 <div class="col-md-11" style="padding-left: 5%;">
 
     {% if not events %}
-        <h1>Upcoming Events...</h1>
+        <h1 class="d-flex justify-content-center" id="PageTitle">No Upcoming Events</h1>
+        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 460px;">
     {% elif events.first.has_happened %}
-        <h1>Past Events...</h1>
+        <h1 class="d-flex justify-content-center" id="PageTitle">Past Events</h1>
+        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 320px;">
     {% else %}
-        <h1>Upcoming Events...</h1>
+        <h1 class="d-flex justify-content-center" id="PageTitle">Upcoming Events</h1>
+        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 460px;">
     {% endif %}
 
-    <hr>
+
 
     {% if not events %}
         <h3>No Upcoming Events</h3>

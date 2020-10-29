@@ -4,33 +4,50 @@
 
     <!-- Adding stylesheet to base template -->
     {% block content-blog %}
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-styles.css' %}">
     {% endblock %}
     <!-- Adding stylesheet to base template -->
 
     {% block content %}
 
-        <!-- Post Body -->
-        <div class="col-md-9" style="padding-left: 10%;">
-            <div class="media-body">
-                <p> </p>
-                <h1 class="article-title">{{ object.title }}</h1>
-                <hr>
-                {%if object.image%}
-                <img style="width: 80%;" src ="{{ object.image.url }}">
-                {%endif%}
-                <p class="article-content">{{ object.content| markdown |safe }}</p>
-                <p> Last date to register : {{ object.reg_date|date:"M j, Y"}} </p>
-                <!--if event has happened, dont display registration button-->
-                {% if object.has_happened %}
-                    <p></p>
-                {% else %}
-                    <a href="{{object.google_doc_url}}">
-                        <button type="button" class="btn btn-primary">Register</button>
-                    </a>
-                {% endif %}
+        <div class="d-flex justify-content-center">
+            <div id="PostContainer" class="col-md-10">
+                <div class="media-body">
+
+                    <!-- Event Detail Title -->
+                    <h1 id="PostTitle" class="article-title d-flex justify-content-center">{{ object.title }}</h1>
+                    <!-- Post Title -->
+                    <hr id="PostUnderline" class="d-flex justify-content-center" style="width: 330px;">
+
+                    <!-- Event Poster -->
+                    {% if object.image %}
+                        <img id="PostImage" src ="{{ object.image.url }}">
+                    {% endif %}
+                    <!-- Event Poster -->
+
+                    <!-- Event Detail Content -->
+                    <p class="article-content">{{ object.content | markdown | safe }}</p>
+                    <!-- Event Detail Content -->
+                    <p> Last date to register : {{ object.reg_date|date:"M j, Y"}} </p>
+
+                    <br><br>
+
+                    <!--if event has happened, don't display registration button-->
+                    {% if object.has_happened %}
+                        <p></p>
+                    {% else %}
+                        <a href="{{ object.google_doc_url }}">
+                            <button type="button" class="btn btn-primary" style="width: 150px; height: 50px; font-size: 20px;">
+                                Register
+                            </button>
+                        </a>
+                    {% endif %}
+
+                </div>
             </div>
         </div>
-        <!-- Post Body -->
+        <!-- Event Detail Body -->
+
 
     {% endblock content %}

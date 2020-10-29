@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Events(models.Model):
+    objects = None
     title = models.CharField(max_length=300)
     description = models.CharField(max_length=300)
     reg_date = models.DateField()
@@ -41,4 +42,4 @@ class SingleRegistration(models.Model):
     email = models.EmailField(max_length=200)
 
     def __str__(self):
-        return f'{self.Member_1.username} {self.event.title} single regestration'
+        return f'{self.Member_1.username} {self.event.title} single registration'
