@@ -15,7 +15,7 @@
 <div class="col-md-11" style="padding-left: 5%;">
 
     {% if not events %}
-        <h1 class="d-flex justify-content-center" id="PageTitle">No Upcoming Events</h1>
+        <h1 class="d-flex justify-content-center" id="PageTitle">Upcoming Events</h1>
         <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 460px;">
     {% elif events.first.has_happened %}
         <h1 class="d-flex justify-content-center" id="PageTitle">Past Events</h1>
@@ -26,9 +26,16 @@
     {% endif %}
 
 
-
     {% if not events %}
-        <h3>No Upcoming Events</h3>
+        <h3>Upcoming Events</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
@@ -40,7 +47,7 @@
         {% for event in events %}
             <div id="PostBody" style="margin: 10px 30px 50px 10px;" class="media content-section">
                 <div class="media-body">
-                    <img id="PostImage" src="{{ event.image.url }}">
+                    <img id="PostImage" src="{{ event.image.url }}" style="height: 200px; width: 200px;">
                     <h1 id="ArticleTitle"><a href="{% url 'events-detail' event.id %}" style="color: black;">{{ event.title }}</a></h1>
                     <div id="ArticleMetaData">
                         <hr id="Underline" align="left">
