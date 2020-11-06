@@ -37,6 +37,7 @@ urlpatterns = [
     path('password-reset_confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='user/password_reset_confirm.html'), name='password_reset_confirm'),
     path('SignOut/', user_views.logout, name='signout-page'),
     path('Events/', include('events.urls')),
+    path('Gallery/', pages_views.gallery, name='gallery-page'),
     path('markdownx/', include('markdownx.urls')),
     path('user/<str:username>/', blog_views.user_blog, name='user-posts')
 ]

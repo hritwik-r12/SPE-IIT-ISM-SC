@@ -60,7 +60,7 @@
                             <a href="{% url 'events-past' %}" class="dropdown-item">Past</a>
                         </div>
                     </li>
-                    <li><a href="#" class="nav-item nav-link">Gallery</a></li>
+                    <li><a href="{% url 'gallery-page' %}" class="nav-item nav-link">Gallery</a></li>
                     <li><a href="#" class="nav-item nav-link">Contact</a></li>
                     <li><a href="{% url 'about-page' %}" class="nav-item nav-link">About Us</a></li>
                     {% if user.is_authenticated %}

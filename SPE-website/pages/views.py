@@ -12,3 +12,7 @@ def about(request):
 
 def gazette(request):
     return render(request, 'pages/gazette.html')
+
+
+def gallery(request):
+    return render(request, 'pages/gallery.html')
