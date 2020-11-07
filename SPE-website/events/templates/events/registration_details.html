@@ -6,23 +6,24 @@
     <!-- Adding stylesheet to base template -->
     {% block content-blog %}
         <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'events/eventregistration.css' %}">
         
     {% endblock %}
     <!-- Adding stylesheet to base template -->
 
     {% block content %}
     <div class="col-md-8" style="padding-left: 5%;">
-        <div class="content-section">
+        <div class="content-section" style="width: 600px;">
         <form method="POST">
             {% csrf_token %}
             <fieldset class ="form-group">
-                <legend class="border-bottom mb-4">
-                    Registration Form
-                </legend>
+                <h1 class="border-bottom mb-4" style="font-family:'adam.cg pro'; font-size: 200%;">Registration Form</h1>
                 {{ r_form | crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-info" type="submit">Register</button>
+                <button class="btn btn-primary" type="submit" style="height: 40px; width: 100px; font-size: 16px;">
+                    Register
+                </button>
             </div>
         </form>
         </div>
