@@ -5,9 +5,10 @@
     {% block content-blog %}
         <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-styles.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">
+<!--        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">-->
+<!--        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-styles.css' %}">-->
+<!--        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">-->
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
     {% endblock content-blog %}
     <!-- Adding stylesheet to base template -->
@@ -28,17 +29,17 @@
         <div class="d-block mx-auto">
 
             <!-- Heading for this page -->
-            <h1 class="mb-3 d-flex justify-content-center" id="UserBlogTitle">
+            <h1 class="mb-3 d-flex justify-content-center" id="PageTitle">
                 Blogs by {{ view.kwargs.username }} {{req_user.username}}    ({{ posts.paginator.count }})
             </h1>
             <!-- Heading for this page -->
 
-            <hr class="d-flex justify-content-center" id="UserPostTitleUnderline">
+            <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 25%;">
 
             <!-- Blog Post Body -->
             <div id="PostContainer">
             {% for post in posts %}
-                    <div id="PostBody" class="media content-section">
+                    <div id="PostBody" class="media content-section col-md-8 mx-auto" style="padding: 20px;">
                         <div class="media-body">
                             <img id="PostImage" src="{{ post.image.url }}">
                             <h1 id="ArticleTitle">{{ post.title }}</h1>

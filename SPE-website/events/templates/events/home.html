@@ -5,9 +5,10 @@
 {% block content-blog %}
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">-->
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">-->
 <!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
 {% endblock content-blog %}
 <!-- Adding stylesheet to base template -->
@@ -46,9 +47,9 @@
     <div id="PostContainer">
         <!-- Event List body -->
         {% for event in events %}
-            <div id="PostBody" style="margin: 10px 30px 50px 10px;" class="media content-section">
+            <div id="PostBody" style="margin: 10px 30px 50px 10px;" class="media content-section col-md-9 mx-auto">
                 <div class="media-body">
-                    <img id="PostImage" src="{{ event.image.url }}" style="height: 200px; width: 200px;">
+                    <img id="PostImage" src="{{ event.image.url }}">
                     <h1 id="ArticleTitle"><a href="{% url 'events-detail' event.id %}" style="color: black;">{{ event.title }}</a></h1>
                     <div id="ArticleMetaData">
                         <hr id="Underline" align="left">

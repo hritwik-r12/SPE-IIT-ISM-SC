@@ -20,7 +20,7 @@
             <div id="PostContainer">
                 <!-- Blog Post body -->
                 {% for post in posts %}
-                    <div id="PostBody" class="media content-section col-md-8 mx-auto">
+                    <div id="PostBody" class="media content-section col-md-8 mx-auto" style="padding: 20px;">
                         <div class="media-body">
                             <img id="PostImage" src="{{ post.image.url }}">
                             <h1 id="ArticleTitle">{{ post.title }}</h1>
