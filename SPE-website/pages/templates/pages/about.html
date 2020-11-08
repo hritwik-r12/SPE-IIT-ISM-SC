@@ -1,7 +1,4 @@
-{% extends 'pages/base.html' %}
-{% load static %}
-
-{% block content-blog %}
+{% extends 'pages/base.html' %} {% load static %} {% block content-blog %}
 <link rel="stylesheet" type="text/css" href="{% static 'pages/about.css' %}"> {% endblock content-blog %} {% block content %}
 <div class="hero-image" style="margin-top: -14px; overflow: hidden;">
     <div class="hero-text">
@@ -56,8 +53,12 @@
 </div>
 
 <!-- ACHIEVEMENTS OF THE CHAPTER -->
-
-<div class="container" style="padding:5% 0%">
+<div class="container" style="padding:5% 0%;background-image: url(https://www.noticebard.com/wp-content/uploads/2019/09/IIT-ISM-jobs-in-Dhanbad.jpg);
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
     <div style="font-family: 'Dosis', sans-serif; color:#323d47; font-size:5rem; font-weight:600;text-align:center; letter-spacing:0.5px">
         <p>ACHIEVEMENTS</p>
     </div>
