@@ -1,0 +1,29 @@
+#PageTitle {
+    font-family: 'adam.cg pro';
+    font-size: 60px;
+}
+
+#UnderlineTitle {
+    height: 0.8px;
+    width: 210px;
+    background-color: #007bff;
+    margin-bottom: 50px;
+}
+
+#Heading {
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  width: 350px;
+  padding: 20px;
+  font-size: 23px;
+  text-align: center;
+}

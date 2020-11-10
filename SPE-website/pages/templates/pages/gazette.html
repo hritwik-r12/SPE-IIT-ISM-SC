@@ -2,29 +2,47 @@
 {% load static %}
 
 {% block content-blog %}
-    <link rel="stylesheet" type="text/css" href="{% static 'pages/gazette.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/gazettepage.css' %}">
 {% endblock content-blog %}
 
 {% block content %}
 
-    <div class="d-block mx-auto">
+    <div class="d-block mx-auto col-md-10">
         <h1 class="d-flex justify-content-center" id="PageTitle">Gazette</h1>
         <hr class="d-flex justify-content-center" id="UnderlineTitle">
 
-        <div class="container">
-            <h1>Download the latest version of the SPE IIT (ISM) Dhanbad Gazette: </h1>
-            <ul>
-                <li><a href="/media/gazettes/blah.pdf" download>Gazette1.pdf</a></li>
-                <li><a href="/media/gazettes/Gazette 9.0 Illustrating Unconventional Passion.pdf" download>Gazette2.pdf</a></li>
-            </ul>
+            <h1 id="Heading">Download the latest version of the SPE IIT (ISM) Dhanbad Gazette: </h1>
+
+            <div class="grid-container">
+
+              <div class="grid-item">
+                  <div class="container" >
+                    <iframe frameborder="0" scrolling="no" width="320" height="240"
+                                src="https://drive.google.com/file/d/1FfAbfwEfmKv4Bgj6XAc8KyYZtiP8QSIm/preview"></iframe>
+                    <div>Gazette 9</div>
+                </div>
+              </div>
+
+              <div class="grid-item">
+                  <div class="container">
+                    <iframe frameborder="0" scrolling="no" width="320" height="240"
+                                src="https://drive.google.com/file/d/1Jp5FNTGoW5gz938FEszqCWI4GWpc7yUd/preview"></iframe>
+                    <div>Gazette 8</div>
+                </div>
+              </div>
+
+              <div class="grid-item">
+                  <div class="container">
+                    <iframe frameborder="0" scrolling="no" width="320" height="240"
+                                src="https://drive.google.com/file/d/1CdTkQixJRZnhObzdctt_9lqGr9l_JzLs/preview"></iframe>
+                    <div>Gazette 7</div>
+                </div>
+              </div>
+
+
+            </div>
+
         </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 {% endblock content %}
