@@ -1,9 +1,11 @@
 @import "compass/css3";
-@font-face {
+
+/* @font-face {
     src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/polar.otf');
     font-family: 'Polar';
-}
+} */
 
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 *,
 *:before,
 *:after {
@@ -16,11 +18,8 @@ html,
 body {
     font-size: 62.5%;
     height: 100%;
-    overflow: hidden;
-}
-
-body {
-    background: #000;
+    overflow-x: hidden !important;
+    font-family: 'Dosis', sans-serif;
 }
 
 svg {

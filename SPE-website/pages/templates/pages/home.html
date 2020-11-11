@@ -1,6 +1,6 @@
 {% extends 'pages/base.html' %} {% load static %} {% block content-blog %}
 <link rel="stylesheet" type="text/css" href="{% static 'pages/home.css' %}"> {% endblock content-blog %} {% block content %}
-<div class="slider-container">
+<div class="slider-container" style="margin-top: -150px; z-index:-1;">
     <div class="slider-control left inactive"></div>
     <div class="slider-control right"></div>
     <ul class="slider-pagi"></ul>
@@ -66,25 +66,14 @@
 
 
 <div class="container">
-    <h1>HELLO SPE</h1>
-    <ul>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-        <li>SPE</li>
-    </ul>
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <p style="font-size: 3rem; font-weight: 700;">WHO WE ARE</p>
+        </div>
+        <div class="col-lg-6 col-sm-6">
+            <p style="font-size: 3rem; font-weight: 700;">ANNOUNCEMENTS</p>
+        </div>
+    </div>
 </div>
 
 
