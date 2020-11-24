@@ -1,0 +1,17 @@
+.lower-navbar {
+    background-color: #011724;
+    position: relative;
+    top: 86px;
+    height: 40px;
+}
+
+.low-nav-item {
+    font-size: 18px  !important;
+    color: white;
+    padding-right: 20px;
+}
+
+#LowNavLink1 a:active, #LowNavLink2 a:active, #LowNavLink1 a:hover, #LowNavLink2 a:hover {
+    color: #bbbbbb;
+    text-decoration: none;
+}
