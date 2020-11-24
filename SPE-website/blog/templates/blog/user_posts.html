@@ -10,6 +10,7 @@
 <!--        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">-->
         <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/profile.css' %}">
     {% endblock content-blog %}
     <!-- Adding stylesheet to base template -->
 
@@ -18,17 +19,18 @@
         <!--User info only visible to logged in user-->
         <!--added a temporary style, frontend guys can change it later -Shirin -->
         {% if req_user == user %}
-            <h1 class="mb-3 d-flex justify-content-center" id="PageTitle">
-                Profile information
-            </h1>
+            <h1 class="mb-3 d-flex justify-content-center" id="PageTitle">Profile information</h1>
             <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 25%;">
             <div id="PostContainer">
-                <div id="PostBody" class="media content-section col-md-8 mx-auto" style="padding: 20px;">
+                <div id="PostBody" class="media content-section col-md-7 mx-auto" style="padding: 20px;">
                     <div class="media-body">
-                        <h6 id="ArticleTitle">Username: {{ user.username }}</h6>
-                        <h6 id="ArticleTitle">E-Mail: {{ user.email }} </h6>
-                        <h6 id="ArticleTitle">SPE-ID: {{ user.foobar.SPE_ID }}</h6>
-                        <h6 id="ArticleTitle">Registration Number: {{user.foobar.institute_registration_number}}</h6>
+                        <div>
+                            <img class="profile-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7wrKjpbjvQzLHlQfvKO8gsopOJBvbCEXe1A&usqp=CAU">
+                        </div>
+                        <p class="profile-element">Username: {{ user.username }}</p>
+                        <p class="profile-element">E-Mail: {{ user.email }} </p>
+                        <p class="profile-element">SPE-ID: {{ user.foobar.SPE_ID }}</p>
+                        <p class="profile-element">Registration Number: {{user.foobar.institute_registration_number}}</p>
                     </div>
                 </div>
             </div>

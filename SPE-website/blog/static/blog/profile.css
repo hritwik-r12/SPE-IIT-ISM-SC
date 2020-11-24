@@ -1,0 +1,11 @@
+.profile-element {
+    font-size: 180%;
+    font-family: 'oxygen';
+    font-weight: 1000;
+}
+
+.profile-image {
+    float: right;
+    align: right;
+}
+
