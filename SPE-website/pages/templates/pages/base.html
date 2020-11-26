@@ -57,6 +57,7 @@
                         </div>
                     </li>
                     <li><a href="{% url 'gallery-page' %}" class="nav-item nav-link">Gallery</a></li>
+                    <li><a href="{% url 'core-team' %}" class="nav-item nav-link">Core Team</a></li>
                     {% if user.is_authenticated %}
                     <li class="dropdown">
                         <a><span class="material-icons" id="AccountCircle" >account_circle</span></a>
@@ -85,7 +86,7 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item" id="LowNavLink1">
-                    <a class="low-nav-item" href="{% url 'about-page' %}">Contact Us</a>
+                    <a class="low-nav-item" href="#">Contact Us</a>
                 </li>
                 <li class="nav-item" id="LowNavLink2">
                     <a class="low-nav-item" href="{% url 'about-page' %}">About Us</a>

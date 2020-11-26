@@ -38,6 +38,7 @@ urlpatterns = [
     path('SignOut/', user_views.logout, name='signout-page'),
     path('Events/', include('events.urls')),
     path('Gallery/', pages_views.gallery, name='gallery-page'),
+    path('CoreTeam/', pages_views.core_team, name='core-team'),
     path('markdownx/', include('markdownx.urls')),
     path('user/<str:username>/', blog_views.user_blog, name='user-posts')
 ]
