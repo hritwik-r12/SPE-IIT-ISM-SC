@@ -20,3 +20,7 @@ def gallery(request):
 
 def core_team(request):
     return render(request, 'pages/core-team.html')
+
+
+def contact_us(request):
+    return render(request, 'pages/contact-us.html')
