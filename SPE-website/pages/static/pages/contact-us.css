@@ -1,0 +1,26 @@
+#PageTitle {
+    font-family: 'adam.cg pro';
+    font-size: 60px;
+}
+
+#UnderlineTitle {
+    height: 1px;
+    width: 250px;
+    background-color: #007bff;
+    margin-bottom: 50px;
+}
+
+.campus-map {
+    margin: 30px 30px 30px 150px;
+    float: left;
+}
+
+i.fas {
+    font-size: 35px;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+
+p.contact-info {
+    font-size: 1.3em;
+}
