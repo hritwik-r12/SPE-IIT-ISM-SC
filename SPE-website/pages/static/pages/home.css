@@ -1,12 +1,6 @@
 @import "compass/css3";
-
-/* @font-face {
-    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/polar.otf');
-    font-family: 'Polar';
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
-*,
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap');
 *:before,
 *:after {
     box-sizing: border-box;
@@ -19,7 +13,7 @@ body {
     font-size: 62.5%;
     height: 100%;
     overflow-x: hidden !important;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Open Sans', sans-serif !important;
 }
 
 svg {
@@ -334,4 +328,54 @@ svg {
 
 .slide__text-link:hover:before {
     transform: rotateX(0);
+}
+
+
+/* Read more button */
+
+.homebutton {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.homebutton:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0cf;
+    border-radius: 10rem;
+    z-index: -2;
+}
+
+.homebutton:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #008fb3;
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+
+.homebutton:hover {
+    color: #fff;
+}
+
+.homebutton:hover:before {
+    width: 100%;
 }
