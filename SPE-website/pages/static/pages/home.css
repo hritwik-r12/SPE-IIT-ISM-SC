@@ -1,7 +1,8 @@
 @import "compass/css3";
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap');
-*:before,
+
+/* *:before,
 *:after {
     box-sizing: border-box;
     margin: 0;
@@ -13,7 +14,6 @@ body {
     font-size: 62.5%;
     height: 100%;
     overflow-x: hidden !important;
-    font-family: 'Open Sans', sans-serif !important;
 }
 
 svg {
@@ -328,13 +328,14 @@ svg {
 
 .slide__text-link:hover:before {
     transform: rotateX(0);
-}
+} */
 
 
 /* Read more button */
 
-.homebutton {
+.button {
     display: inline-block;
+    text-decoration: none !important;
     padding: 0.75rem 1.25rem;
     border-radius: 10rem;
     color: #fff;
@@ -347,35 +348,132 @@ svg {
     z-index: 1;
 }
 
-.homebutton:after {
+.button:after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0cf;
+    background-color: rgb(0, 83, 207);
     border-radius: 10rem;
     z-index: -2;
 }
 
-.homebutton:before {
+.button:before {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #008fb3;
+    background-color: #053388;
     transition: all 0.3s;
     border-radius: 10rem;
     z-index: -1;
 }
 
-.homebutton:hover {
+.button:hover {
     color: #fff;
 }
 
-.homebutton:hover:before {
+.button:hover:before {
     width: 100%;
 }
+
+
+/* Blog Section */
+
+.post {
+    display: flex;
+    width: 1000px;
+}
+
+.post-left {
+    width: 40%;
+    background-color: #484855;
+    color: white;
+    padding: 3em;
+    position: relative;
+}
+
+.post-left_title {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.post-left_title_sub {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 0.25em;
+}
+
+.post-left_border {
+    border: 2px solid #ef5350;
+    width: 15%;
+    margin-top: 1em;
+}
+
+.post-left_author {
+    position: absolute;
+    bottom: 2em;
+    display: flex;
+    align-items: center;
+}
+
+.post-left_author img {
+    width: 2.5em;
+    margin-right: 1em;
+    border: 1px solid #fefefe;
+    border-radius: 50%;
+}
+
+.post-right {
+    width: 60%;
+    background-color: #fefefe;
+    color: #484855;
+}
+
+.post-right_body {
+    line-height: 2;
+    font-size: 17px;
+    padding: 2em;
+}
+
+.post-right_body p {
+    margin-top: 1em;
+}
+
+.post-right_body p span {
+    font-size: 2em;
+}
+
+.post-right_footer {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px -4px 3px -2px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+}
+
+.post-right_footer_date {
+    text-transform: uppercase;
+}
+
+.post-right_footer_date span {
+    font-weight: 700;
+}
+
+.post-right_footer_pictos {
+    font-size: 1.5em;
+    margin-right: 1em;
+}
+
+.post-right_footer_pictos .fa-heart {
+    color: #ef5350;
+    margin-right: 1em;
+}
+
+
+/* Counter Animation */
