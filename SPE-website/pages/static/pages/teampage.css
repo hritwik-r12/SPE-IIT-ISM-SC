@@ -1,0 +1,59 @@
+#PageTitle {
+    font-family: 'adam.cg pro';
+    font-size: 70px;
+  }
+
+  #UnderlineTitle {
+    height: 0.9px;
+    width: 250px;
+    background-color: #007bff;
+  }
+
+.team-vector {
+    width: 1500px;
+    margin-bottom: 60px;
+}
+
+.office-bearers {
+    font-family: 'adam.cg pro';
+    font-size: 40px;
+}
+
+.office-bearers-underline {
+    height: 0.8px;
+    width: 270px;
+    background-color: #007bff;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  margin-left: 150px;
+}
+
+.grid-item {
+  /* width: 480px;
+  padding: 20px; */
+  font-size: 23px;
+  text-align: center;
+}
+
+div.card {
+    width: 300px;
+    margin-bottom: 50px;
+    background-color: #393939;
+}
+
+h4.card-title {
+    font-size:35px;
+}
+
+p.card-text {
+    font-size: 30px;
+}
+
+.title-partition {
+    background-color: #a1a1a1;
+    margin-bottom: 35px;
+}
