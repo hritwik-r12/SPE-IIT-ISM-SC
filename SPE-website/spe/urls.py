@@ -26,7 +26,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('pages.urls')),
+    path('', pages_views.landing_page, name='landing-page'),
+    path('Home/', pages_views.home, name='home-page'),
     path('AboutUs/', pages_views.about, name='about-page'),
     path('Blogs/', include('blog.urls')),
     path('SignUp/', user_views.CreateUserView.as_view(template_name='user/signup.html'), name='signup-page'),
@@ -38,6 +39,7 @@ urlpatterns = [
     path('SignOut/', user_views.logout, name='signout-page'),
     path('Events/', include('events.urls')),
     path('Gallery/', pages_views.gallery, name='gallery-page'),
+    path('Gazette/', pages_views.gazette, name='gazette-page'),
     path('CoreTeam/', pages_views.core_team, name='core-team'),
     path('ContactUs/', pages_views.contact_us, name='contact-page'),
     path('markdownx/', include('markdownx.urls')),

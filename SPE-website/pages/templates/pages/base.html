@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/body.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/navbar.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'pages/low-navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/down-navbar.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/scroll-to-top-button.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'pages/footer.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
@@ -29,7 +29,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#26416c; box-shadow: none !important;">
         <div class="container-fluid">
-            <a href="{% url 'homepage' %}" class="navbar-brand">
+            <a href="{% url 'home-page' %}" class="navbar-brand">
                 <img src="https://cdn.asp.events/CLIENT_SPE__29FE44FF_5056_B733_49EC4D60A02A6A7D/sites/Asia-Pacific-Oil-Gas-2020/media/logos/SPE_Logo_2.png" width="170px" height="80px">
             </a>
 
@@ -41,12 +41,12 @@
 
             <div id="main-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                    <li><a href="{% url 'homepage' %}" class="nav-item nav-link active">Home</a></li>
+                    <li><a href="{% url 'home-page' %}" class="nav-item nav-link active">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="nav-item nav-link" data-toggle="dropdown">Resources</a>
                         <div class="dropdown-menu">
                             <a href="{% url 'blog-home' %}" class="dropdown-item">Blogs</a>
-                            <a href="{% url 'gazette' %}" class="dropdown-item">Gazette</a>
+                            <a href="{% url 'gazette-page' %}" class="dropdown-item">Gazette</a>
                         </div>
                     </li>
                     <li class="dropdown">
@@ -57,7 +57,6 @@
                         </div>
                     </li>
                     <li><a href="{% url 'gallery-page' %}" class="nav-item nav-link">Gallery</a></li>
-                    <li><a href="{% url 'core-team' %}" class="nav-item nav-link">Core Team</a></li>
                     {% if user.is_authenticated %}
                     <li class="dropdown">
                         <a><span class="material-icons" id="AccountCircle" >account_circle</span></a>
@@ -85,6 +84,9 @@
             <!-- Links -->
             <ul class="navbar-nav ml-auto">
 
+                <li class="nav-item" id="LowNavLink0">
+                    <a class="low-nav-item" href="{% url 'core-team' %}">Core Team</a>
+                </li>
                 <li class="nav-item" id="LowNavLink1">
                     <a class="low-nav-item" href="{% url 'contact-page' %}">Contact Us</a>
                 </li>

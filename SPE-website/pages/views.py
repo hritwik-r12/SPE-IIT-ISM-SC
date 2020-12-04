@@ -2,6 +2,10 @@ from django.shortcuts import render, HttpResponse
 import mimetypes
 
 
+def landing_page(request):
+    return render(request, 'pages/landing-page.html')
+
+
 def home(request):
     return render(request, 'pages/home.html')
 
