@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block content-blog %}
-    <link rel="stylesheet" type="text/css" href="{% static 'pages/core-team.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/core-team0.css' %}">
 {% endblock content-blog %}
 
 {% block content %}
@@ -28,6 +29,26 @@
         </div>
         <div class="d-block mx-auto">
                 <div class="grid-container">
+
+                    <!-- Card -->
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img class="round-img" src="{% static 'pages/team-images/jon-snow.jpg' %}" alt="Avatar">
+                        </div>
+                        <div class="flip-card-back flip-border"
+                             style="background-image: url(/media/core-team_images/jon-snow-blur.jpg);">
+                          <h1 class="card-title" style="color: black;">Jon Snow</h1>
+                          <hr class="underline" style="background-color: black;">
+                          <p style="color: black;">Architect & Engineer</p>
+                          <p style="color: black;">We love that guy</p>
+                          <a href="#"><i class="fa fa-instagram"></i></a>
+                          <a href="#"><i class="fa fa-linkedin"></i></a>
+                          <a href="#"><i class="fa fa-facebook"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Card -->
 
                     <!-- Card -->
                     <div class="flip-card">
@@ -66,11 +87,12 @@
                     <div class="flip-card">
                       <div class="flip-card-inner">
                         <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/team-images/sample-img.jpg' %}" alt="Avatar" style="width:300px;height:360px;">
+                          <img class="round-img" src="{% static 'pages/team-images/sample-img.jpg' %}" alt="Avatar">
                         </div>
-                        <div class="flip-card-back flip-border">
+                        <div class="flip-card-back flip-border"
+                             style="background-image: url(/media/core-team_images/sample-blur.png);">
                           <h1 class="card-title">John Doe</h1>
-                          <hr style="background-color: white; height: 0.1px; width: 200px; margin-bottom: 25px;">
+                          <hr class="underline">
                           <p>Architect & Engineer</p>
                           <p>We love that guy</p>
                         </div>
@@ -83,7 +105,7 @@
         </div>
         <!--Office Bearers Section-->
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
 
         <!--Core Team Section-->
         <div class="d-block mx-auto">
