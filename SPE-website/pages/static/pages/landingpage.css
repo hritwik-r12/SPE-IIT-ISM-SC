@@ -1,6 +1,7 @@
 body {
     height: 98%;
     background-image: url(/media/landingpage.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/media/landingpage.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,20 +34,21 @@ body {
 
 .img-text {
     position: absolute;
-    top: 30%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 850px;
+    width: 1000px;
 }
 
 .img-text h2 {
     color: white;
     font-family: 'oxygen';
     margin: 15px;
-    font-size: 60px;
+    font-size: 55px;
     letter-spacing: 2px;
     font-weight: 800;
+    margin-bottom: 30px;
 }
 
 .chapter-title {
@@ -74,5 +76,119 @@ body {
     background: white;
     z-index: -2;
     filter: blur(50px);
+}
 
+.text-case {
+    width: 750px;
+    margin: auto;
+}
+
+.chapter-text {
+    font-family: 'oxygen';
+    color: white;
+    font-size: 1.15em;
+    font-weight: 750;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+/*
+.center {
+    display: flex;
+    text-align: center;
+}
+
+.outer {
+    position: relative;
+    margin: 0 50px;
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+}
+
+.button {
+    height: 70px;
+    width: 220px;
+    border-radius: 50px;
+}
+
+.outer button, .outer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.outer button {
+    background: #848087;
+    color: #f2f2f2;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.button button {
+    height: 60px;
+    width: 210px;
+    border-radius: 50px;
+}
+
+.outer span {
+    height: 100%;
+    width: 100%;
+    background: inherit;
+}
+
+.button span {
+    border-radius: 50px;
+}
+
+.outer:hover span:nth-child(1) {
+    filter: blur(7px);
+}
+
+.outer:hover span:nth-child(2) {
+    filter: blur(14px);
+}
+
+.outer:hover {
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+*/
+
+.button {
+    position: relative;
+    text-align: center;
+    width: 200px;
+    padding: 15px;
+    font-size: 25px;
+    border: 5px solid #4cf7db;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    letter-spacing: 3px;
+    border-radius: 100px;
+    transition: 1.25s;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 0 0px 25px 0 #4cf7db inset, 0 0px 25px 0 #4cf7db,
+                0 0px 25px 0 #4cf7db inset, 0 0px 25px 0 #4cf7db;
+    text-shadow: 0 0 5px #4cf7db, 0 0 5px #4cf7db;
+}
+
+.btn {
+    text-decoration: none;
+    color: #4cf7db;
 }
