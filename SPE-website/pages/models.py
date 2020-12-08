@@ -7,3 +7,8 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
+class MessagesForUs(models.Model):
+    sender = models.CharField(max_length=100)
+    sender_email = models.CharField(max_length=120)
+    message = models.CharField(max_length=600)

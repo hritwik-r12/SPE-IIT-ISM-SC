@@ -1,8 +1,12 @@
 {% extends 'pages/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
+
+
 
 {% block content-blog %}
     <link rel="stylesheet" type="text/css" href="{% static 'pages/contact-us.css' %}">
+    
 {% endblock content-blog %}
 
 {% block content %}
@@ -34,6 +38,27 @@
             <p class="contact-info"><i class="fas fa-envelope"></i> Email: speiitismsc@domain.com</p>
             <br>
             <!-- Email -->
+
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+    
+                    <p>Leave a message</p>
+                    <!-- Horizontal Divider -->
+                    <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
+                    <!-- Horizontal Divider -->
+    
+                    {{ form|crispy }}
+                </fieldset>
+    
+                <!-- Sign Up Button -->
+                <div class="form-group">
+                    <button type="submit" id="SignUpBtn" class="btn btn-outline-primary waves-effect"
+                    style="margin-top: 0px; align-self: center;">submit</button>
+                </div>
+                <!-- Sign Up Button -->
+    
+            </form>
 
         </div>
 

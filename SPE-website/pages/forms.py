@@ -16,3 +16,14 @@
 # class ProfileUpdateForm(forms.ModelForm):
 #     class Meta:
 #         pass
+from django import forms
+from .models import MessagesForUs
+
+class MessagesForUsForm(forms.ModelForm):
+    class Meta:
+        model = MessagesForUs
+        fields = ('sender', 'sender_email', 'message')
+        labels = {
+            'sender': 'Your name',
+            'sender_email': 'Your email',
+        }

@@ -1,4 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+from django.contrib import messages
+
+from .forms import MessagesForUsForm
 import mimetypes
 
 
@@ -27,4 +30,13 @@ def core_team(request):
 
 
 def contact_us(request):
-    return render(request, 'pages/contact-us.html')
+    if request.method == 'POST':
+        form = MessagesForUsForm(request.POST)
+        if form.is_valid():
+            messageforus = form.save()
+            messages.success(request, f'Message sent!')
+            return redirect('contact-page')
+    else:
+        form = MessagesForUsForm()
+    context = {'form': form}
+    return render(request, 'pages/contact-us.html', context)
