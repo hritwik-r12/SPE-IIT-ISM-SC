@@ -1,7 +1,7 @@
 body {
     height: 98%;
-    background-image: url(/media/landingpage.jpg);
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/media/landingpage.jpg);
+    background-image: url(/media/dark-bg.jpg);
+     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/media/dark-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
