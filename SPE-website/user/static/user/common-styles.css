@@ -3,7 +3,10 @@
 /* Background Image */
 body {
     box-sizing: border-box;
-    background-image: url('https://texashillcountry.com/wp-content/uploads/Texas-Oil-Field-Wiki-commons.jpg')
+    background-image: url(/media/bg-images/dark-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /* Background Image */
 
@@ -19,8 +22,7 @@ div.content-section {
 
 /* SPE logo */
 img#spe-logo {
-    width: 300px;
-    height: 192px;
+    height: 250px;
     margin-bottom: 20px;
 }
 /* SPE logo */

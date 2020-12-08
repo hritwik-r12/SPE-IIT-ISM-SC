@@ -262,8 +262,9 @@ body {
 /* Account Circle */
 #AccountCircle {
     color: white;
-    font-size: 40px;
+    font-size: 50px;
     margin: 11px 20px 0px 15px;
+    cursor: pointer;
 }
 /* Account Circle */
 
