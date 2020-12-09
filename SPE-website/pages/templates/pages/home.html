@@ -19,6 +19,11 @@
         font-size: 2rem;
     }
     
+    .test a {
+        text-decoration: none;
+        color: black !important;
+    }
+    
     @media (min-width: 576px) {
         .modal-dialog {
             max-width: 70%;
@@ -60,7 +65,7 @@
                     <a href="{% url 'about-page' %}" class="button" style="font-size: 20px;">Read More</a>
                 </div>
             </div>
-            <div class="col-lg-5 offset-md-2 col-sm-12" style="padding:10% 1%;">
+            <div class="col-lg-5 offset-md-2 col-sm-12" style="padding:12% 1%;">
                 <div class="card shadow">
                     <div class="card-header">ANNOUNCEMENTS</div>
                     <div class="card-body">
@@ -144,9 +149,9 @@
 
 <!-- Social Media Cards -->
 <div class="main main-raised">
-    <div class="container" style="padding: 5% 0;">
+    <div class="container" style="padding: 5% 1%;">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000">
                 <div class="card shadow">
                     <div class="card-header">Facebook</div>
                     <div class="card-body" style="line-height: 24px;">
@@ -178,40 +183,46 @@
     <!-- Gazette Section -->
     <div class="container" style="color: black !important;font-family: 'Dosis', sans-serif; margin-bottom: 8%;">
         <div class="row">
-            <div class="col-lg-5 col-sm-12" style="padding:5% 1%; margin-bottom: 8%;">
+            <div class="col-lg-5 col-sm-12" style="padding:5% 1%; margin-bottom: 8%;" data-aos="fade-right" data-aos-duration="2000">
                 <p style="font-size: 4rem; font-weight: 700; text-align: center;">GAZETTE 2020</p>
-                <div class="card-gazette" style="background-image: url('../../../media/blog_images/oilrig_q8U2v17.jpg')">
+                <div class="card-gazette" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../media/blog_images/oilrig_q8U2v17.jpg')">
                     <div class="gazette-body">
-                        <h3 class="card-title">ILLUSTRATING UNCONVENTIONAL PASSION</h3>
+                        <h3 class="card-title" style="font-weight: 500; font-size: 2.5rem; color:#fff;">ILLUSTRATING UNCONVENTIONAL PASSION</h3>
                         <p class="card-description">
-                            <div class="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, eveniet nam. Repellat explicabo unde voluptas dolor dolore totam sequi molestias, aut beatae dicta adipisci. Alias quos itaque tempore modi ut.</div>
+                            <div style="color: hsla(0,0%,100%,.7)!important; padding: 5% 0%;">"Illustrating Unconventional Passion" presents to you a collection of successful start-ups led by the passionate and audacious entrepreneurs with a dream to transform the Oil & Gas industry.</div>
                         </p>
-                        <a href="#" class="btn btn-danger btn-round">
-                            <i class="material-icons">subject</i> Read
-                        </a>
+                        <!-- <a href="#" class="btn btn-danger btn-round ">
+                            <i class="material-icons ">subject</i> Read
+                        </a> -->
+                        <div class="container" style="
+                            margin: 0 auto; 
+                            width: 100%;
+                            text-align: center;">
+                            <a href="#" class="button" style="font-size: 20px;">Read more</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-lg-5 offset-md-2 col-sm-12" style="padding:5% 1%;">
-                <div class="card shadow">
-                    <div class="card-header">ANNOUNCEMENTS</div>
-                    <div class="card-body">
-                        <div class="test">
-                            <marquee direction="up" onmouseover="this.stop();" onmouseout="this.start(); " scrollamount="3">
+            <!-- <div class="col-lg-5 offset-md-2 col-sm-12 " style="padding:5% 1%; ">
+                <div class="card shadow ">
+                    <div class="card-header ">ANNOUNCEMENTS</div>
+                    <div class="card-body ">
+                        <div class="test ">
+                            <marquee direction="up " onmouseover="this.stop(); " onmouseout="this.start(); " scrollamount="3 ">
                                 <p> <b>
-                         <br> <a href="#">
+                         <br> <a href="# ">
                     1   .&nbsp;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</a>
                              <br>
                          <br>                 
-                             <a href="#">
+                             <a href="# ">
                     2   .&nbsp;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </a>
                              <br>
                          <br>                    
-                             <a href="#">
+                             <a href="# ">
                     3   .&nbsp;Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words</a>
                              <br>
                          <br>
-                         <a href="#">
+                         <a href="# ">
                     4  .&nbsp;There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</a>
                              <br>  
                             </b></p>
@@ -232,42 +243,42 @@
 <script>
     $(document).ready(function() {
 
-        var $slider = $(".slider"),
-            $slideBGs = $(".slide__bg"),
+        var $slider = $(".slider "),
+            $slideBGs = $(".slide__bg "),
             diff = 0,
             curSlide = 0,
-            numOfSlides = $(".slide").length - 1,
+            numOfSlides = $(".slide ").length - 1,
             animating = false,
             animTime = 500,
             autoSlideTimeout,
             autoSlideDelay = 6000,
-            $pagination = $(".slider-pagi");
+            $pagination = $(".slider-pagi ");
 
         function createBullets() {
             for (var i = 0; i < numOfSlides + 1; i++) {
-                var $li = $("<li class='slider-pagi__elem'></li>");
-                $li.addClass("slider-pagi__elem-" + i).data("page", i);
-                if (!i) $li.addClass("active");
+                var $li = $("<li class='slider-pagi__elem'> </li > ");
+                $li.addClass("slider - pagi__elem - " + i).data("page ", i);
+                if (!i) $li.addClass("active ");
                 $pagination.append($li);
             }
         };
-
         createBullets();
 
         function manageControls() {
-            $(".slider-control").removeClass("inactive");
-            if (!curSlide) $(".slider-control.left").addClass("inactive");
+            $(".slider - control ").removeClass("inactive ");
+            if (!curSlide)
+                $(".slider-control.left").addClass("inactive");
             if (curSlide === numOfSlides) $(".slider-control.right").addClass("inactive");
         };
 
         function autoSlide() {
             autoSlideTimeout = setTimeout(function() {
                 curSlide++;
-                if (curSlide > numOfSlides) curSlide = 0;
+                if (curSlide >
+                    numOfSlides) curSlide = 0;
                 changeSlides();
             }, autoSlideDelay);
         };
-
         autoSlide();
 
         function changeSlides(instant) {
@@ -300,17 +311,16 @@
 
         function navigateRight() {
             if (animating) return;
-            if (curSlide < numOfSlides) curSlide++;
+            if (curSlide <
+                numOfSlides) curSlide++;
             changeSlides();
         }
-
         $(document).on("mousedown touchstart", ".slider", function(e) {
             if (animating) return;
             window.clearTimeout(autoSlideTimeout);
             var startX = e.pageX || e.originalEvent.touches[0].pageX,
                 winW = $(window).width();
             diff = 0;
-
             $(document).on("mousemove touchmove", function(e) {
                 var x = e.pageX || e.originalEvent.touches[0].pageX;
                 diff = (startX - x) / winW * 70;
@@ -319,26 +329,26 @@
                 $slideBGs.css("transform", "translate3d(" + (curSlide * 50 + diff / 2) + "%,0,0)");
             });
         });
-
-        $(document).on("mouseup touchend", function(e) {
-            $(document).off("mousemove touchmove");
-            if (animating) return;
-            if (!diff) {
-                changeSlides(true);
-                return;
-            }
-            if (diff > -8 && diff < 8) {
-                changeSlides();
-                return;
-            }
-            if (diff <= -8) {
-                navigateLeft();
-            }
-            if (diff >= 8) {
-                navigateRight();
-            }
-        });
-
+        $(document).on("mouseup touchend",
+            function(e) {
+                $(document).off("mousemove touchmove");
+                if (animating) return;
+                if (!diff) {
+                    changeSlides(true);
+                    return;
+                }
+                if (diff > -8 && diff <
+                    8) {
+                    changeSlides();
+                    return;
+                }
+                if (diff <= -8) {
+                    navigateLeft();
+                }
+                if (diff >= 8) {
+                    navigateRight();
+                }
+            });
         $(document).on("click", ".slider-control", function() {
             if ($(this).hasClass("left")) {
                 navigateLeft();
@@ -346,12 +356,10 @@
                 navigateRight();
             }
         });
-
         $(document).on("click", ".slider-pagi__elem", function() {
             curSlide = $(this).data("page");
             changeSlides();
         });
-
     });
 </script>
 
