@@ -31,7 +31,20 @@ p.contact-info {
 }
 
 .query-title {
-    left: 13px;
-    font-family: 'oxygen'
+    font-family: 'adam.cg pro';
+    font-size: 40px;
+}
 
+.query-underline {
+    height: 0.8px;
+    width: 270px;
+    background-color: #007bff;
+}
+
+#SignUpBtn {
+    height: 50px;
+    width: 150px;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
