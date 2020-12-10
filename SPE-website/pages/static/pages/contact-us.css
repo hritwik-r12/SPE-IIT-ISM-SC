@@ -24,3 +24,14 @@ i.fas {
 p.contact-info {
     font-size: 1.3em;
 }
+
+.query {
+    clear: both;
+    margin-top: 250px;
+}
+
+.query-title {
+    left: 13px;
+    font-family: 'oxygen'
+
+}

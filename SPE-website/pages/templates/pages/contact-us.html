@@ -39,26 +39,30 @@
             <br>
             <!-- Email -->
 
-            <form method="POST">
-                {% csrf_token %}
-                <fieldset class="form-group">
-    
-                    <p>Leave a message</p>
-                    <!-- Horizontal Divider -->
-                    <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
-                    <!-- Horizontal Divider -->
-    
-                    {{ form|crispy }}
-                </fieldset>
-    
-                <!-- Sign Up Button -->
-                <div class="form-group">
-                    <button type="submit" id="SignUpBtn" class="btn btn-outline-primary waves-effect"
-                    style="margin-top: 0px; align-self: center;">submit</button>
-                </div>
-                <!-- Sign Up Button -->
-    
-            </form>
+            <!-- Query Form-->
+            <div class="query">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+
+                        <h2 class="query-title col-md-4 d-block mx-auto">Leave a message</h2>
+                        <!-- Horizontal Divider -->
+                        <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
+                        <!-- Horizontal Divider -->
+
+                        {{ form|crispy }}
+                    </fieldset>
+
+                    <!-- Sign Up Button -->
+                    <div class="form-group">
+                        <button type="submit" id="SignUpBtn" class="btn btn-outline-primary waves-effect"
+                        style="margin-top: 0px; align-self: center;">submit</button>
+                    </div>
+                    <!-- Sign Up Button -->
+
+                </form>
+            </div>
+            <!-- Query Form-->
 
         </div>
 
