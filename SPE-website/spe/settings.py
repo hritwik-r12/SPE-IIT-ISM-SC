@@ -141,3 +141,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS= True
 EMAIL_HOST_USER = '' #add company email
 EMAIL_HOST_PASSWORD = '' #add company password to send email for password reset.
+
+DEFAULT_FROM_EMAIL = '' #add company email

@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
+from django.core.mail import send_mail, BadHeaderError
 
 from .forms import MessagesForUsForm
 import mimetypes
@@ -34,6 +35,16 @@ def contact_us(request):
         form = MessagesForUsForm(request.POST)
         if form.is_valid():
             messageforus = form.save()
+            subject = "message from django site"
+            message = form.cleaned_data['message']
+            sender = form.cleaned_data['sender']
+            sender_email= form.cleaned_data['sender_email']
+            body = message + "\nEmail: " + sender_email + "\nName: "+ sender
+            email = '' #add comany email
+            try:
+                send_mail(subject, body, email, [email])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found')
             messages.success(request, f'Message sent!')
             return redirect('contact-page')
     else:
