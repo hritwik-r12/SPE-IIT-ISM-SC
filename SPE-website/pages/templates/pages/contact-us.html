@@ -6,7 +6,7 @@
 
 {% block content-blog %}
     <link rel="stylesheet" type="text/css" href="{% static 'pages/contact-us.css' %}">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock content-blog %}
 
 {% block content %}
@@ -43,11 +43,11 @@
             <div class="query">
                 <form method="POST">
                     {% csrf_token %}
-                    <fieldset class="form-group">
+                    <fieldset class="form-group" style="font-size: 1.5em;">
 
-                        <h2 class="query-title col-md-4 d-block mx-auto">Leave a message</h2>
+                        <h2 class="query-title d-flex justify-content-center">Leave a message</h2>
                         <!-- Horizontal Divider -->
-                        <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
+                        <hr class="d-block mr-auto query-underline">
                         <!-- Horizontal Divider -->
 
                         {{ form|crispy }}
