@@ -261,3 +261,89 @@
     max-width: 440px;
     margin: 0 auto;
 }
+
+
+/* Counter Section */
+
+.count-area {
+    margin-top: -18px
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .count-area .col-lg-4:nth-child(1) .count-clients .single-counter,
+    .count-area .col-lg-4:nth-child(2) .count-clients .single-counter {
+        padding-bottom: 0px;
+        text-align: center
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .count-area .col-lg-4:nth-child(1) .count-clients .single-counter,
+    .count-area .col-lg-4:nth-child(2) .count-clients .single-counter {
+        padding-bottom: 0px;
+        text-align: center
+    }
+}
+
+@media (max-width: 575px) {
+    .count-area .col-lg-4:nth-child(1) .count-clients .single-counter,
+    .count-area .col-lg-4:nth-child(2) .count-clients .single-counter {
+        padding-bottom: 0px;
+        text-align: center
+    }
+}
+
+.count-area .count-clients {
+    display: flex;
+    justify-content: center
+}
+
+.count-area .count-clients .single-counter {
+    padding: 60px 0;
+    display: flex
+}
+
+.count-area .count-clients .single-counter:last-child {
+    margin-right: 0px
+}
+
+.count-area .count-clients .single-counter .count-number span {
+    color: #fff;
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 0;
+    display: block
+}
+
+.count-area .count-clients .single-counter p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1;
+    margin: 0;
+    padding: 0
+}
+
+.count-area .count-clients .single-counter .count-text {
+    padding-left: 20px
+}
+
+.count-area .count-clients .single-counter .count-text p {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block
+}
+
+.count-area .count-clients .single-counter .count-text h5 {
+    color: #fff;
+    font-size: 36px;
+    text-transform: capitalize;
+    margin-bottom: 0px;
+    display: block
+}
+
+.count-bg {
+    background-size: cover;
+    background-repeat: no-repeat
+}
