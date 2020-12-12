@@ -7,14 +7,13 @@
     {% block content-blog %}
         <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-main.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'events/eventregistration.css' %}">
-        
     {% endblock %}
     <!-- Adding stylesheet to base template -->
 
     {% block content %}
         <br><br><br><br><br>
 
-    <div class="col-md-8" style="padding-left: 5%;">
+    <div class="col-md-8 d-flex justify-content-center" style="padding-left: 5%; left: 300px;">
         <div class="content-section" style="width: 600px;">
         <form method="POST">
             {% csrf_token %}

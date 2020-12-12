@@ -27,6 +27,13 @@
 
 .grid-container {
   display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  margin-left: 290px;
+}
+
+.grid-container-3-col {
+  display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;
   margin-left: 150px;
@@ -97,32 +104,34 @@
 .card-title {
     font-family:'oxygen';
     margin-top: 15px;
-    font-size: 30px;
+    font-size: 33px;
     font-weight: 800;
 }
 
 .underline {
     background-color: white;
-    height: 0.1px;
+    height: 0.5px;
     width: 200px;
     margin-bottom: 25px;
 }
 
+.card-content {
+    font-size: 1.3em;
+    font-family: 'oxygen';
+    font-weight: 500;
+}
+
 .fa {
-    font-size: 1.55em;
+    font-size: 1.8em;
     padding-left: 25px;
     position: absolute;
     bottom: 30px;
 }
 
-.fa-instagram {
-    left: 50px;
-}
-
 .fa-linkedin {
-    left: 120px;
+    left: 70px;
 }
 
 .fa-facebook {
-    right: 50px;
+    right: 75px;
 }

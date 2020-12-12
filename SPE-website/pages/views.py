@@ -23,7 +23,7 @@ def gazette(request):
 
 
 def gallery(request):
-    return render(request, 'pages/gallery.html')
+    return render(request, 'pages/gallery1.html')
 
 
 def core_team(request):
