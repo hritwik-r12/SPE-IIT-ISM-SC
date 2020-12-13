@@ -7,89 +7,164 @@
 
 {% block content %}
     <br><br><br><br><br>
-
-    <h1 class="d-flex justify-content-center" id="PageTitle">Gallery</h1>
-    <hr class="d-flex justify-content-center" id="UnderlineTitle">
-<!--        <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-1.jpg' %}">-->
+<!--<img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-1.jpg' %}">-->
+        <h1 style="color: black; font-family: 'adam.cg pro'; font-size: 60px;">Gallery</h1>
+        <hr class="d-block mx-auto" style="width: 210px; height: 1px; background-color: #007bff; margin-bottom: 50px;">
+        <br><br>
 
     <!-- Event 1-->
-    <!-- Container for the image gallery -->
-    <div class="container">
+    <div class="d-block mx-auto" style="width: 1000px;">
+        <h2 class="event-title d-flex justify-content-left">Event 1:</h2>
+        <hr class="event-underline d-flex justify-content-left">
+        <div class="wrapper">
+          <div id="slider-wrap1">
+              <ul id="slider1">
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-1.jpg' %}">
+                 </li>
 
-      <!-- Full-width images with number text -->
-      <div class="mySlides">
-        <div class="numbertext">1 / 6</div>
-          <img src="img_woods_wide.jpg" style="width:100%">
-      </div>
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-2.jpg' %}">
+                 </li>
 
-      <div class="mySlides">
-        <div class="numbertext">2 / 6</div>
-          <img src="img_5terre_wide.jpg" style="width:100%">
-      </div>
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-3.jpg' %}">
+                 </li>
 
-      <div class="mySlides">
-        <div class="numbertext">3 / 6</div>
-          <img src="img_mountains_wide.jpg" style="width:100%">
-      </div>
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-4.jpg' %}">
+                 </li>
 
-      <!-- Next and previous buttons -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-5.jpg' %}">
+                 </li>
+              </ul>
 
-      <!-- Image text -->
-      <div class="caption-container">
-        <p id="caption"></p>
-      </div>
+               <!--controls-->
+              <div class="btns" id="next1"><i class="fa fa-arrow-right"></i></div>
+              <div class="btns" id="previous1"><i class="fa fa-arrow-left"></i></div>
+              <div id="counter1"></div>
 
-      <!-- Thumbnail images -->
-      <div class="row">
-        <div class="column">
-          <img class="demo cursor" src="{% static 'pages/gallery-slideshow/event-1/show-img-1.jpg' %}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="{% static 'pages/gallery-slideshow/event-1/show-img-2.jpg' %}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-        </div>
-        <div class="column">
-          <img class="demo cursor" src="{% static 'pages/gallery-slideshow/event-1/show-img-3.jpg' %}" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-        </div>
-      </div>
+              <div id="pagination-wrap1">
+                <ul>
+                </ul>
+              </div>
+              <!--controls-->
+
+          </div>
+       </div>
     </div>
-    <!-- Event 1-->
-
+    <br><br>
+   <!-- Event 1-->
 
 
 <script>
-    var slideIndex = 1;
-showSlides(slideIndex);
+    //current position
+var pos = 0;
+//number of slides
+var totalSlides = $('#slider-wrap1 ul li').length;
+//get the slide width
+var sliderWidth = $('#slider-wrap1').width();
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+
+$(document).ready(function(){
+
+
+	/*****************
+	 BUILD THE SLIDER
+	*****************/
+	//set width to be 'x' times the number of slides
+	$('#slider-wrap1 ul#slider1').width(sliderWidth*totalSlides);
+
+    //next slide
+	$('#next1').click(function(){
+		slideRight();
+	});
+
+	//previous slide
+	$('#previous').click(function(){
+		slideLeft();
+	});
+
+
+
+	/*************************
+	 //*> OPTIONAL SETTINGS
+	************************/
+	//automatic slider
+	var autoSlider = setInterval(slideRight, 3000);
+
+	//for each slide
+	$.each($('#slider-wrap1 ul li'), function() {
+	   //set its color
+	   var c = $(this).attr("data-color");
+	   $(this).css("background",c);
+
+	   //create a pagination
+	   var li = document.createElement('li');
+	   $('#pagination-wrap1 ul').append(li);
+	});
+
+	//counter
+	countSlides();
+
+	//pagination
+	pagination();
+
+	//hide/show controls/btns when hover
+	//pause automatic slide when hover
+	$('#slider-wrap1').hover(
+	  function(){ $(this).addClass('active'); clearInterval(autoSlider); },
+	  function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
+	);
+
+
+
+});//DOCUMENT READY
+
+
+
+/***********
+ SLIDE LEFT
+************/
+function slideLeft(){
+	pos--;
+	if(pos==-1){ pos = totalSlides-1; }
+	$('#slider-wrap1 ul#slider1').css('left', -(sliderWidth*pos));
+
+	//*> optional
+	countSlides();
+	pagination();
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+
+/************
+ SLIDE RIGHT
+*************/
+function slideRight(){
+	pos++;
+	if(pos==totalSlides){ pos = 0; }
+	$('#slider-wrap1 ul#slider1').css('left', -(sliderWidth*pos));
+
+	//*> optional
+	countSlides();
+	pagination();
 }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+
+
+
+/************************
+ //*> OPTIONAL SETTINGS
+************************/
+function countSlides(){
+	$('#counter1').html(pos+1 + ' / ' + totalSlides);
 }
 
+function pagination(){
+	$('#pagination-wrap1 ul li').removeClass('active');
+	$('#pagination-wrap1 ul li:eq('+pos+')').addClass('active');
+}
 </script>
 
 {% endblock content %}
