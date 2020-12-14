@@ -2,17 +2,20 @@
 {% load static %}
 
 {% block content-blog %}
-    <link rel="stylesheet" type="text/css" href="{% static 'pages/gallery1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/gallery-css/common.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/gallery-css/gallery1-e1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/gallery-css/gallery1-e2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/gallery-css/gallery1-e3.css' %}">
 {% endblock content-blog %}
 
 {% block content %}
     <br><br><br><br><br>
 <!--<img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-1.jpg' %}">-->
-        <h1 style="color: black; font-family: 'adam.cg pro'; font-size: 60px;">Gallery</h1>
+        <h1 class="d-flex justify-content-center" style="color: black; font-family: 'adam.cg pro'; font-size: 60px;">Gallery</h1>
         <hr class="d-block mx-auto" style="width: 210px; height: 1px; background-color: #007bff; margin-bottom: 50px;">
         <br><br>
 
-    <!-- Event 1-->
+<!-- Event 1-->
     <div class="d-block mx-auto" style="width: 1000px;">
         <h2 class="event-title d-flex justify-content-left">Event 1:</h2>
         <hr class="event-underline d-flex justify-content-left">
@@ -55,116 +58,102 @@
        </div>
     </div>
     <br><br>
+    <script src="{% static 'pages/gallery-js/gallery1-e1.js' %}"></script>
    <!-- Event 1-->
 
 
-<script>
-    //current position
-var pos = 0;
-//number of slides
-var totalSlides = $('#slider-wrap1 ul li').length;
-//get the slide width
-var sliderWidth = $('#slider-wrap1').width();
+    <!-- Event 2-->
+    <div class="d-block mx-auto" style="width: 1000px;">
+        <h2 class="event-title d-flex justify-content-left">Event 2:</h2>
+        <hr class="event-underline d-flex justify-content-left">
+        <div class="wrapper">
+          <div id="slider-wrap2">
+              <ul id="slider2">
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-1.jpg' %}">
+                 </li>
+
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-2.jpg' %}">
+                 </li>
+
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-3.jpg' %}">
+                 </li>
+
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-4.jpg' %}">
+                 </li>
+
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-5.jpg' %}">
+                 </li>
+              </ul>
+
+               <!--controls-->
+              <div class="btns" id="next2"><i class="fa fa-arrow-right"></i></div>
+              <div class="btns" id="previous2"><i class="fa fa-arrow-left"></i></div>
+              <div id="counter2"></div>
+
+              <div id="pagination-wrap2">
+                <ul>
+                </ul>
+              </div>
+              <!--controls-->
+
+          </div>
+       </div>
+    </div>
+    <br><br>
+    <script src="{% static 'pages/gallery-js/gallery1-e2.js' %}"></script>
+   <!-- Event 2-->
+
+    <!-- Event 3-->
+    <div class="d-block mx-auto" style="width: 1000px;">
+        <h2 class="event-title d-flex justify-content-left">Event 3:</h2>
+        <hr class="event-underline d-flex justify-content-left">
+        <div class="wrapper">
+          <div id="slider-wrap3">
+              <ul id="slider3">
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-1.jpg' %}">
+                 </li>
+
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-2.jpg' %}">
+                 </li>
+
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-3.jpg' %}">
+                 </li>
+
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-4.jpg' %}">
+                 </li>
+
+                 <li>
+                    <img class="gal-img" src="{% static 'pages/gallery-slideshow/event-1/show-img-5.jpg' %}">
+                 </li>
+              </ul>
+
+               <!--controls-->
+              <div class="btns" id="next3"><i class="fa fa-arrow-right"></i></div>
+              <div class="btns" id="previous3"><i class="fa fa-arrow-left"></i></div>
+              <div id="counter3"></div>
+
+              <div id="pagination-wrap3">
+                <ul>
+                </ul>
+              </div>
+              <!--controls-->
+
+          </div>
+       </div>
+    </div>
+    <br><br>
+    <script src="{% static 'pages/gallery-js/gallery1-e3.js' %}"></script>
+   <!-- Event 2-->
 
 
-$(document).ready(function(){
-
-
-	/*****************
-	 BUILD THE SLIDER
-	*****************/
-	//set width to be 'x' times the number of slides
-	$('#slider-wrap1 ul#slider1').width(sliderWidth*totalSlides);
-
-    //next slide
-	$('#next1').click(function(){
-		slideRight();
-	});
-
-	//previous slide
-	$('#previous1').click(function(){
-		slideLeft();
-	});
-
-
-
-	/*************************
-	 //*> OPTIONAL SETTINGS
-	************************/
-	//automatic slider
-	var autoSlider = setInterval(slideRight, 3000);
-
-	//for each slide
-	$.each($('#slider-wrap1 ul li'), function() {
-	   //set its color
-	   var c = $(this).attr("data-color");
-	   $(this).css("background",c);
-
-	   //create a pagination
-	   var li = document.createElement('li');
-	   $('#pagination-wrap1 ul').append(li);
-	});
-
-	//counter
-	countSlides();
-
-	//pagination
-	pagination();
-
-	//hide/show controls/btns when hover
-	//pause automatic slide when hover
-	$('#slider-wrap1').hover(
-	  function(){ $(this).addClass('active'); clearInterval(autoSlider); },
-	  function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
-	);
-
-
-
-});//DOCUMENT READY
-
-
-
-/***********
- SLIDE LEFT
-************/
-function slideLeft(){
-	pos--;
-	if(pos==-1){ pos = totalSlides-1; }
-	$('#slider-wrap1 ul#slider1').css('left', -(sliderWidth*pos));
-
-	//*> optional
-	countSlides();
-	pagination();
-}
-
-
-/************
- SLIDE RIGHT
-*************/
-function slideRight(){
-	pos++;
-	if(pos==totalSlides){ pos = 0; }
-	$('#slider-wrap1 ul#slider1').css('left', -(sliderWidth*pos));
-
-	//*> optional
-	countSlides();
-	pagination();
-}
-
-
-
-
-/************************
- //*> OPTIONAL SETTINGS
-************************/
-function countSlides(){
-	$('#counter1').html(pos+1 + ' / ' + totalSlides);
-}
-
-function pagination(){
-	$('#pagination-wrap1 ul li').removeClass('active');
-	$('#pagination-wrap1 ul li:eq('+pos+')').addClass('active');
-}
-</script>
 
 {% endblock content %}
