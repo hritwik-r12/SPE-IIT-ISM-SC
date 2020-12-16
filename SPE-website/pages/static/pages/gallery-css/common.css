@@ -48,6 +48,7 @@ body, hmtl{background: #ecf0f1; font-family: 'Oxygen';}
 .gal-img {
     width: 1000px;
     height: 550px;
+    margin-bottom: 40px;
 }
 
 .event-title {
@@ -63,3 +64,9 @@ body, hmtl{background: #ecf0f1; font-family: 'Oxygen';}
     margin-top: 10px;
     margin-bottom: -20px;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
