@@ -7,6 +7,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .models import UserProfile
+from verify_email.email_handler import send_verification_email
 
 '''def signup(request):
     if request.method == 'POST':
