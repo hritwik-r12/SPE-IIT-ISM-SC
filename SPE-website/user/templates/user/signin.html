@@ -16,44 +16,44 @@
 
 <body>
 
-    <div class="content-section mx-auto d-block">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
+        <div class="content-section d-block mx-auto">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
 
-                <!-- SPE logo -->
-                <img id='spe-logo' class="mx-auto d-block" src="{% static 'pages/landingpage-bg/chapter-logo.png' %}">
-                <!-- SPE logo -->
+                    <!-- SPE logo -->
+                    <img id='spe-logo' class="mx-auto d-block" src="{% static 'pages/landingpage-bg/chapter-logo.png' %}">
+                    <!-- SPE logo -->
 
-                <!-- Horizontal Divider -->
-                <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
-                <!-- Horizontal Divider -->
+                    <!-- Horizontal Divider -->
+                    <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
+                    <!-- Horizontal Divider -->
 
-                {{ form|crispy }}
-            </fieldset>
+                    {{ form|crispy }}
+                </fieldset>
 
-            <!-- Sign Up Button -->
-            <div class="form-group">
-                <button type="submit" id="SignUpBtn" class="btn btn-outline-primary waves-effect"
-                style="margin-top: 0px;">Sign In</button>
-            </div>
-            <!-- Sign Up Button -->
+                <!-- Sign Up Button -->
+                <div class="form-group">
+                    <button type="submit" id="SignUpBtn" class="btn btn-outline-primary waves-effect"
+                    style="margin-top: 0px;">Sign In</button>
+                </div>
+                <!-- Sign Up Button -->
 
-        </form>
+            </form>
 
-        <!-- Horizontal Divider -->
-        <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
-        <!-- Horizontal Divider -->
+            <!-- Horizontal Divider -->
+            <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
+            <!-- Horizontal Divider -->
 
-        <!-- Sign In Link -->
-        <p id="LogInLink" class="text-muted">
-            Don't have an account? <a class="ml-2" href="{% url 'signup-page' %}">Sign Up</a>
-        </p>
-        <p id="LogInLink" class="text-muted">
-            <a class="ml-2" href="{% url 'signup-page' %}"> Forgot password </a>
-        </p>
-        <!-- Sign In Link -->
+            <!-- Sign In Link -->
+            <p id="LogInLink" class="text-muted">
+                Don't have an account? <a class="ml-2" href="{% url 'signup-page' %}">Sign Up</a>
+            </p>
+            <p id="LogInLink" class="text-muted">
+                <a class="ml-2" href="{% url 'signup-page' %}"> Forgot password </a>
+            </p>
+            <!-- Sign In Link -->
 
-    </div>
+        </div>
 
 </body>

@@ -14,10 +14,12 @@ body {
 div.content-section {
     width:600px;
     padding: 30px 30px 10px 30px;
-    margin: 40px;
     background-color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    margin-top: 60px;
+    margin-bottom: 50px;
 }
+
 /* form container */
 
 /* SPE logo */
