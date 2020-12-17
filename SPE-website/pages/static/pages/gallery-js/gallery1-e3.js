@@ -97,7 +97,7 @@ function slideRight3(){
  //*> OPTIONAL SETTINGS
 ************************/
 function countSlides3(){
-	$('#counter3').html(pos3+1 + ' / ' + totalSlides2);
+	$('#counter3').html(pos3+1 + ' / ' + totalSlides3);
 }
 
 function pagination3(){
