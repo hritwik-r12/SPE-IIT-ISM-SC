@@ -70,3 +70,9 @@ body, hmtl{background: #ecf0f1; font-family: 'Oxygen';}
   grid-template-columns: auto auto auto;
 }
 
+.stat-img {
+    width: 500px;
+    height: 250px;
+    margin-bottom: 40px;
+}
+
