@@ -18,7 +18,7 @@ body {
     padding: 0;
     width: 100%;
     transition: 0.6s ease-in;
-    z-index: 99999;
+    z-index: 9999;
 }
 
 .navbar .navbar-brand {
@@ -260,16 +260,19 @@ body {
 
 
 /* Account Circle */
+
 #AccountCircle {
     color: white;
     font-size: 55px;
     margin: 13px 20px 0px 15px;
     cursor: pointer;
 }
+
+
 /* Account Circle */
 
 .footer-top {
-    padding: 60px 0;
+    padding: 40px 0;
     background: #1E3456;
     text-align: left;
     color: #aaa;
