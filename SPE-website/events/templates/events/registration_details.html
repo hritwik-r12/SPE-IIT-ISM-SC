@@ -18,11 +18,11 @@
         <form method="POST">
             {% csrf_token %}
             <fieldset class ="form-group">
-                <h1 class="border-bottom mb-4" style="font-family:'adam.cg pro'; font-size: 200%;">Registration Form</h1>
+                <h1 class="border-bottom mb-4 d-flex justify-content-center" style="font-family:'adam.cg pro'; font-size: 200%;">Registration Form</h1>
                 {{ r_form | crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-primary" type="submit" style="height: 40px; width: 100px; font-size: 16px;">
+                <button class="btn btn-primary" type="submit" style=" margin: 20px 0 30px 0; height: 40px; width: 100px; font-size: 16px;">
                     Register
                 </button>
             </div>
