@@ -347,3 +347,30 @@
     background-size: cover;
     background-repeat: no-repeat
 }
+
+
+/* Companies we have collaborations with */
+
+#mainwrapper .box {
+    border: 5px solid #fff;
+    cursor: pointer;
+    height: 240px;
+    float: left !important;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    width: 240px;
+    -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+    -moz-box-shadow: 1px 1px 1px 1px #ccc;
+    box-shadow: 1px 1px 14px 1px #ccc;
+}
+
+#mainwrapper .box img {
+    position: absolute;
+    left: 0;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+}
