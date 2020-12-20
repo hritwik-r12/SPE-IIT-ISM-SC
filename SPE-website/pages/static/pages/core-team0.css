@@ -29,14 +29,14 @@
   display: grid;
   grid-template-columns: auto auto;
   padding: 10px;
-  margin-left: 290px;
+  margin-left: 20%;
 }
 
 .grid-container-3-col {
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;
-  margin-left: 150px;
+  margin-left: 10%;
 }
 
 .grid-item {
@@ -134,4 +134,26 @@
 
 .fa-facebook {
     right: 75px;
+}
+
+@media screen and (min-width: 771px) and (max-width: 1500px) {
+.grid-container-3-col {
+  grid-template-columns: auto auto;
+  margin-left: 2%;
+}
+.grid-container {
+    margin-left: 2%;
+}
+}
+
+@media screen and (max-width: 770px) {
+.grid-container-3-col {
+  grid-template-columns: auto;
+  margin-left: 100px;
+}
+
+.grid-container {
+  grid-template-columns: auto;
+  margin-left: 100px;
+}
 }

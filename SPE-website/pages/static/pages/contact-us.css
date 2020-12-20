@@ -11,7 +11,7 @@
 }
 
 .campus-map {
-    margin: 30px 30px 30px 150px;
+    margin: 30px 30px 30px 10%;
     float: left;
 }
 
@@ -47,4 +47,21 @@ p.contact-info {
     font-size: 25px;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+@media screen and (min-width: 771px) and (max-width: 1200px) {
+    .campus-map {
+        justify-content: center;
+        clear: both;
+    }
+    .container {
+        clear: both;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .campus-map {
+        justify-content: center;
+        clear: both;
+    }
 }

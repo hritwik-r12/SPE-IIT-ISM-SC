@@ -16,7 +16,7 @@
         <h1 class="d-flex justify-content-center" id="PageTitle">Our Team</h1>
                 <hr class="d-flex justify-content-center" id="UnderlineTitle">
 
-        <img class="team-vector d-block mx-auto" src="{% static 'pages/team-images/team-vector.png' %}">
+        <img class="team-vector d-block mx-auto" style="width: 100%; height: auto;" src="{% static 'pages/team-images/team-vector.png' %}">
         <!-- Team Image-->
 
         <!--Office Bearers Section-->
@@ -208,19 +208,18 @@
             <h1 class="office-bearers d-flex justify-content-center">Core Team:</h1>
             <hr class="office-bearers-underline d-block mr-auto" style="margin-bottom: 40px;">
         </div>
-        <img class="team-vector d-block mx-auto" src="{% static 'pages/team-images/core-team.jpg' %}" style="width: 1500px;">
+        <img class="team-vector d-block mx-auto"src="{% static 'pages/team-images/core-team.jpg' %}" style=" width: 90%; height: auto;">
         <!--Core Team Section-->
 
         <br><br><br><br>
 
-        <!--Developer Section-->
+        <!-- Developer Section -->
         <div class="d-block mx-auto">
             <h1 class="office-bearers d-flex justify-content-center">Developer Team:</h1>
             <hr class="office-bearers-underline d-block mx-auto" style="margin-bottom: 40px;">
         </div>
         <div class="d-block mx-auto">
-
-            <div class="grid-container">
+                <div class="grid-container">
 
                     <!-- Card -->
                     <div class="flip-card">
@@ -230,10 +229,10 @@
                         </div>
                         <div class="flip-card-back flip-border"
                              style="background-image: url(/static/pages/office-bearers/HOD-blur.jpg);">
-                          <h1 class="card-title" style="color: black;">Rajvardhan Rawat</h1>
+                          <h1 class="card-title" style="color: black;">Dr. Ajay Mandal</h1>
                           <hr class="underline" style="background-color: black;">
-                          <p class="card-content" style="color: black;"></p>
-                          <a href="https://www.linkedin.com/in/rajvardhanrawat/"><i class="fa fa-linkedin"></i></a>
+                          <p class="card-content" style="color: black;">Head of the Department, Petroleum Engineering Department</p>
+                          <a href="https://www.linkedin.com/in/ajay-mandal-62762524/"><i class="fa fa-linkedin"></i></a>
                           <a href="https://www.facebook.com/mandal.ajay"><i class="fa fa-facebook"></i></a>
                         </div>
                       </div>
@@ -248,9 +247,9 @@
                         </div>
                         <div class="flip-card-back flip-border"
                              style="background-image: url(/static/pages/office-bearers/covener-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Raj Kumar</h1>
+                          <h1 class="card-title" style="color: white;">Dr. Neetish Kumar Maurya</h1>
                           <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;"></p>
+                          <p class="card-content" style="color: white;">Faculty Convener</p>
                           <a href="https://www.facebook.com/neetishmaurya"><i class="fa fa-facebook"></i></a>
                           <a href=" https://www.linkedin.com/in/neetish-kumar-maurya-22b08a1a/?originalSubdomain=in">
                               <i class="fa fa-linkedin"></i></a>
@@ -258,11 +257,10 @@
                       </div>
                     </div>
                     <!-- Card -->
+                </div>
 
-            </div>
 
                 <div class="grid-container-3-col">
-
                     <!-- Card -->
                     <div class="flip-card">
                       <div class="flip-card-inner">
@@ -374,11 +372,11 @@
                     </div>
                     <!-- Card -->
 
-                    <br><br><br>
                 </div>
-                 <!--Developer Section-->
 
-            </div>
+        </div>
+        <!-- Developer Section -->
 
+                    <br><br><br>
 
 {% endblock content %}
