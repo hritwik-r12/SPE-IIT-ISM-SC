@@ -37,7 +37,7 @@ button.btn {
     height: 50px;
     font-size: 1.5em;
     margin: 20px;
-    float: right;
+    float: left;
     clear: both;
 }
 
@@ -52,3 +52,20 @@ button.btn {
     background-color: #007bff;
     margin-bottom: 50px;
   }
+
+@media screen and (max-width: 770px) {
+    #PostImage {
+    width: 300px;
+    clear: both;
+    justify-content: center;
+}
+
+#ArticleTitle {
+    font-size: 2.5em;
+    margin-left: 5px;
+}
+
+div#ArticleMetaData {
+    margin-left: 5px;
+}
+}

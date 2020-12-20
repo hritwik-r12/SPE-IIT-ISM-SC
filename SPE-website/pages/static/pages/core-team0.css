@@ -156,4 +156,22 @@
   grid-template-columns: auto;
   margin-left: 100px;
 }
+
+.flip-card {
+  width: 150px;
+  height: 180px;
+  margin-bottom: 45px;
+}
+
+.flip-card-back {
+  background-size: 150px 180px;
+  height: 180px;
+  width: 150px;
+}
+
+.round-img {
+    border-radius: 15px;
+    width:150px;
+    height:180px;
+}
 }

@@ -48,3 +48,13 @@
     margin-bottom: 50px;
 }
 /* Blogs by User title Underline */
+
+@media screen and (max-width: 770px) {
+    #PostImage {
+    width: 350px;
+    margin: 5px;
+}
+#PostTitle {
+    font-size: 30px;
+}
+}

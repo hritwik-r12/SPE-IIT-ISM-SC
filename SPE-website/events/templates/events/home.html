@@ -4,30 +4,30 @@
 <!-- Adding stylesheet to base template -->
 {% block content-blog %}
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">-->
-<!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">-->
-<!--    <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">-->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
 {% endblock content-blog %}
 <!-- Adding stylesheet to base template -->
 
 {% block content %}
-
+<style>
+    @media screen and (max-width: 770px) {
+        #PostBody {margin-left: 0;}
+    }
+</style>
         <br><br><br><br><br>
 
 <div class="col-md-11" style="padding-left: 5%;">
 
     {% if not events %}
-        <h1 class="d-flex justify-content-center" id="PageTitle">Upcoming Events</h1>
-        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 460px;">
+        <h1 class="d-flex justify-content-center" id="PageTitle">No Upcoming Events</h1>
+        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="@media screen and (max-width: 770px) { {width: 200px;} };">
     {% elif events.first.has_happened %}
         <h1 class="d-flex justify-content-center" id="PageTitle">Past Events</h1>
-        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 320px;">
+        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="@media screen and (max-width: 770px) { {width: 200px;} };">
     {% else %}
         <h1 class="d-flex justify-content-center" id="PageTitle">Upcoming Events</h1>
-        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 460px;">
+        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="@media screen and (max-width: 770px) { {width: 200px;} };">
     {% endif %}
 
 
@@ -51,6 +51,7 @@
         <!-- Event List body -->
         {% for event in events %}
             <div id="PostBody" style="margin: 10px 30px 50px 10px;" class="media content-section col-md-9 mx-auto">
+
                 <div class="media-body">
                     <img id="PostImage" src="{{ event.image.url }}">
                     <h1 id="ArticleTitle"><a href="{% url 'events-detail' event.id %}" style="color: black;">{{ event.title }}</a></h1>

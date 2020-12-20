@@ -42,7 +42,7 @@
         <div class="d-block mx-auto">
 
             <!-- Heading for this page -->
-            <h1 class="mb-3 d-flex justify-content-center" id="PageTitle">
+            <h1 class="mb-3 d-flex justify-content-center" id="PageTitle" style="@media screen and (max-width: 770px){ {font-size: 20px;} };">
                 Blogs by {{ view.kwargs.username }} {{req_user.username}}    ({{ posts.paginator.count }})
             </h1>
             <!-- Heading for this page -->

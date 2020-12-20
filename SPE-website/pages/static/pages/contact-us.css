@@ -1,6 +1,6 @@
 #PageTitle {
     font-family: 'adam.cg pro';
-    font-size: 60px;
+    font-size: 50px;
 }
 
 #UnderlineTitle {
@@ -27,18 +27,19 @@ p.contact-info {
 
 .query {
     clear: both;
-    margin-top: 250px;
+    margin-top: 100px;
 }
 
 .query-title {
     font-family: 'adam.cg pro';
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .query-underline {
     height: 0.8px;
     width: 270px;
     background-color: #007bff;
+    margin-bottom: 20px;
 }
 
 #SignUpBtn {
