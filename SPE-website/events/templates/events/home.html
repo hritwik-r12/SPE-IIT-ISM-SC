@@ -1,103 +1,85 @@
-{% extends "pages/base.html" %}
-{% load static %}
+{% extends "pages/base.html" %} {% load static %}
 
 <!-- Adding stylesheet to base template -->
 {% block content-blog %}
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
-{% endblock content-blog %}
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}"> {% endblock content-blog %}
 <!-- Adding stylesheet to base template -->
 
 {% block content %}
 <style>
     @media screen and (max-width: 770px) {
-        #PostBody {margin-left: 0;}
+        #PostBody {
+            margin-left: 0;
+        }
     }
 </style>
-        <br><br><br><br><br>
+<br><br><br><br><br>
 
 <div class="col-md-11" style="padding-left: 5%;">
 
     {% if not events %}
-        <h1 class="d-flex justify-content-center" id="PageTitle">No Upcoming Events</h1>
-        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="@media screen and (max-width: 770px) { {width: 200px;} };">
-    {% elif events.first.has_happened %}
-        <h1 class="d-flex justify-content-center" id="PageTitle">Past Events</h1>
-        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="@media screen and (max-width: 770px) { {width: 200px;} };">
-    {% else %}
-        <h1 class="d-flex justify-content-center" id="PageTitle">Upcoming Events</h1>
-        <hr class="d-flex justify-content-center" id="UnderlineTitle" style="@media screen and (max-width: 770px) { {width: 200px;} };">
-    {% endif %}
-
-
-    {% if not events %}
-        <h3>Upcoming Events</h3>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-    {% endif %}
+    <h1 class="d-flex justify-content-center" id="PageTitle">No Upcoming Events</h1>
+    <hr class="d-flex justify-content-center" id="UnderlineTitle" style="@media screen and (max-width: 770px) { {width: 200px;} };"> {% elif events.first.has_happened %}
+    <h1 class="d-flex justify-content-center" id="PageTitle">Past Events</h1>
+    <hr class="d-flex justify-content-center" id="UnderlineTitle" style="@media screen and (max-width: 770px) { {width: 200px;} };"> {% else %}
+    <h1 class="d-flex justify-content-center" id="PageTitle">Upcoming Events</h1>
+    <hr class="d-flex justify-content-center" id="UnderlineTitle" style="@media screen and (max-width: 770px) { {width: 200px;} };"> {% endif %} {% if not events %}
+    <h3>Upcoming Events</h3>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br> {% endif %}
 
     <div id="PostContainer">
         <!-- Event List body -->
         {% for event in events %}
-            <div id="PostBody" style="margin: 10px 30px 50px 10px;" class="media content-section col-md-9 mx-auto">
+        <div id="PostBody" style="margin: 10px 30px 50px 10px; overflow:hidden !important;" class="media content-section col-md-9 mx-auto">
 
-                <div class="media-body">
-                    <img id="PostImage" src="{{ event.image.url }}">
-                    <h1 id="ArticleTitle"><a href="{% url 'events-detail' event.id %}" style="color: black;">{{ event.title }}</a></h1>
-                    <div id="ArticleMetaData">
-                        <hr id="Underline" align="left">
-                    </div>
-                    <p class="article-content">{{ event.description }}</p>
-                    <p class="article-content">Last date to register: {{ event.reg_date }}</p>
-                    {% if event.has_happened %}
-                        <p></p>
-                    {% else %}
-                    <a href="{{event.google_doc_url}}">
-                        <button type="button" class="btn btn-primary" style="float: left;">Register</button>
-                    </a>
-                    {% endif %}
+            <div class="media-body">
+                <img id="PostImage" src="{{ event.image.url }}">
+                <h1 id="ArticleTitle"><a href="{% url 'events-detail' event.id %}" style="color: black;">{{ event.title }}</a></h1>
+                <div id="ArticleMetaData">
+                    <hr id="Underline" align="left">
                 </div>
+                <p class="article-content">{{ event.description }}</p>
+                <p class="article-content">Last date to register: {{ event.reg_date }}</p>
+                {% if event.has_happened %}
+                <p></p>
+                {% else %}
+                <a href="{{event.google_doc_url}}">
+                    <button type="button" class="btn btn-primary" style="float: left;">Register</button>
+                </a>
+                {% endif %}
             </div>
+        </div>
         {% endfor %}
         <!-- Event List body -->
     </div>
 
     <!-- Next/Previous Button Group -->
     <div class="d-flex justify-content-center">
-        {% if is_paginated %}
-
-            {% if page_obj.has_previous %}
-                <a class="btn btn-grp mb-4" href="?page={{ page_obj.previous_page_number }}">
-                    <span class="material-icons">arrow_back_ios</span>
-                </a>
-            {% endif %}
-
-            {% for num in page_obj.paginator.page_range %}
-                {% if page_obj.number == num %}
-                    <a class="btn btn-grp mb-4" href="?page={{ num }}">{{ num }}</a>
-                {% elif num > page_obj.number|add:'-2' and num < page_obj.number|add:'2' %}
-                    <a class="btn btn-grp mb-4" href="?page={{ num }}">{{ num }}</a>
-                {% endif %}
-            {% endfor %}
-
-            {% if page_obj.has_next %}
+        {% if is_paginated %} {% if page_obj.has_previous %}
+        <a class="btn btn-grp mb-4" href="?page={{ page_obj.previous_page_number }}">
+            <span class="material-icons">arrow_back_ios</span>
+        </a>
+        {% endif %} {% for num in page_obj.paginator.page_range %} {% if page_obj.number == num %}
+        <a class="btn btn-grp mb-4" href="?page={{ num }}">{{ num }}</a> {% elif num > page_obj.number|add:'-2' and num
+        < page_obj.number|add: '2' %} <a class="btn btn-grp mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% endif %} {% endfor %} {% if page_obj.has_next %}
             <a class="btn btn-grp mb-4" href="?page={{ page_obj.next_page_number }}">
                 <span class="material-icons">arrow_forward_ios</span>
             </a>
-            {% endif %}
-
-        {% endif %}
+            {% endif %} {% endif %}
     </div>
     <!-- Next/Previous Button Group -->
 

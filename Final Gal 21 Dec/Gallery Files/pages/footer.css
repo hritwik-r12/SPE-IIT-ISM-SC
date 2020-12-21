@@ -1,0 +1,78 @@
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: grey;
+   color: white;
+   text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/* Upper Footer Container */
+div#upper-footer {
+    background-color: #0d4c92;
+}
+/* Upper Footer Container */
+
+/* Upper Footer Text */
+h6.mb-0 {
+    color: white;
+    font-weight: 450;
+    font-size: 25px;
+    text-decoration: none;
+}
+/* Upper Footer Text */
+
+/* Social Media and other Icons */
+.fa {
+  font-size: 30px;
+  width: 60px;
+  text-align: left;
+  text-decoration: none;
+  color: white;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+/* Social Media and other Icons */
+
+/* Lower Footer Underline */
+hr.accent-2 {
+    background-color: #0d4c92 !important;
+    width: 100px;
+}
+/* Lower Footer Underline */
+
+/* Lower Footer container */
+div#lower-footer {
+    background-color: #232F3E;
+    padding: 1px 0px 0px 0px;
+}
+/* Lower Footer container */
+
+/* Lower Footer Text */
+h6.text-uppercase {
+    font-size: 23px;
+}
+
+div.col-md-6, div.col-md-4  {
+    color: white;
+    font-size: 17px;
+}
+/* Lower Footer Text */
+
+/* Lower Footer Contact Details */
+div.col-md-4 .fa {
+  width: 17px;
+}
+/* Lower Footer Contact Details */

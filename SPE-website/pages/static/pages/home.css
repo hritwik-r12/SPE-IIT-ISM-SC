@@ -28,8 +28,9 @@
 /* Header text effect */
 
 .text {
+    text-align: center !important;
     display: inline-block;
-    font-size: 8rem;
+    font-size: 450%;
     font-weight: 700;
 }
 
@@ -337,7 +338,7 @@
 
 .count-area .count-clients .single-counter .count-text h5 {
     color: #fff;
-    font-size: 36px;
+    font-size: 30px;
     text-transform: capitalize;
     margin-bottom: 0px;
     display: block

@@ -1,0 +1,40 @@
+.lower-navbar {
+    background-color: #262626;
+    position: relative;
+    top: 90px;
+    height: 50px;
+}
+
+.low-nav-item {
+    font-size: 19px  !important;
+    color: white;
+    padding-right: 25px;
+}
+
+#LowNavLink2 {
+    padding-right: 25px;
+}
+
+#LowNavLink0 a:active, #LowNavLink0 a:hover, #LowNavLink1 a:active, #LowNavLink2 a:active,
+ #LowNavLink1 a:hover, #LowNavLink2 a:hover {
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .low-nav-item {
+    font-size: 19px  !important;
+    color: white;
+    padding-right: 25px;
+}
+
+#LowNavLink2 {
+    padding-right: 25px;
+}
+
+#LowNavLink0 a:active, #LowNavLink0 a:hover, #LowNavLink1 a:active, #LowNavLink2 a:active,
+ #LowNavLink1 a:hover, #LowNavLink2 a:hover {
+    color: #bbbbbb;
+    text-decoration: none;
+}
+}

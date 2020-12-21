@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="pages/body.css">
+    <link rel="stylesheet" type="text/css" href="pages/navbar.css">
+    <link rel="stylesheet" type="text/css" href="pages/down-navbar.css">
+    <link rel="stylesheet" type="text/css" href="pages/scroll-to-top-button.css">
+    <link rel="stylesheet" type="text/css" href="pages/footer.css">
+
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/templatemo-video-catalog.css">
+
+
+
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- counter , waypoint -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js " integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin=" anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js " integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin=" anonymous "></script>
+
+    <!-- to load header files for blog -->
+<!--     {% block content-blog %} {% endblock content-blog %}
+ -->    <!-- to load header files for blog -->
+<!-- <style type="text/css">
+    .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: grey;
+   color: white;
+   text-align: center;
+}
+
+</style> -->
+</head>
+
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#26416c; box-shadow: none !important;">
+        <div class="container-fluid">
+            <a href="{% url 'home-page' %}" class="navbar-brand">
+                <img src="{% static 'pages/landingpage-bg/chapter-inv-logo.png' %}" style="height: 70px; margin: 10px">
+            </a>
+
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                </button>
+
+            <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="{% url 'home-page' %}" class="nav-item nav-link active" style="font-size: 23px;">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-item nav-link" style="font-size: 23px;" data-toggle="dropdown">Resources</a>
+                        <div class="dropdown-menu">
+                            <a href="{% url 'blog-home' %}" class="dropdown-item">Blogs</a>
+                            <a href="{% url 'gazette-page' %}" class="dropdown-item">Gazette</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-item nav-link" style="font-size: 23px;" data-toggle="dropdown">Events</a>
+                        <div class="dropdown-menu">
+                            <a href="{% url 'events-home' %}" class="dropdown-item">Upcoming</a>
+                            <a href="{% url 'events-past' %}" class="dropdown-item">Past</a>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'gallery-page' %}" style="font-size: 23px;" class="nav-item nav-link">Gallery</a></li>
+                    
+                    <li class="dropdown">
+                        <a><span class="material-icons" id="AccountCircle" >account_circle</span></a>
+                        <div class="dropdown-menu">
+                            <a href="{% url 'user-posts' user.username %}" class="dropdown-item">Profile</a>
+                            <a href="{% url 'signout-page' %}" class="dropdown-item">Sign Out</a>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-md lower-navbar" style="position: static; z-index: 1; height: 4em;">
+
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#basicExampleNav">
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item" id="LowNavLink0">
+                    <a class="low-nav-item" href="{% url 'core-team' %}">Core Team</a>
+                </li>
+                <li class="nav-item" id="LowNavLink1">
+                    <a class="low-nav-item" href="{% url 'contact-page' %}">Contact Us</a>
+                </li>
+                <li class="nav-item" id="LowNavLink2">
+                    <a class="low-nav-item" href="{% url 'about-page' %}">About Us</a>
+                </li>
+
+            </ul>
+            <!-- Links -->
+        </div>
+    </nav>
+    <!--/.Navbar-->
+
+    
+
+    <!-- Scroll to top Button -->
+    <button id="back-to-top-btn" style="z-index: 3;">
+            <i class="material-icons">arrow_upward</i>
+        </button>
+    <!-- Scroll to top Button -->
+
+
+
+
+
+
+<div class="tm-page-wrap mx-auto">
+        
+            <div class="tm-welcome-container text-center text-white">
+                <div class="tm-welcome-container-inner">
+                    <p class="tm-welcome-text mb-1 text-white">Welcome to our Photo Gallery</p>
+                    <p class="tm-welcome-text mb-5 text-white">SPE IIT ISM Dhanbad</p>
+                    <a href="#content" class="btn tm-btn-animate tm-btn-cta tm-icon-down">
+                        <span>Let's Go!!</span>
+                    </a>
+                </div>
+            </div>
+
+            <div id="tm-video-container">
+                <video autoplay muted loop id="tm-video">
+                    <!-- <source src="video/sunset-timelapse-video.mp4" type="video/mp4"> -->
+                        <source src="video/wheat-field.mp4" type="video/mp4">
+                </video>    
+            </div>
+            
+            <i id="tm-video-control-button" class="fas fa-pause"></i>
+        </div>
+
+        <div class="container-fluid">
+            <div id="content" class="mx-auto tm-content-container">
+                <main>
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="tm-page-title mb-4">Our Video Catalog</h2>
+                            <div class="tm-categories-container mb-5">
+                                <h3 class="tm-text-primary tm-categories-text">Categories:</h3>
+                                <ul class="nav tm-category-list">
+                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link active">All</a></li>
+                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Intern Talk</a></li>
+                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">FIPI</a></li>
+                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Teacher's Day</a></li>
+                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Induction</a></li>
+                                </ul>
+                            </div>        
+                        </div>
+                    </div>
+                    
+                    <div class="row tm-catalog-item-list">
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="img/i1.png" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="interntalk/intern.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>    
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Intern Talk</h3>
+                                <p class="tm-catalog-item-text">Video thumbnail has a link to another HTML page. 
+                                    Categories <span class="tm-text-secondary">do not need</span> any JS. 
+                                    They are just separated HTML pages. Paging is at the bottom to extend the list as long as you want. 
+                                    This can be a large catalog.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="img/t1.png" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Teacher's Day</h3>
+                                <p class="tm-catalog-item-text">Duis vulputate nisl metus, eget dapibus nunc ultricies id. Ut augue mauris, varius quis nulla non, sollicitudin consectetur nisl. Donec eget arcu placerat, ullamcorper.
+                                    <span class="tm-text-secondary">font-family: 'Source Sans Pro', sans-serif; for this template.</span></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="img/fipi1.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>                            
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">FIPI</h3>
+                                <p class="tm-catalog-item-text">Duis vulputate nisl metus, eget dapibus nunc ultricies id. Ut augue mauris, varius quis nulla non, sollicitudin consectetur nisl. Donec eget arcu placerat, ullamcorper.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="img/i1.png" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>    
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Induction</h3>
+                                <p class="tm-catalog-item-text">Duis vulputate nisl metus, eget dapibus nunc ultricies id. Ut augue mauris, varius quis nulla non, sollicitudin consectetur nisl. Donec eget arcu placerat, ullamcorper.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="img/t2.png" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Praesent posuere rhoncus</h3>
+                                <p class="tm-catalog-item-text">Duis vulputate nisl metus, eget dapibus nunc ultricies id. Ut augue mauris, varius quis nulla non, sollicitudin consectetur nisl. Donec eget arcu placerat, ullamcorper.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="img/i2.png" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>                            
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Turpis massa aliquam</h3>
+                                <p class="tm-catalog-item-text">Nunc neque risus, ultrices sed luctus at, iaculis at arcu. Pellentesque rutrum velit nec sapien ullamcorper ultrices. Vestibulum lectus risus, laoreet pretium ipsum</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="img/i3.png" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>    
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Class aptent taciti sociosqu</h3>
+                                <p class="tm-catalog-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus bibendum orci sit amet dignissim rhoncus. Pellentesque pretium faucibus vestibulum.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="img/i4.png" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Donec ac nisl ul elit</h3>
+                                <p class="tm-catalog-item-text">Suspendisse in odio congue, lobortis metus sed, venenatis nisl. In dapibus et massa feugiat facilisis. Maecenas venenatis aliquet nulla, a tincidunt erat suscipit eget.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                            <div class="position-relative tm-thumbnail-container">
+                                <img src="img/t3.png" alt="Image" class="img-fluid tm-catalog-item-img">    
+                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                    <i class="fas fa-play tm-overlay-icon"></i>
+                                </a>
+                            </div>                            
+                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sed mattis nisi erat</h3>
+                                <p class="tm-catalog-item-text">Integer ultricies mi eu aliquet cursus. Nam sem leo, imperdiet non lacinia eget, volutpat ac massa. Donec mattis in velit quis commodo. Cras nec rutrum arcu.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catalog Paging Buttons -->
+                    <div>
+                        <ul class="nav tm-paging-links">
+                            <li class="nav-item active"><a href="#" class="nav-link tm-paging-link">1</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link tm-paging-link">2</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link tm-paging-link">3</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link tm-paging-link">4</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link tm-paging-link">></a></li>
+                        </ul>
+                    </div>
+                </main>
+
+                            </div> <!-- tm-content-container -->
+        </div>
+
+    </div>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        function setVideoSize() {
+            const vidWidth = 1920;
+            const vidHeight = 1080;
+            let windowWidth = window.innerWidth;
+            let newVidWidth = windowWidth;
+            let newVidHeight = windowWidth * vidHeight / vidWidth;
+            let marginLeft = 0;
+            let marginTop = 0;
+
+            if (newVidHeight < 500) {
+                newVidHeight = 500;
+                newVidWidth = newVidHeight * vidWidth / vidHeight;
+            }
+
+            if(newVidWidth > windowWidth) {
+                marginLeft = -((newVidWidth - windowWidth) / 2);
+            }
+
+            if(newVidHeight > 720) {
+                marginTop = -((newVidHeight - $('#tm-video-container').height()) / 2);
+            }
+
+            const tmVideo = $('#tm-video');
+
+            tmVideo.css('width', newVidWidth);
+            tmVideo.css('height', newVidHeight);
+            tmVideo.css('margin-left', marginLeft);
+            tmVideo.css('margin-top', marginTop);
+        }
+
+        $(document).ready(function () {
+            /************** Video background *********/
+
+            setVideoSize();
+
+            // Set video background size based on window size
+            let timeout;
+            window.onresize = function () {
+                clearTimeout(timeout);
+                timeout = setTimeout(setVideoSize, 100);
+            };
+
+            // Play/Pause button for video background      
+            const btn = $("#tm-video-control-button");
+
+            btn.on("click", function (e) {
+                const video = document.getElementById("tm-video");
+                $(this).removeClass();
+
+                if (video.paused) {
+                    video.play();
+                    $(this).addClass("fas fa-pause");
+                } else {
+                    video.pause();
+                    $(this).addClass("fas fa-play");
+                }
+            });
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer-top">
+            <div class="container-fluid">
+                <div class="row" style="overflow: hidden">
+                    <div class="col-md-2 offset-md-1 footer-about">
+                        <img src="{% static 'pages/landingpage-bg/chapter-inv-logo.png' %}" style="height: 180px;" alt="logo-footer">
+                    </div>
+                    <div class="col-md-4 offset-md-1 footer-contact">
+                        <h3>Contact</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Department of Petroleum Engineering, IIT (ISM) Dhanbad (695.89 km) 826004 Dhanbad, Jharkhand, India</p>
+                        <p><i class="fas fa-phone"></i> Phone: 087098 43266</p>
+                        <p><i class="fas fa-envelope"></i> Email: <a href="#">speiitismsc@domain.com</a></p>
+                    </div>
+                    <div class="col-md-3 offset-md-1 footer-links">
+                        <div class="row">
+                            <div class="col">
+                                <h3>Links</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><a class="imp-link" href="https://www.spe.org/en/">SPE International</a></p>
+                                <p><a class="imp-link" href="https://www.iitism.ac.in/">IIT ISM Official Website</a></p>
+                                <p><a class="imp-link" href="https://parent.iitism.ac.in/index.php/parent_portal/portal0">Parents Portal</a></p>
+                                <p><a class="imp-link" href="https://www.fipi.org.in/">FIPI</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 footer-copyright">
+                        Copyright © 2020 All rights reserved | SPE IIT(ISM) Student Chapter
+                    </div>
+                    <div class="col-md-6 footer-social">
+                        <p style="display: inline;">Follow us on : </p>
+                        <a href="https://www.facebook.com/speismsc/" style="color:white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/spe_iitism/" style="color:white"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/spe-iit-ism-sc/" style="color: white;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="pages/top-button.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- counter , waypoint -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js " integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin=" anonymous "></script>
+
+
+    <script>
+        jQuery(function($) {
+            $(window).on('scroll', function() {
+                if ($(this).scrollTop() >= 200) {
+                    $('.navbar').addClass('fixed-top');
+                } else if ($(this).scrollTop() == 0) {
+                    $('.navbar').removeClass('fixed-top');
+                }
+            });
+
+            function adjustNav() {
+                var winWidth = $(window).width(),
+                    dropdown = $('.dropdown'),
+                    dropdownMenu = $('.dropdown-menu');
+
+                if (winWidth >= 768) {
+                    dropdown.on('mouseenter', function() {
+                        $(this).addClass('show')
+                            .children(dropdownMenu).addClass('show');
+                    });
+
+                    dropdown.on('mouseleave', function() {
+                        $(this).removeClass('show')
+                            .children(dropdownMenu).removeClass('show');
+                    });
+                } else {
+                    dropdown.off('mouseenter mouseleave');
+                }
+            }
+
+            $(window).on('resize', adjustNav);
+
+            adjustNav();
+        });
+    </script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
