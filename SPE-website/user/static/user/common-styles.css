@@ -47,3 +47,32 @@ button#SignUpBtn, button#SignInBtn {
     font-size: 25px;
     margin: 20px;
 }
+
+@media screen and (max-width:1200px) {
+    body {
+    background-image: url(/media/bg-images/dark-bg-slim.jpg);
+    font-size: 2em;
+}
+img#spe-logo {
+    height: 500px;
+}
+hr.accent-2 {
+    width: 90%;
+    height: 2px;
+}
+div.content-section {
+    width:90%;
+    background-color: white;
+    margin-top: 60px;
+}
+button#SignUpBtn, button#SignInBtn {
+    width: 80%;
+    font-size: 1.5em;
+}
+#SignInVert {
+    margin-top: 30%;
+}
+#SignUpVert {
+    margin-top: 15%;
+}
+}

@@ -18,11 +18,11 @@
         <form method="POST">
             {% csrf_token %}
             <fieldset class ="form-group">
-                <h1 class="border-bottom mb-4 d-flex justify-content-center" style="font-family:'adam.cg pro'; font-size: 200%;">Registration Form</h1>
+                <h1 class="border-bottom mb-4 d-flex justify-content-center" id="Title" style="font-family:'adam.cg pro'; font-size: 200%;">Registration Form</h1>
                 {{ r_form | crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-primary" type="submit" style=" margin: 20px 0 30px 0; height: 40px; width: 100px; font-size: 16px;">
+                <button class="btn btn-primary" id="Btn" type="submit" style=" margin: 20px 0 30px 0; height: 40px; width: 100px; font-size: 16px;">
                     Register
                 </button>
             </div>
@@ -33,4 +33,24 @@
         <br>
         <br>
     </div>
+
+<style>
+    @media screen and (max-width: 770px) {
+        html{
+            overflow: hidden;
+        }
+        .form-group{
+            width: 300px;
+            margin-left: -45%;
+        }
+        #Title {
+            font-size: 2.5em;
+            margin-left: -90%;
+        }
+        #Btn {
+            margin-left: -10% !important;
+        }
+    }
+</style>
+
     {% endblock content %}
