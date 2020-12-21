@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
 #PostBody {
     border: 1px solid #cfcfcf;
     margin-left: 50px;
     margin-bottom: 60px;
-    box-shadow: 9px 12px 20px -10px rgba(0,0,0,0.39);
+    box-shadow: 9px 12px 20px -10px rgba(0, 0, 0, 0.39);
     padding: 20px;
 }
 
@@ -13,7 +14,7 @@
 }
 
 #ArticleTitle {
-    font-family: lobster;
+    font-family: 'Dosis', sans-serif;
     font-size: 3em;
     margin-left: 20px;
 }
@@ -44,28 +45,26 @@ button.btn {
 #PageTitle {
     font-family: 'adam.cg pro';
     font-size: 60px;
-  }
+}
 
-  #UnderlineTitle {
+#UnderlineTitle {
     height: 0.8px;
     width: 250px;
     background-color: #007bff;
     margin-bottom: 50px;
-  }
+}
 
 @media screen and (max-width: 770px) {
     #PostImage {
-    width: 300px;
-    clear: both;
-    justify-content: center;
-}
-
-#ArticleTitle {
-    font-size: 2.5em;
-    margin-left: 5px;
-}
-
-div#ArticleMetaData {
-    margin-left: 5px;
-}
+        width: 300px;
+        clear: both;
+        justify-content: center;
+    }
+    #ArticleTitle {
+        font-size: 2.5em;
+        margin-left: 5px;
+    }
+    div#ArticleMetaData {
+        margin-left: 5px;
+    }
 }
