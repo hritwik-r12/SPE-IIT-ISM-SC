@@ -1,0 +1,1 @@
+web: gunicorn SPE-IIT-ISM-SC/SPE-website/spe.wsgi
