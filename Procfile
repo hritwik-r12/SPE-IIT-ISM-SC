@@ -1,1 +1,1 @@
-web: gunicorn spe.wsgi
+web: gunicorn --pythonpath SPE-website spe.wsgi
