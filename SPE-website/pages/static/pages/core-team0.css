@@ -167,6 +167,7 @@
   background-size: 150px 180px;
   height: 180px;
   width: 150px;
+  border-radius: 15px;
 }
 
 .round-img {
