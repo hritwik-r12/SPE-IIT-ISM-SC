@@ -1,1 +1,1 @@
-web: gunicorn SPE-website/spe.wsgi
+web: gunicorn SPE-website.spe.wsgi
