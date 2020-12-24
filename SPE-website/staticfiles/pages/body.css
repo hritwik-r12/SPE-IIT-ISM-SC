@@ -1,0 +1,13 @@
+body {
+    font-family: calibri;
+    box-sizing: border-box;
+}
+
+.message {
+    position: absolute;
+    top: 150px;
+    height: 40px;
+    width: 100%;
+    font-size: 17px;
+    z-index: 9999999999999;
+}

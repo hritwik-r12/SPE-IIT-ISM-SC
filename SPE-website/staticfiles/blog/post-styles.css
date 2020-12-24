@@ -1,0 +1,60 @@
+/* Post Container */
+#PostContainer {
+    margin: 40px;
+}
+/* Post Container */
+
+/* Post Title */
+#PostTitle {
+    font-family: 'adam.cg pro';
+    font-size: 60px;
+}
+/* Post Title */
+
+/* Post Underline */
+#PostUnderline {
+    width: 200px;
+    height: 1.5px;
+    background-color: #007bff;
+    margin-bottom: 20px;
+}
+/* Post Underline */
+
+/* Post Author and Date */
+#PostAuthDate {
+    font-size: 0.85em;
+}
+/* Post Author and Date */
+
+/* Post Image */
+#PostImage {
+    width: 800px;
+    margin: 20px;
+}
+/* Post Image */
+
+/* Blogs by User Heading */
+#UserBlogTitle {
+    font-family: 'adam.cg pro';
+    font-size: 45px;
+}
+/* Blogs by User Heading */
+
+/* Blogs by User title Underline */
+#UserPostTitleUnderline {
+    height: 0.8px;
+    width: 430px;
+    background-color: #007bff;
+    margin-bottom: 50px;
+}
+/* Blogs by User title Underline */
+
+@media screen and (max-width: 770px) {
+    #PostImage {
+    width: 350px;
+    margin: 5px;
+}
+#PostTitle {
+    font-size: 30px;
+}
+}
