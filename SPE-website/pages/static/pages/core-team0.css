@@ -136,13 +136,16 @@
     right: 75px;
 }
 
-@media screen and (min-width: 771px) and (max-width: 1500px) {
+@media screen and (min-width: 771px) and (max-width: 1199px) {
 .grid-container-3-col {
   grid-template-columns: auto auto;
   margin-left: 2%;
 }
 .grid-container {
     margin-left: 2%;
+}
+.flip-card {
+    margin:50px;
 }
 }
 
