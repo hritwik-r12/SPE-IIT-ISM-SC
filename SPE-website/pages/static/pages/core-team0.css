@@ -149,12 +149,14 @@
 @media screen and (max-width: 770px) {
 .grid-container-3-col {
   grid-template-columns: auto;
-  margin-left: 100px;
+  justify-content: center;
+  margin: auto;
 }
 
 .grid-container {
   grid-template-columns: auto;
-  margin-left: 100px;
+  justify-content: center;
+  margin: auto;
 }
 
 .flip-card {
