@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath SPE-website spe.wsgi
