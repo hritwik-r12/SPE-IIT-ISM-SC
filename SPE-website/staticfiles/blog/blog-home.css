@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+#PostBody {
+    border: 1px solid #cfcfcf;
+    margin-left: 50px;
+    margin-bottom: 60px;
+    box-shadow: 9px 12px 20px -10px rgba(0, 0, 0, 0.39);
+    padding: 20px;
+}
+
+#PostImage {
+    width: 350px;
+    margin: 20px;
+    float: right;
+}
+
+#ArticleTitle {
+    font-family: 'Dosis', sans-serif;
+    font-size: 3em;
+    margin-left: 20px;
+}
+
+div#ArticleMetaData {
+    font-size: 1.25em;
+    margin-left: 20px;
+}
+
+hr#Underline {
+    width: 30%;
+}
+
+p.article-content {
+    margin: 20px;
+    font-family: 'Oxygen', sans-serif;
+}
+
+button.btn {
+    width: 150px;
+    height: 50px;
+    font-size: 1.5em;
+    margin: 20px;
+    float: left;
+    clear: both;
+}
+
+#PageTitle {
+    font-family: 'adam.cg pro';
+    font-size: 60px;
+}
+
+#UnderlineTitle {
+    height: 0.8px;
+    width: 250px;
+    background-color: #007bff;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 770px) {
+    #PostImage {
+        width: 300px;
+        clear: both;
+        justify-content: center;
+    }
+    #ArticleTitle {
+        font-size: 2.5em;
+        margin-left: 5px;
+    }
+    div#ArticleMetaData {
+        margin-left: 5px;
+    }
+}

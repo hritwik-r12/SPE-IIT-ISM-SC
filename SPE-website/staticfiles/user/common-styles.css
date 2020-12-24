@@ -1,0 +1,78 @@
+/* contains the common files for the SignUp and SignIn page */
+
+/* Background Image */
+body {
+    box-sizing: border-box;
+    background-image: url(/media/bg-images/dark-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Background Image */
+
+/* form container */
+div.content-section {
+    width:600px;
+    padding: 30px 30px 10px 30px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+/* form container */
+
+/* SPE logo */
+img#spe-logo {
+    height: 250px;
+    margin-bottom: 20px;
+}
+/* SPE logo */
+
+/* Horizontal Divider */
+hr.accent-2 {
+    background-color: #0d4c92;
+    width: 500px;
+    margin: 20px;
+    height: 1px;
+}
+/* Horizontal Divider */
+
+a#SignUpAnchor {
+    text-decoration: none;
+}
+
+button#SignUpBtn, button#SignInBtn {
+    width: 500px;
+    font-size: 25px;
+    margin: 20px;
+}
+
+@media screen and (max-width:1200px) {
+    body {
+    background-image: url(/media/bg-images/dark-bg-slim.jpg);
+    font-size: 2em;
+}
+img#spe-logo {
+    height: 500px;
+}
+hr.accent-2 {
+    width: 90%;
+    height: 2px;
+}
+div.content-section {
+    width:90%;
+    background-color: white;
+    margin-top: 60px;
+}
+button#SignUpBtn, button#SignInBtn {
+    width: 80%;
+    font-size: 1.5em;
+}
+#SignInVert {
+    margin-top: 30%;
+}
+#SignUpVert {
+    margin-top: 15%;
+}
+}

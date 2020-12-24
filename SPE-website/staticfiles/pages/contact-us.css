@@ -1,0 +1,70 @@
+#PageTitle {
+    font-family: 'adam.cg pro';
+    font-size: 50px;
+}
+
+#UnderlineTitle {
+    height: 1px;
+    width: 250px;
+    background-color: #007bff;
+    margin-bottom: 50px;
+}
+
+.campus-map {
+    margin: 30px 30px 30px 0;
+    float: left;
+}
+
+i.fas {
+    font-size: 35px;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+
+p.contact-info {
+    font-size: 1.3em;
+}
+
+.query {
+    clear: both;
+    margin-top: 100px;
+}
+
+.query-title {
+    font-family: 'adam.cg pro';
+    font-size: 35px;
+}
+
+.query-underline {
+    height: 0.8px;
+    width: 270px;
+    background-color: #007bff;
+    margin-bottom: 20px;
+}
+
+#SignUpBtn {
+    height: 50px;
+    width: 150px;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media screen and (min-width: 771px) and (max-width: 1200px) {
+    .campus-map {
+        justify-content: center;
+        clear: both;
+    }
+    .container {
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .campus-map {
+        justify-content: center;
+        clear: both;
+        width: 100%;
+        margin-left: 0;
+    }
+}
