@@ -24,7 +24,10 @@
                 {% for post in posts %}
                     <div id="PostBody" class="media content-section col-md-8 mx-auto" style="padding: 20px;">
                         <div class="media-body">
-                            <img id="PostImage" src="{{ post.image.url }}">
+                            <img id="PostImage" src="{{ post.img_url }}">
+                            <!-- * *  use this {{post.img_url}} everywhere    * *-->
+                            <!-- * *  rewrite the blogs for new model to take effect              * * -->
+                            <!-- * *  post image on imagur and get the url with extention .png  * * -->
                             <h1 id="ArticleTitle">{{ post.title }}</h1>
                             <div id="ArticleMetaData">
                                 <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>

@@ -10,6 +10,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     overview = models.TextField()
     content = models.TextField()
+    img_url = models.URLField()
 
     def __str__(self):
         return self.title

@@ -11,6 +11,7 @@ class Events(models.Model):
     content = models.TextField()
     image = models.ImageField(null=True, blank=True, upload_to='event_poster')
     google_doc_url = models.URLField(max_length=500)
+    img_url= models.URLField()
 
     def __str__(self):
         return self.title
