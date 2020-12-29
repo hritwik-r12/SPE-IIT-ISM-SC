@@ -44,7 +44,6 @@ urlpatterns = [
     path('ContactUs/', pages_views.contact_us, name='contact-page'),
     path('markdownx/', include('markdownx.urls')),
     path('user/<str:username>/', blog_views.user_blog, name='user-posts'),
-    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ]
 
 # only works in debug mode
