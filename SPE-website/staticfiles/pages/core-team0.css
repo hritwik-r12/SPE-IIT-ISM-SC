@@ -1,0 +1,186 @@
+#PageTitle {
+    font-family: 'adam.cg pro';
+    font-size: 70px;
+  }
+
+  #UnderlineTitle {
+    height: 0.9px;
+    width: 250px;
+    background-color: #007bff;
+  }
+
+.team-vector {
+    width: 1500px;
+    margin-bottom: 60px;
+}
+
+.office-bearers {
+    font-family: 'adam.cg pro';
+    font-size: 40px;
+}
+
+.office-bearers-underline {
+    height: 0.8px;
+    width: 270px;
+    background-color: #007bff;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  margin-left: 20%;
+}
+
+.grid-container-3-col {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  margin-left: 10%;
+}
+
+.grid-item {
+  /* width: 480px;
+  padding: 20px; */
+  font-size: 23px;
+  text-align: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 360px;
+  margin-bottom: 90px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: transparent;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-size: 300px 360px;
+  color: white;
+  border-radius: 30px;
+  transform: rotateY(180deg);
+  height: 360px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.round-img {
+    border-radius: 30px;
+    width:300px;
+    height:360px;
+}
+
+.card-title {
+    font-family:'oxygen';
+    margin-top: 15px;
+    font-size: 33px;
+    font-weight: 800;
+}
+
+.underline {
+    background-color: white;
+    height: 0.5px;
+    width: 200px;
+    margin-bottom: 25px;
+}
+
+.card-content {
+    font-size: 1.3em;
+    font-family: 'oxygen';
+    font-weight: 500;
+}
+
+.fa {
+    font-size: 1.8em;
+    padding-left: 25px;
+    position: absolute;
+    bottom: 30px;
+}
+
+.fa-linkedin {
+    left: 70px;
+}
+
+.fa-facebook {
+    right: 75px;
+}
+
+@media screen and (min-width: 771px) and (max-width: 1500px) {
+.grid-container-3-col {
+  grid-template-columns: auto auto;
+  margin-left: 2%;
+}
+.grid-container {
+    margin-left: 2%;
+}
+}
+
+@media screen and (max-width: 770px) {
+.grid-container-3-col {
+  grid-template-columns: auto;
+  margin-left: 100px;
+}
+
+.grid-container {
+  grid-template-columns: auto;
+  margin-left: 100px;
+}
+
+.flip-card {
+  width: 150px;
+  height: 180px;
+  margin-bottom: 45px;
+}
+
+.flip-card-back {
+  background-size: 150px 180px;
+  height: 180px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+.round-img {
+    border-radius: 15px;
+    width:150px;
+    height:180px;
+}
+
+h1.card-title { font-size: 1.2em; }
+
+hr.underline { margin-bottom: 10px; }
+
+p.card-content { font-size: 0.85em; }
+
+i.fa { font-size: 1.25em; bottom: 15px; }
+}
