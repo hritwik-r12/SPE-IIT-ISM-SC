@@ -27,7 +27,7 @@ SECRET_KEY = 'u#!0l9!&g73jd!#-2o-wv11)et-gyb!axj)_5)98k2l8%x28$c'
 # SECURITY WARNING: don't run with debug turned on in production!!!
 DEBUG = True
 
-ALLOWED_HOSTS = ['iitismspe.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['iitismspe.herokuapp.com', '127.0.0.1','www.iitismspe.org']
 
 
 # Application definition
