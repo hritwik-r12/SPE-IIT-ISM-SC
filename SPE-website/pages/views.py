@@ -34,8 +34,8 @@ def teacher(request):
 def fipi(request): 
     return render(request, 'pages/fipi.html')
 
-def induction(request): 
-    return render(request, 'pages/induction.html')    
+def basant(request): 
+    return render(request, 'pages/basant.html')    
 
 def core_team(request):
     return render(request, 'pages/core-team.html')
