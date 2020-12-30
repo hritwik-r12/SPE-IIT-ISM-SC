@@ -31,6 +31,12 @@ def intern(request):
 def teacher(request): 
     return render(request, 'pages/teacher.html')
 
+def fipi(request): 
+    return render(request, 'pages/fipi.html')
+
+def induction(request): 
+    return render(request, 'pages/induction.html')    
+
 def core_team(request):
     return render(request, 'pages/core-team.html')
 
