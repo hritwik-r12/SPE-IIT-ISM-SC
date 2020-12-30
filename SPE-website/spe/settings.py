@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -27,8 +26,7 @@ SECRET_KEY = 'u#!0l9!&g73jd!#-2o-wv11)et-gyb!axj)_5)98k2l8%x28$c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['iitismspe.herokuapp.com', '127.0.0.1','www.iitismspe.org']
-
+ALLOWED_HOSTS = ['iitismspe.herokuapp.com', '127.0.0.1', 'www.iitismspe.org']
 
 # Application definition
 
@@ -78,7 +76,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'spe.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -100,7 +97,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -119,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -132,7 +127,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -152,8 +146,8 @@ MEDIA_URL = '/media/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_USE_TLS= True
-EMAIL_HOST_USER = '' #add company email
-EMAIL_HOST_PASSWORD = '' #add company password to send email for password reset.
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ''  # add company email
+EMAIL_HOST_PASSWORD = ''  # add company password to send email for password reset.
 
-DEFAULT_FROM_EMAIL = '' #add company email
+DEFAULT_FROM_EMAIL = ''  # add company email

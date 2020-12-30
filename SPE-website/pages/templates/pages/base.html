@@ -67,7 +67,7 @@
                     <li><a href="{% url 'gallery-page' %}" style="font-size: 23px;" class="nav-item nav-link">Gallery</a></li>
                     {% if user.is_authenticated %}
                     <li class="dropdown">
-                        <a><span class="material-icons" id="AccountCircle" >account_circle</span></a>
+                        <a href="#" data-toggle="dropdown"><span class="material-icons" id="AccountCircle" >account_circle</span></a>
                         <div class="dropdown-menu">
                             <a href="{% url 'user-posts' user.username %}" class="dropdown-item">Profile</a>
                             <a href="{% url 'signout-page' %}" class="dropdown-item">Sign Out</a>

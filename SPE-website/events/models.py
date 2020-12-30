@@ -10,7 +10,7 @@ class Events(models.Model):
     reg_date = models.DateField()
     content = models.TextField()
     google_doc_url = models.URLField(max_length=500)
-    img_url= models.URLField()
+    img_url = models.URLField()
 
     def __str__(self):
         return self.title
