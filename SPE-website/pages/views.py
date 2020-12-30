@@ -38,7 +38,13 @@ def basant(request):
     return render(request, 'pages/basant.html')    
 
 def cdd(request): 
-    return render(request, 'pages/cdd.html') 
+    return render(request, 'pages/cdd.html')
+
+def hall(request): 
+    return render(request, 'pages/hall.html') 
+
+def m(request): 
+    return render(request, 'pages/m.html') 
 
 def core_team(request):
     return render(request, 'pages/core-team.html')
