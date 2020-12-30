@@ -39,6 +39,7 @@ urlpatterns = [
     path('SignOut/', user_views.logout, name='signout-page'),
     path('Events/', include('events.urls')),
     path('Gallery/', pages_views.gallery, name='gallery-page'),
+    path('intern/', pages_views.intern, name='intern-page'),
     path('Gazette/', pages_views.gazette, name='gazette-page'),
     path('CoreTeam/', pages_views.core_team, name='core-team'),
     path('ContactUs/', pages_views.contact_us, name='contact-page'),
