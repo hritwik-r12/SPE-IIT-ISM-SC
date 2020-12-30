@@ -4,7 +4,7 @@ from django.core.mail import send_mail, BadHeaderError
 
 from .forms import MessagesForUsForm
 import mimetypes
-
+import os
 
 def landing_page(request):
     return render(request, 'pages/landing-page.html')
@@ -60,7 +60,7 @@ def contact_us(request):
             sender = form.cleaned_data['sender']
             sender_email= form.cleaned_data['sender_email']
             body = message + "\nEmail: " + sender_email + "\nName: "+ sender
-            email = '' #add comany email
+            email=os.environ.get('USER_EMAIL') #add comany email
             try:
                 send_mail(subject, body, email, [email])
             except BadHeaderError:
