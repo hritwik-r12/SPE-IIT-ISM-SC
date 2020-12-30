@@ -28,7 +28,13 @@
                 <!-- Horizontal Divider -->
                 <hr class="accent-2 mb-4 mt-0 d-block mx-auto">
                 <!-- Horizontal Divider -->
-
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
                 {{ form|crispy }}
             </fieldset>
 
