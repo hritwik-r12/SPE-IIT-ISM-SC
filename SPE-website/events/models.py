@@ -9,7 +9,6 @@ class Events(models.Model):
     description = models.CharField(max_length=300)
     reg_date = models.DateField()
     content = models.TextField()
-    image = models.ImageField(null=True, blank=True, upload_to='event_poster')
     google_doc_url = models.URLField(max_length=500)
     img_url= models.URLField()
 
