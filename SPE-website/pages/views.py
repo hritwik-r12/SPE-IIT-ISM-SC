@@ -28,6 +28,8 @@ def gallery(request):
 def intern(request): 
     return render(request, 'pages/intern.html')
 
+def teacher(request): 
+    return render(request, 'pages/teacher.html')
 
 def core_team(request):
     return render(request, 'pages/core-team.html')
