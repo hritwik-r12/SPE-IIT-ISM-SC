@@ -37,6 +37,9 @@ def fipi(request):
 def basant(request): 
     return render(request, 'pages/basant.html')    
 
+def cdd(request): 
+    return render(request, 'pages/cdd.html') 
+
 def core_team(request):
     return render(request, 'pages/core-team.html')
 

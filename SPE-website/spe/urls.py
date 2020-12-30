@@ -43,6 +43,7 @@ urlpatterns = [
     path('teacher/', pages_views.teacher, name='teacher-page'),
     path('fipi/', pages_views.fipi, name='fipi-page'),
     path('basant/', pages_views.basant, name='basant-page'),
+    path('cdd/', pages_views.cdd, name='cdd-page'),
     path('Gazette/', pages_views.gazette, name='gazette-page'),
     path('CoreTeam/', pages_views.core_team, name='core-team'),
     path('ContactUs/', pages_views.contact_us, name='contact-page'),
