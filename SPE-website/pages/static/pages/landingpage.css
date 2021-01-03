@@ -1,7 +1,7 @@
 body {
     height: 98%;
-    background-image: url(/media/bg-images/premium.jpg);
-    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(/media/bg-images/premium.jpg);
+    background-image: url(https://i.imgur.com/qrpw3uX.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://i.imgur.com/qrpw3uX.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -108,8 +108,7 @@ body {
 }
 
 .button:hover {
-    box-shadow: 0 0px 25px 0 #4cf7db inset, 0 0px 25px 0 #4cf7db,
-                0 0px 25px 0 #4cf7db inset, 0 0px 25px 0 #4cf7db;
+    box-shadow: 0 0px 25px 0 #4cf7db inset, 0 0px 25px 0 #4cf7db, 0 0px 25px 0 #4cf7db inset, 0 0px 25px 0 #4cf7db;
     text-shadow: 0 0 5px #4cf7db, 0 0 5px #4cf7db;
 }
 

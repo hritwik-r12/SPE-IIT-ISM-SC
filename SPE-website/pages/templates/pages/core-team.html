@@ -1,12 +1,6 @@
-{% extends 'pages/base.html' %}
-{% load static %}
-
-{% block content-blog %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'pages/core-team0.css' %}">
-{% endblock content-blog %}
-
-{% block content %}
+{% extends 'pages/base.html' %} {% load static %} {% block content-blog %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'pages/core-team0.css' %}"> {% endblock content-blog %} {% block content %}
 <style>
 
 </style>
@@ -16,387 +10,377 @@
         justify-content: center;
         margin: auto;
     }
+    
     .grid-container-3-col {
         justify-content: center;
         margin: auto;
     }
-     @media screen and (min-width: 1200px) {
-     .flip-card { margin: 70px; }
-      }
-    @media screen and (max-width: 770px) { .flip-card { margin: 20px; } }
+    
+    @media screen and (min-width: 1200px) {
+        .flip-card {
+            margin: 70px;
+        }
+    }
+    
+    @media screen and (max-width: 770px) {
+        .flip-card {
+            margin: 20px;
+        }
+    }
 </style>
 
-    <br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 
-    <div class="container col-md-11">
+<div class="container col-md-11">
 
-        <!-- Team Image-->
-        <div class="d-block mx-auto">
-            <h1 class="d-flex justify-content-center" id="PageTitle" style="font-size: 6rem;">Our Team</h1>
-                <hr class="d-flex justify-content-center" id="UnderlineTitle">
+    <!-- Team Image-->
+    <div class="d-block mx-auto">
+        <h1 class="d-flex justify-content-center" id="PageTitle" style="font-size: 6rem;">Our Team</h1>
+        <hr class="d-flex justify-content-center" id="UnderlineTitle">
+    </div>
+
+    <img class="team-vector d-block mx-auto" style="width: 100%; height: auto;" src="{% static 'pages/team-images/team-vector.png' %}">
+    <!-- Team Image-->
+
+    <!--Office Bearers Section-->
+    <div class="d-block mx-auto">
+        <h1 class="office-bearers d-flex justify-content-center">Office Bearers:</h1>
+        <hr class="office-bearers-underline d-block mx-auto" style="margin-bottom: 40px;">
+    </div>
+    <div class="d-block mx-auto">
+        <div class="grid-container">
+
+            <!-- Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="round-img" src="{% static 'pages/office-bearers/HOD.jpg' %}" alt="Avatar">
+                    </div>
+                    <div class="flip-card-back flip-border" style="background-image: url(/static/pages/office-bearers/HOD-blur.jpg);">
+                        <h1 class="card-title" style="color: black;">Dr. Ajay Mandal</h1>
+                        <hr class="underline" style="background-color: black;">
+                        <p class="card-content" style="color: black;">Head of the Department, Petroleum Engineering Department</p>
+                        <a href="https://www.linkedin.com/in/ajay-mandal-62762524/"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/mandal.ajay"><i class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+
+            <!-- Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="round-img" src="{% static 'pages/office-bearers/covener.jpg' %}" alt="Avatar">
+                    </div>
+                    <div class="flip-card-back flip-border" style="background-image: url(/static/pages/office-bearers/covener-blur.jpg);">
+                        <h1 class="card-title" style="color: white;">Dr. Neetish Kumar Maurya</h1>
+                        <hr class="underline" style="background-color: white;">
+                        <p class="card-content" style="color: white;">Faculty Convener</p>
+                        <a href="https://www.facebook.com/neetishmaurya"><i class="fa fa-facebook"></i></a>
+                        <a href=" https://www.linkedin.com/in/neetish-kumar-maurya-22b08a1a/?originalSubdomain=in">
+                            <i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+
+            <!-- Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="round-img" src="{% static 'pages/office-bearers/debosmit-sir.jpg' %}" alt="Avatar">
+                    </div>
+                    <div class="flip-card-back flip-border" style="background-image: url(/static/pages/office-bearers/debosmit-sir-blur.jpg);">
+                        <h1 class="card-title" style="color: white;">Debosmit Banerjee</h1>
+                        <hr class="underline" style="background-color: white;">
+                        <p class="card-content" style="color: white;">President</p>
+                        <a href="https://www.linkedin.com/in/debosmit-banerjee/?originalSubdomain=in">
+                            <i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+
+            <!-- Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="round-img" src="https://i.imgur.com/rbRyfQ8.jpg" alt="Avatar">
+                    </div>
+                    <div class="flip-card-back flip-border" style="background-image: url(https://i.imgur.com/raAvZsN.jpg);">
+                        <h1 class="card-title" style="color: white;">Sankhadip Biswas</h1>
+                        <hr class="underline" style="background-color: white;">
+                        <p class="card-content" style="color: white;">Vice President</p>
+                        <a href="https://www.facebook.com/sankhadipbiswas03"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/sankhadipbiswas/"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
         </div>
 
-        <img class="team-vector d-block mx-auto" style="width: 100%; height: auto;" src="{% static 'pages/team-images/team-vector.png' %}">
-        <!-- Team Image-->
+        <div class="grid-container-3-col">
+            <!-- Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="round-img" src="{% static 'pages/office-bearers/aritra-sir.jpg' %}" alt="Avatar">
+                    </div>
+                    <div class="flip-card-back flip-border" style="background-image: url(/static/pages/office-bearers/aritra-sir-blur.jpg);">
+                        <h1 class="card-title" style="color:white;">Aritra Roy</h1>
+                        <hr class="underline" style="background-color: white;">
+                        <p class="card-content" style="color: white;">General Secretary</p>
+                        <a href=" https://www.linkedin.com/in/aritraroype/"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/aritra.roy.96592836"><i class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
 
-        <!--Office Bearers Section-->
-        <div class="d-block mx-auto">
-            <h1 class="office-bearers d-flex justify-content-center">Office Bearers:</h1>
-            <hr class="office-bearers-underline d-block mx-auto" style="margin-bottom: 40px;">
+            <!-- Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="round-img" src="{% static 'pages/office-bearers/shubham-sir.jpg' %}" alt="Avatar">
+                    </div>
+                    <div class="flip-card-back flip-border" style="background-image: url(/static/pages/office-bearers/shubham-sir-blur.jpg);">
+                        <h1 class="card-title" style="color: white;">Shubham Agarwal</h1>
+                        <hr class="underline" style="background-color: white;">
+                        <p class="card-content" style="color: white;">Communications Chairperson</p>
+                        <a href="https://www.linkedin.com/in/shubham-agarwal-552aa0173/"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100021658957419"><i class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
+
+            <!-- Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="round-img" src="{% static 'pages/office-bearers/ashish-sir.jpg' %}" alt="Avatar">
+                    </div>
+                    <div class="flip-card-back flip-border" style="background-image: url(/static/pages/office-bearers/ashish-sir-blur.jpg);">
+                        <h1 class="card-title" style="color: black;">Ashish Shukla</h1>
+                        <hr class="underline" style="background-color: black;">
+                        <p class="card-content" style="color: black;">Social Activities Chair</p>
+                        <a href="https://in.linkedin.com/in/ashish-shukla2021"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/ashish.shukla.5836"><i class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card -->
         </div>
-        <div class="d-block mx-auto">
-                <div class="grid-container">
 
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/office-bearers/HOD.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/office-bearers/HOD-blur.jpg);">
-                          <h1 class="card-title" style="color: black;">Dr. Ajay Mandal</h1>
-                          <hr class="underline" style="background-color: black;">
-                          <p class="card-content" style="color: black;">Head of the Department, Petroleum Engineering Department</p>
-                          <a href="https://www.linkedin.com/in/ajay-mandal-62762524/"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/mandal.ajay"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
+        <div class="grid-container">
+            <!-- Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="round-img" src="{% static 'pages/office-bearers/harshit-sir.jpg' %}" alt="Avatar">
                     </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/office-bearers/covener.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/office-bearers/covener-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Dr. Neetish Kumar Maurya</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Faculty Convener</p>
-                          <a href="https://www.facebook.com/neetishmaurya"><i class="fa fa-facebook"></i></a>
-                          <a href=" https://www.linkedin.com/in/neetish-kumar-maurya-22b08a1a/?originalSubdomain=in">
-                              <i class="fa fa-linkedin"></i></a>
-                        </div>
-                      </div>
+                    <div class="flip-card-back flip-border" style="background-image: url(/static/pages/office-bearers/harshit-sir-blur.jpg);">
+                        <h1 class="card-title" style="color: white;">Harshit Pathak</h1>
+                        <hr class="underline" style="background-color: white;">
+                        <p class="card-content" style="color: white;">Technical Chair</p>
+                        <a href="https://www.linkedin.com/in/harshitpathak0311/"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/harshit.pathak.90663"><i class="fa fa-facebook"></i></a>
                     </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/office-bearers/debosmit-sir.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/office-bearers/debosmit-sir-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Debosmit Banerjee</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">President</p>
-                          <a href="https://www.linkedin.com/in/debosmit-banerjee/?originalSubdomain=in">
-                              <i class="fa fa-linkedin"></i></a>
-                          <a href="#"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/office-bearers/sankhdip-sir.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/office-bearers/sankhdip-sir-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Sankhadip Biswas</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Vice President</p>
-                          <a href="https://www.facebook.com/sankhadipbiswas03"><i class="fa fa-facebook"></i></a>
-                          <a href="https://www.linkedin.com/in/sankhadipbiswas/"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
                 </div>
+            </div>
+            <!-- Card -->
 
-                <div class="grid-container-3-col">
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/office-bearers/aritra-sir.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/office-bearers/aritra-sir-blur.jpg);">
-                          <h1 class="card-title" style="color:white;">Aritra Roy</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">General Secretary</p>
-                          <a href=" https://www.linkedin.com/in/aritraroype/"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/aritra.roy.96592836"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
+            <!-- Card -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img class="round-img" src="{% static 'pages/office-bearers/jalaj-sir.jpg' %}" alt="Avatar">
                     </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/office-bearers/shubham-sir.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/office-bearers/shubham-sir-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Shubham Agarwal</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Communications Chairperson</p>
-                          <a href="https://www.linkedin.com/in/shubham-agarwal-552aa0173/"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/profile.php?id=100021658957419"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
+                    <div class="flip-card-back flip-border" style="background-image: url(/static/pages/office-bearers/jalaj-sir-blur.jpg);">
+                        <h1 class="card-title" style="color: white;">Jalaj Tripathi</h1>
+                        <hr class="underline" style="background-color: white;">
+                        <p class="card-content" style="color: white;">Program Chairperson</p>
+                        <a href="https://www.linkedin.com/in/jalaj-tripathi-78768615a/"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/jalaj.tripathi.188"><i class="fa fa-facebook"></i></a>
                     </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/office-bearers/ashish-sir.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/office-bearers/ashish-sir-blur.jpg);">
-                          <h1 class="card-title" style="color: black;">Ashish Shukla</h1>
-                          <hr class="underline" style="background-color: black;">
-                          <p class="card-content" style="color: black;">Social Activities Chair</p>
-                          <a href="https://in.linkedin.com/in/ashish-shukla2021"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/ashish.shukla.5836"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
                 </div>
+            </div>
+            <!-- Card -->
+        </div>
 
-                <div class="grid-container">
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/office-bearers/harshit-sir.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/office-bearers/harshit-sir-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Harshit Pathak</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Technical Chair</p>
-                          <a href="https://www.linkedin.com/in/harshitpathak0311/"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/harshit.pathak.90663"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
+    </div>
+</div>
+</div>
+<!--Office Bearers Section-->
 
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/office-bearers/jalaj-sir.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/office-bearers/jalaj-sir-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Jalaj Tripathi</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Program Chairperson</p>
-                          <a href="https://www.linkedin.com/in/jalaj-tripathi-78768615a/"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/jalaj.tripathi.188"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
+<br><br><br><br><br>
+
+<!--Core Team Section-->
+<div class="d-block mx-auto">
+    <h1 class="office-bearers d-flex justify-content-center">Core Team:</h1>
+    <hr class="office-bearers-underline d-block mr-auto" style="margin-bottom: 40px;">
+</div>
+<img class="team-vector d-block mx-auto" src="{% static 'pages/team-images/core-team.jpg' %}" style=" width: 90%; height: auto;">
+<!--Core Team Section-->
+
+<br><br><br><br>
+
+<!-- Developer Section -->
+<div class="d-block mx-auto">
+    <h1 class="office-bearers d-flex justify-content-center">Developer Team:</h1>
+    <hr class="office-bearers-underline d-block mx-auto" style="margin-bottom: 40px;">
+</div>
+<div class="d-block mx-auto col-md-11">
+    <div class="grid-container">
+
+        <!-- Card -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img class="round-img" src="{% static 'pages/developer-img/rajwardhan-sir.jpg' %}" alt="Avatar">
                 </div>
-
+                <div class="flip-card-back flip-border" style="background-image: url(/static/pages/developer-img/rajwardhan-sir-blur.jpg);">
+                    <h1 class="card-title" style="color: white;">Rajvardhan Rawat</h1>
+                    <hr class="underline" style="background-color: white;">
+                    <p class="card-content" style="color: white;">Team Leader</p>
+                    <a href="https://www.linkedin.com/in/rajvardhanrawat/"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
                 </div>
             </div>
         </div>
-        <!--Office Bearers Section-->
+        <!-- Card -->
 
-        <br><br><br><br><br>
-
-        <!--Core Team Section-->
-        <div class="d-block mx-auto">
-            <h1 class="office-bearers d-flex justify-content-center">Core Team:</h1>
-            <hr class="office-bearers-underline d-block mr-auto" style="margin-bottom: 40px;">
-        </div>
-        <img class="team-vector d-block mx-auto"src="{% static 'pages/team-images/core-team.jpg' %}" style=" width: 90%; height: auto;">
-        <!--Core Team Section-->
-
-        <br><br><br><br>
-
-        <!-- Developer Section -->
-        <div class="d-block mx-auto">
-            <h1 class="office-bearers d-flex justify-content-center">Developer Team:</h1>
-            <hr class="office-bearers-underline d-block mx-auto" style="margin-bottom: 40px;">
-        </div>
-        <div class="d-block mx-auto col-md-11">
-                <div class="grid-container">
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/developer-img/rajwardhan-sir.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/developer-img/rajwardhan-sir-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Rajvardhan Rawat</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Team Leader</p>
-                          <a href="https://www.linkedin.com/in/rajvardhanrawat/"><i class="fa fa-linkedin"></i></a>
-                          <a href="#"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/developer-img/raj-sir.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/developer-img/raj-sir-blur.jpg);">
-                          <h1 class="card-title" style="color: black;">Raj Kumar Singh</h1>
-                          <hr class="underline" style="background-color: black;">
-                          <p class="card-content" style="color: white;">Team Leader</p>
-                          <a href="#"><i class="fa fa-facebook"></i></a>
-                          <a href="https://www.linkedin.com/in/raj-kumar-singh-272a8b179">
-                              <i class="fa fa-linkedin"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
+        <!-- Card -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img class="round-img" src="{% static 'pages/developer-img/raj-sir.jpg' %}" alt="Avatar">
                 </div>
-
-
-                <div class="grid-container-3-col">
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/developer-img/omkar.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/developer-img/omkar-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Omkar Kurlekar</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Front End Developer</p>
-                          <a href="https://www.linkedin.com/in/omkar-kurlekar-54788119b/"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://m.facebook.com/profile.php?id=100039375039521&ref=content_filter">
-                              <i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/developer-img/shirin.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/developer-img/shirin-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Shirin Kaul</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Back End Developer</p>
-                          <a href="https://www.linkedin.com/in/shirin-kaul-b09282190/"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/shirin.kaul.315"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/developer-img/hritvik.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/developer-img/hritvik-blur.jpg);">
-                          <h1 class="card-title" style="color: black;">Hritwik Ranjan</h1>
-                          <hr class="underline" style="background-color: black;">
-                          <p class="card-content" style="color: white;">Front End Developer</p>
-                          <a href="https://www.linkedin.com/in/hritwik-ranjan-a250491a2"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/profile.php?id=100009683348917"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/developer-img/shadan.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/developer-img/shadan-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Shadan Arif</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color:white;">Front End Developer</p>
-                          <a href="https://www.linkedin.com/in/shadan-arif-24b1791b2/"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/shadan.arif.333/"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/developer-img/nirmalya.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/developer-img/nirmalya-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Nirmalya Basu</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Content Writer</p>
-                          <a href="http://linkedin.com/in/nirmalya-basu-6161a4120">
-                              <i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/nirmalya.basu.14">
-                              <i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
-
-                    <!-- Card -->
-                    <div class="flip-card">
-                      <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                          <img class="round-img" src="{% static 'pages/developer-img/satyam.jpg' %}" alt="Avatar">
-                        </div>
-                        <div class="flip-card-back flip-border"
-                             style="background-image: url(/static/pages/developer-img/satyam-blur.jpg);">
-                          <h1 class="card-title" style="color: white;">Satyam Gupta</h1>
-                          <hr class="underline" style="background-color: white;">
-                          <p class="card-content" style="color: white;">Designer</p>
-                          <a href="https://www.linkedin.com/in/satyam-gupta-a3b73a120/"><i class="fa fa-linkedin"></i></a>
-                          <a href="https://www.facebook.com/profile.php?id=100037141251561"><i class="fa fa-facebook"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Card -->
-
+                <div class="flip-card-back flip-border" style="background-image: url(/static/pages/developer-img/raj-sir-blur.jpg);">
+                    <h1 class="card-title" style="color: black;">Raj Kumar Singh</h1>
+                    <hr class="underline" style="background-color: black;">
+                    <p class="card-content" style="color: white;">Team Leader</p>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/raj-kumar-singh-272a8b179">
+                        <i class="fa fa-linkedin"></i></a>
                 </div>
-
+            </div>
         </div>
-        <!-- Developer Section -->
+        <!-- Card -->
+    </div>
 
-                    <br><br><br>
 
-{% endblock content %}
+    <div class="grid-container-3-col">
+        <!-- Card -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img class="round-img" src="{% static 'pages/developer-img/omkar.jpg' %}" alt="Avatar">
+                </div>
+                <div class="flip-card-back flip-border" style="background-image: url(/static/pages/developer-img/omkar-blur.jpg);">
+                    <h1 class="card-title" style="color: white;">Omkar Kurlekar</h1>
+                    <hr class="underline" style="background-color: white;">
+                    <p class="card-content" style="color: white;">Front End Developer</p>
+                    <a href="https://www.linkedin.com/in/omkar-kurlekar-54788119b/"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://m.facebook.com/profile.php?id=100039375039521&ref=content_filter">
+                        <i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img class="round-img" src="{% static 'pages/developer-img/shirin.jpg' %}" alt="Avatar">
+                </div>
+                <div class="flip-card-back flip-border" style="background-image: url(/static/pages/developer-img/shirin-blur.jpg);">
+                    <h1 class="card-title" style="color: white;">Shirin Kaul</h1>
+                    <hr class="underline" style="background-color: white;">
+                    <p class="card-content" style="color: white;">Back End Developer</p>
+                    <a href="https://www.linkedin.com/in/shirin-kaul-b09282190/"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/shirin.kaul.315"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img class="round-img" src="{% static 'pages/developer-img/hritvik.jpg' %}" alt="Avatar">
+                </div>
+                <div class="flip-card-back flip-border" style="background-image: url(/static/pages/developer-img/hritvik-blur.jpg);">
+                    <h1 class="card-title" style="color: black;">Hritwik Ranjan</h1>
+                    <hr class="underline" style="background-color: black;">
+                    <p class="card-content" style="color: white;">Front End Developer</p>
+                    <a href="https://www.linkedin.com/in/hritwik-ranjan-a250491a2"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100009683348917"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img class="round-img" src="{% static 'pages/developer-img/shadan.jpg' %}" alt="Avatar">
+                </div>
+                <div class="flip-card-back flip-border" style="background-image: url(/static/pages/developer-img/shadan-blur.jpg);">
+                    <h1 class="card-title" style="color: white;">Shadan Arif</h1>
+                    <hr class="underline" style="background-color: white;">
+                    <p class="card-content" style="color:white;">Front End Developer</p>
+                    <a href="https://www.linkedin.com/in/shadan-arif-24b1791b2/"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/shadan.arif.333/"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img class="round-img" src="{% static 'pages/developer-img/nirmalya.jpg' %}" alt="Avatar">
+                </div>
+                <div class="flip-card-back flip-border" style="background-image: url(/static/pages/developer-img/nirmalya-blur.jpg);">
+                    <h1 class="card-title" style="color: white;">Nirmalya Basu</h1>
+                    <hr class="underline" style="background-color: white;">
+                    <p class="card-content" style="color: white;">Content Writer</p>
+                    <a href="http://linkedin.com/in/nirmalya-basu-6161a4120">
+                        <i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/nirmalya.basu.14">
+                        <i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+
+        <!-- Card -->
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img class="round-img" src="{% static 'pages/developer-img/satyam.jpg' %}" alt="Avatar">
+                </div>
+                <div class="flip-card-back flip-border" style="background-image: url(/static/pages/developer-img/satyam-blur.jpg);">
+                    <h1 class="card-title" style="color: white;">Satyam Gupta</h1>
+                    <hr class="underline" style="background-color: white;">
+                    <p class="card-content" style="color: white;">Designer</p>
+                    <a href="https://www.linkedin.com/in/satyam-gupta-a3b73a120/"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100037141251561"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Card -->
+
+    </div>
+
+</div>
+<!-- Developer Section -->
+
+<br><br><br> {% endblock content %}
