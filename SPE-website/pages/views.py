@@ -25,6 +25,9 @@ def gazette(request):
 def gallery(request):    
     return render(request, 'pages/finalgallery.html')
 
+def tgal(request):    
+    return render(request, 'pages/testgal.html')
+
 def intern(request): 
     return render(request, 'pages/intern.html')
 
