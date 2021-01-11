@@ -28,6 +28,9 @@ def gallery(request):
 def tgal(request):    
     return render(request, 'pages/testgal.html')
 
+def tgal2(request):    
+    return render(request, 'pages/tgal2.html')
+
 def intern(request): 
     return render(request, 'pages/intern.html')
 
