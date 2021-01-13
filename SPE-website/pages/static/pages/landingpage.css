@@ -1,7 +1,7 @@
 body {
     height: 98%;
-    background-image: url(https://i.imgur.com/qrpw3uX.jpg);
-    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://i.imgur.com/qrpw3uX.jpg);
+    background-image: url('https://i.imgur.com/qrpw3uX.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.imgur.com/qrpw3uX.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
