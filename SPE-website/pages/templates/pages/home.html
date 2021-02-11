@@ -395,6 +395,14 @@
         }
     }
     /* <link type="text/css" href="{% static 'pages/home.css' %}"> */
+
+    @media screen and (max-width: 1199px) {
+        .desktop { display: none; }
+    }
+    @media screen and (min-width: 1200px) {
+        .mobile { display: none; }
+    }
+
 </style>
 {% endblock content-blog %} {% block content %}
 <div style="padding-top:90px;"></div>
@@ -454,31 +462,107 @@
     </div>
 </div>
 <!-- Who we are and announcement section end-->
+<br><br>
 
 <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_5eab7"></div>
-  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/symbols/TVC-USOIL/" rel="noopener" target="_blank"><span class="blue-text">USOIL Chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
+<div class="tradingview-widget-container desktop" style="margin: auto;">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/futures/" rel="noopener" target="_blank"><span class="blue-text">Commodities</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
   {
-  "autosize": true,
-  "symbol": "TVC:USOIL",
-  "interval": "D",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
+  "colorTheme": "dark",
+  "dateRange": "12M",
+  "showChart": true,
   "locale": "in",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "allow_symbol_change": true,
-  "container_id": "tradingview_5eab7"
+  "largeChartUrl": "",
+  "isTransparent": false,
+  "showSymbolLogo": true,
+  "width": "1000",
+  "height": "550",
+  "plotLineColorGrowing": "rgba(25, 118, 210, 1)",
+  "plotLineColorFalling": "rgba(25, 118, 210, 1)",
+  "gridLineColor": "rgba(42, 46, 57, 1)",
+  "scaleFontColor": "rgba(120, 123, 134, 1)",
+  "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+  "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+  "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+  "tabs": [
+    {
+      "title": "Commodities",
+      "symbols": [
+        {
+          "s": "NYMEX:CL1!",
+          "d": "Crude Oil"
+        },
+        {
+          "s": "NYMEX:NG1!",
+          "d": "Natural Gas"
+        },
+        {
+          "s": "TVC:UKOIL"
+        },
+        {
+          "s": "TVC:USOIL"
+        }
+      ],
+      "originalTitle": "Commodities"
+    }
+  ]
 }
-  );
   </script>
 </div>
 <!-- TradingView Widget END -->
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container mobile" style="margin:auto;">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/futures/" rel="noopener" target="_blank"><span class="blue-text">Commodities</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+  {
+  "colorTheme": "dark",
+  "dateRange": "12M",
+  "showChart": true,
+  "locale": "in",
+  "largeChartUrl": "",
+  "isTransparent": false,
+  "showSymbolLogo": true,
+  "width": "360",
+  "height": "550",
+  "plotLineColorGrowing": "rgba(25, 118, 210, 1)",
+  "plotLineColorFalling": "rgba(25, 118, 210, 1)",
+  "gridLineColor": "rgba(42, 46, 57, 1)",
+  "scaleFontColor": "rgba(120, 123, 134, 1)",
+  "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+  "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+  "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+  "tabs": [
+    {
+      "title": "Commodities",
+      "symbols": [
+        {
+          "s": "NYMEX:CL1!",
+          "d": "Crude Oil"
+        },
+        {
+          "s": "NYMEX:NG1!",
+          "d": "Natural Gas"
+        },
+        {
+          "s": "TVC:UKOIL"
+        },
+        {
+          "s": "TVC:USOIL"
+        }
+      ],
+      "originalTitle": "Commodities"
+    }
+  ]
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+<br><br>
 
 <!-- Blogs Section -->
 
