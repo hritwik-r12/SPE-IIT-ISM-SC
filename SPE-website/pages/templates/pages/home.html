@@ -395,14 +395,18 @@
         }
     }
     /* <link type="text/css" href="{% static 'pages/home.css' %}"> */
-
+    
     @media screen and (max-width: 1199px) {
-        .desktop { display: none; }
+        .desktop {
+            display: none;
+        }
     }
+    
     @media screen and (min-width: 1200px) {
-        .mobile { display: none; }
+        .mobile {
+            display: none;
+        }
     }
-
 </style>
 {% endblock content-blog %} {% block content %}
 <div style="padding-top:90px;"></div>
@@ -443,12 +447,11 @@
                             <marquee direction="up" onmouseover="this.stop();" onmouseout="this.start(); " scrollamount="3">
                                 <p> <b>
                                  <br> <a href="#">1. WELCOME TO THE OFFICIAL WEBSITE OF SPE IIT ISM STUDENT CHAPTER!</a><br>
-                                 <br> <a href="https://us02web.zoom.us/j/83751133072?pwd=MWY1dVZ2d2F6Y0pqNEh2bEFIRWlzUT09">
-                                    2. Welcoming 2021 Batch! INDUCTIONS at 30th January 2021,
-                                    5PM onwards- introductory sessions to SPE and IIT ISM Student Chapter.</a><br>
-                                 <br> <a href="http://www.iitismspe.org/Events/Event/15/">3. SPE IIT (ISM) and SPE TAMU jointly presents INTER-CHAPTER RESEARCH EXCHANGE.
-                                    Participants need to submit Abstract by 05/02/2021 in the given link. Click for more information.</a><br>
-                                 <br> <a href="#">4. The deadline for INTER-CHAPTER RESEARCH EXCHANGE has been extended till 12th February, 2021.</a><br>
+                                 <br> <a href="{% url 'gazette-page' %}">
+                                    2. Themed as "Unravelling a Metamorph: Energy in Transit", Gazette 10.0 is here to take you to an erudite virtual read-out ride!!</a><br>
+                                 <!-- <br> <a href="http://www.iitismspe.org/Events/Event/15/">3. SPE IIT (ISM) and SPE TAMU jointly presents INTER-CHAPTER RESEARCH EXCHANGE.
+                                    Participants need to submit Abstract by 05/02/2021 in the given link. Click for more information.</a><br> -->
+                                 <!-- <br> <a href="#">4. The deadline for INTER-CHAPTER RESEARCH EXCHANGE has been extended till 12th February, 2021.</a><br> -->
                                 </b></p>
                             </marquee>
                             <br>
@@ -468,118 +471,98 @@
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container desktop" style="margin: auto; margin-bottom: 50px;">
     <h1 style="font-size: 3em; font-weight: 600; padding-bottom: 15px;">Oil Prices Chart:</h1>
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/futures/" rel="noopener" target="_blank"><span class="blue-text">Commodities</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-  {
-  "colorTheme": "dark",
-  "dateRange": "3M",
-  "showChart": true,
-  "locale": "in",
-  "largeChartUrl": "",
-  "isTransparent": false,
-  "showSymbolLogo": true,
-  "width": "1000",
-  "height": "720",
-  "plotLineColorGrowing": "rgba(25, 118, 210, 1)",
-  "plotLineColorFalling": "rgba(25, 118, 210, 1)",
-  "gridLineColor": "rgba(182, 182, 182, 0)",
-  "scaleFontColor": "rgba(120, 123, 134, 1)",
-  "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
-  "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
-  "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
-  "tabs": [
-    {
-      "title": "Commodities",
-      "symbols": [
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/futures/" rel="noopener" target="_blank"><span class="blue-text">Commodities</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
         {
-          "s": "NYMEX:CL1!",
-          "d": "Crude Oil"
-        },
-        {
-          "s": "NYMEX:NG1!",
-          "d": "Natural Gas"
-        },
-        {
-          "s": "TVC:USOIL"
-        },
-        {
-          "s": "TVC:UKOIL"
-        },
-        {
-          "s": "NYMEX:RB1!"
-        },
-        {
-          "s": "NYMEX:YF1!"
-        },
-        {
-          "s": "CBOT:EH1!"
+            "colorTheme": "dark",
+            "dateRange": "3M",
+            "showChart": true,
+            "locale": "in",
+            "largeChartUrl": "",
+            "isTransparent": false,
+            "showSymbolLogo": true,
+            "width": "1000",
+            "height": "720",
+            "plotLineColorGrowing": "rgba(25, 118, 210, 1)",
+            "plotLineColorFalling": "rgba(25, 118, 210, 1)",
+            "gridLineColor": "rgba(182, 182, 182, 0)",
+            "scaleFontColor": "rgba(120, 123, 134, 1)",
+            "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+            "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+            "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+            "tabs": [{
+                "title": "Commodities",
+                "symbols": [{
+                    "s": "NYMEX:CL1!",
+                    "d": "Crude Oil"
+                }, {
+                    "s": "NYMEX:NG1!",
+                    "d": "Natural Gas"
+                }, {
+                    "s": "TVC:USOIL"
+                }, {
+                    "s": "TVC:UKOIL"
+                }, {
+                    "s": "NYMEX:RB1!"
+                }, {
+                    "s": "NYMEX:YF1!"
+                }, {
+                    "s": "CBOT:EH1!"
+                }],
+                "originalTitle": "Commodities"
+            }]
         }
-      ],
-      "originalTitle": "Commodities"
-    }
-  ]
-}
-  </script>
+    </script>
 </div>
 <!-- TradingView Widget END -->
 
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container mobile" style="margin: auto; margin-bottom: 50px;">
     <h1 style="font-size: 2em; font-weight: 600; padding-bottom: 5px;">Oil Prices Chart:</h1>
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/futures/" rel="noopener" target="_blank"><span class="blue-text">Commodities</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
-  {
-  "colorTheme": "dark",
-  "dateRange": "3M",
-  "showChart": true,
-  "locale": "in",
-  "largeChartUrl": "",
-  "isTransparent": false,
-  "showSymbolLogo": true,
-  "width": "360",
-  "height": "700",
-  "plotLineColorGrowing": "rgba(25, 118, 210, 1)",
-  "plotLineColorFalling": "rgba(25, 118, 210, 1)",
-  "gridLineColor": "rgba(182, 182, 182, 0)",
-  "scaleFontColor": "rgba(120, 123, 134, 1)",
-  "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
-  "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
-  "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
-  "tabs": [
-    {
-      "title": "Commodities",
-      "symbols": [
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/futures/" rel="noopener" target="_blank"><span class="blue-text">Commodities</span></a> by TradingView</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
         {
-          "s": "NYMEX:CL1!",
-          "d": "Crude Oil"
-        },
-        {
-          "s": "NYMEX:NG1!",
-          "d": "Natural Gas"
-        },
-        {
-          "s": "TVC:USOIL"
-        },
-        {
-          "s": "TVC:UKOIL"
-        },
-        {
-          "s": "NYMEX:RB1!"
-        },
-        {
-          "s": "NYMEX:YF1!"
-        },
-        {
-          "s": "CBOT:EH1!"
+            "colorTheme": "dark",
+            "dateRange": "3M",
+            "showChart": true,
+            "locale": "in",
+            "largeChartUrl": "",
+            "isTransparent": false,
+            "showSymbolLogo": true,
+            "width": "360",
+            "height": "700",
+            "plotLineColorGrowing": "rgba(25, 118, 210, 1)",
+            "plotLineColorFalling": "rgba(25, 118, 210, 1)",
+            "gridLineColor": "rgba(182, 182, 182, 0)",
+            "scaleFontColor": "rgba(120, 123, 134, 1)",
+            "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+            "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+            "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+            "tabs": [{
+                "title": "Commodities",
+                "symbols": [{
+                    "s": "NYMEX:CL1!",
+                    "d": "Crude Oil"
+                }, {
+                    "s": "NYMEX:NG1!",
+                    "d": "Natural Gas"
+                }, {
+                    "s": "TVC:USOIL"
+                }, {
+                    "s": "TVC:UKOIL"
+                }, {
+                    "s": "NYMEX:RB1!"
+                }, {
+                    "s": "NYMEX:YF1!"
+                }, {
+                    "s": "CBOT:EH1!"
+                }],
+                "originalTitle": "Commodities"
+            }]
         }
-      ],
-      "originalTitle": "Commodities"
-    }
-  ]
-}
-  </script>
+    </script>
 </div>
 <!-- TradingView Widget END -->
 
@@ -691,12 +674,12 @@
                 </div>
             </div>
             <div class="col-md-6 offset-md-2 col-sm-12 " style="color: black !important;font-family: 'Dosis', sans-serif; margin-bottom: 8%;" data-aos="fade-up " data-aos-duration="1500">
-                <p style="font-size: 4rem; font-weight: 700; text-align: center; ">GAZETTE 2020</p>
-                <div class="card-gazette " style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url( '/media/blog_images/oilrig_q8U2v17.jpg') ">
+                <p style="font-size: 4rem; font-weight: 700; text-align: center; ">GAZETTE 2021</p>
+                <div class="card-gazette " style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.imgur.com/lRDm1Ic.jpg) ">
                     <div class="gazette-body ">
-                        <h3 class="card-title " style="font-weight: 500; font-size: 2.5rem; color:#fff; ">ILLUSTRATING UNCONVENTIONAL PASSION</h3>
+                        <h3 class="card-title " style="font-weight: 500; font-size: 2.5rem; color:#fff; ">UNRAVELLING A METAMORPH: ENERGY IN TRANSIT</h3>
                         <p class="card-description ">
-                            <div style="color: hsla(0,0%,100%,.7)!important; padding: 5% 0%; ">"Illustrating Unconventional Passion " presents to you a collection of successful start-ups led by the passionate and audacious entrepreneurs with a dream to transform the Oil & Gas industry.</div>
+                            <div style="color: hsla(0,0%,100%,.7)!important; padding: 5% 0%; ">This gazette, inspired by SPE International's newsletter, "The Way Ahead", started out as a magazine on the oil and gas scenario to dessiminate knowledge about technical advancements in exploration and production.</div>
                         </p>
                         <!-- <a href="# " class="btn btn-danger btn-round ">
                                     <i class="material-icons ">subject</i> Read
