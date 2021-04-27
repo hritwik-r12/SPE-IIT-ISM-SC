@@ -5,8 +5,6 @@
     {% block content-blog %}
         <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!--        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">-->
-<!--        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">-->
         <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
     {% endblock content-blog %}
@@ -16,6 +14,7 @@
         <br><br><br><br><br><br><br>
 
         <div class="d-block mx-auto">
+            <!-- CSS: blog-home.css line 45-55 -->
             <h1 class="d-flex justify-content-center" id="PageTitle">SPE Blogs</h1>
             <hr class="d-flex justify-content-center" id="UnderlineTitle">
 
@@ -23,6 +22,7 @@
                 <!-- Blog Post body -->
                 {% for post in posts %}
                     <div id="PostBody" class="media content-section col-md-8 mx-auto" style="padding: 20px;">
+                        <!-- CSS: blog-home.css line 10-43 -->
                         <div class="media-body">
                             <img id="PostImage" src="{{ post.img_url }}">
                             <!-- * *  use this {{post.img_url}} everywhere    * *-->
@@ -54,6 +54,7 @@
                         </a>
                     {% endif %}
 
+                    <!-- CSS: button-group.css -->
                     {% for num in page_obj.paginator.page_range %}
                         {% if page_obj.number == num %}
                             <a class="btn btn-grp mb-4" href="?page={{ num }}">{{ num }}</a>

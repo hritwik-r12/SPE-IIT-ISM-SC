@@ -5,9 +5,6 @@
     {% block content-blog %}
         <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!--        <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-body.css' %}">-->
-<!--        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-styles.css' %}">-->
-<!--        <link rel="stylesheet" type="text/css" href="{% static 'blog/post-body.css' %}">-->
         <link rel="stylesheet" type="text/css" href="{% static 'blog/blog-home.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/button-group.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'blog/profile.css' %}">
@@ -21,14 +18,19 @@
         <!--User info only visible to logged in user-->
         <!--added a temporary style, frontend guys can change it later -Shirin -->
         {% if req_user == user %}
+            <!-- CSS: blog-home.css line 45-55 -->
             <h1 class="mb-3 d-flex justify-content-center" id="PageTitle">Profile information</h1>
             <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 25%;">
+
             <div id="PostContainer">
+                <!-- CSS: blog-home.css line 2-8 -->
                 <div id="PostBody" class="media content-section col-md-7 mx-auto" style="padding: 20px;">
                     <div class="media-body">
                         <div>
+                            <!-- CSS: profile.css line 7-10 -->
                             <img class="profile-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7wrKjpbjvQzLHlQfvKO8gsopOJBvbCEXe1A&usqp=CAU">
                         </div>
+                        <!-- CSS: profile.css line 1-5 -->
                         <p class="profile-element">Username: {{ user.username }}</p>
                         <p class="profile-element">E-Mail: {{ user.email }} </p>
                         <p class="profile-element">SPE-ID: {{ user.foobar.SPE_ID }}</p>
@@ -41,19 +43,22 @@
 
         <div class="d-block mx-auto">
 
-            <!-- Heading for this page -->
+            <!-- Heading for this page CSS: blog-home.css line 45-48 -->
             <h1 class="mb-3 d-flex justify-content-center" id="PageTitle" style="@media screen and (max-width: 770px){ {font-size: 20px;} };">
                 Blogs by {{ view.kwargs.username }} {{req_user.username}}    ({{ posts.paginator.count }})
             </h1>
             <!-- Heading for this page -->
 
+            <!-- CSS: blog-home.css line 50-55 -->
             <hr class="d-flex justify-content-center" id="UnderlineTitle" style="width: 25%;">
 
             <!-- Blog Post Body -->
             <div id="PostContainer">
             {% for post in posts %}
+                    <!-- CSS: blog-home.css line 2-8 -->
                     <div id="PostBody" class="media content-section col-md-8 mx-auto" style="padding: 20px;">
                         <div class="media-body">
+                            <!-- CSS: blog-home.css line 16-20, 31-34 -->
                             <h1 id="ArticleTitle">{{ post.title }}</h1>
                             <p class="article-content">{{ post.overview }}</p>
                         </div>
@@ -65,6 +70,7 @@
             <!-- Next/Previous Buttons -->
             <div class="d-flex justify-content-center">
                 {% if posts.has_other_pages %}
+                <!-- CSS: button-group.css  -->
 
                     {% if posts.has_previous %}
                         <a class="btn btn-grp mb-4" href="?page={{ page_obj.previous_page_number }}">

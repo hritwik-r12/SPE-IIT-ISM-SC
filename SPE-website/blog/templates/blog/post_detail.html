@@ -15,15 +15,16 @@
         <br><br><br><br><br><br><br>
 
         <div class="d-flex justify-content-center">
+            <!--  CSS: post-styles.css line 2-4 -->
             <div id="PostContainer" class="col-md-10">
                 <div class="media-body">
 
-                    <!-- Post Title -->
+                    <!-- Post Title  CSS: post-styles line 8-20 -->
                     <h1 id="PostTitle" class="article-title d-flex justify-content-center">{{ object.title }}</h1>
-                    <!-- Post Title -->
                     <hr id="PostUnderline" class="d-flex justify-content-center">
+                    <!-- Post Title -->
 
-                    <!-- Post author and Date -->
+                    <!-- Post author and Date CSS: post-styles.css line 24-26 -->
                     <div id="PostAuthDate" class="d-flex justify-content-center">
                         <div class="article-metadata">Author:
                             <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
@@ -32,11 +33,11 @@
                     </div>
                     <!-- Post author and Date -->
 
-                    <!-- Post Image -->
+                    <!-- Post Image CSS: post-styles.css line 30-33 -->
                     <img id="PostImage" src ="{{ object.img_url }}">
                     <!-- Post Image -->
 
-                    <!-- Post Content -->
+                    <!-- Post Content CSS: blog-body.css line 43-45 -->
                     <p class="article-content">{{ object.content | markdown | safe }}</p>
                     <!-- Post Content -->
 
