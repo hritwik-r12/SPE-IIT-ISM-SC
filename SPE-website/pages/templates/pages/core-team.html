@@ -1,9 +1,23 @@
-{% extends 'pages/base.html' %} {% load static %} {% block content-blog %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="{% static 'pages/core-team0.css' %}"> {% endblock content-blog %} {% block content %}
-<style>
+{% extends 'pages/base.html' %}
+{% load static %}
 
-</style>
+{% block content-blog %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'pages/core-team0.css' %}">
+{% endblock content-blog %}
+
+<!--To change images of the office bearers, crop the 2 images in a 4:5 ratio-->
+<!--Name the first image in the format {name}-sir.jpg, and blur the second image using Gaussian blur filter in Ps-->
+<!--and name it in the format {name}-sir-blur.jpg-->
+<!--Paste both of these images in the /static/pages/office-bearers/  ie where the previous office bearers images are stored-->
+<!--Paste the first image's link in img.round-image and the second image's link in div.flip-card-back-->
+<!--or simply, after storing the images in the concerned file change the image src by just editing the name-->
+<!--Eg, pages/office-bearers/ABC-sir.jpg  to  pages/office-bearers/XYZ-sir.jpg on line 114 -->
+<!--Eg, /static/pages/office-bearers/ABC-sir-blur.jpg  to  /static/pages/office-bearers/XYZ-sir-blur.jpg on line 116 -->
+<!--Also change the facebook and linkedin links-->
+<!--You can also change the text colour in contrast to the image, either black or white, no other colour-->
+
+{% block content %}
 
 <style>
     .grid-container {
@@ -33,33 +47,41 @@
 
 <div class="container col-md-11">
 
-    <!-- Team Image-->
+    <!-- Team Image CSS: core-team0.css line 1-10 -->
     <div class="d-block mx-auto">
         <h1 class="d-flex justify-content-center" id="PageTitle" style="font-size: 6rem;">Our Team</h1>
         <hr class="d-flex justify-content-center" id="UnderlineTitle">
     </div>
 
+    <!-- CSS: core-team0.css line 12-15 -->
     <img class="team-vector d-block mx-auto" style="width: 100%; height: auto;" src="{% static 'pages/team-images/team-vector.png' %}">
     <!-- Team Image-->
 
-    <!--Office Bearers Section-->
+    <!--Office Bearers Section CSS: core-team0.css line 17-26 -->
     <div class="d-block mx-auto">
         <h1 class="office-bearers d-flex justify-content-center">Office Bearers:</h1>
         <hr class="office-bearers-underline d-block mx-auto" style="margin-bottom: 40px;">
     </div>
     <div class="d-block mx-auto">
+        <!-- CSS: core-team0.css line 28-33 -->
         <div class="grid-container">
 
-            <!-- Card -->
+            <!-- Additional instructions given above from line 9-18 -->
+
+            <!-- Card CSS: core-team0.css line 49-85 -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
+                        <!-- Card CSS: core-team0.css line 98-102, 73-79 -->
                         <img class="round-img" src="{% static 'pages/office-bearers/HOD.jpg' %}" alt="Avatar">
                     </div>
+                    <!-- Card CSS: core-team0.css line 88-96 -->
                     <div class="flip-card-back flip-border" style="background-image: url(/static/pages/office-bearers/HOD-blur.jpg);">
+                        <!-- Card CSS: core-team0.css line 104-109, 111-116, 118-122 -->
                         <h1 class="card-title" style="color: black;">Dr. Ajay Mandal</h1>
                         <hr class="underline" style="background-color: black;">
                         <p class="card-content" style="color: black;">Head of the Department, Petroleum Engineering Department</p>
+                        <!-- Card CSS: core-team0.css line 124-137 -->
                         <a href="https://www.linkedin.com/in/ajay-mandal-62762524/"><i class="fa fa-linkedin"></i></a>
                         <a href="https://www.facebook.com/mandal.ajay"><i class="fa fa-facebook"></i></a>
                     </div>
@@ -121,6 +143,7 @@
             <!-- Card -->
         </div>
 
+        <!-- Card CSS: core-team0.css line 35-40, core-team.html line 14-17 -->
         <div class="grid-container-3-col">
             <!-- Card -->
             <div class="flip-card">
@@ -271,7 +294,7 @@
         <!-- Card -->
     </div>
 
-
+    <!-- Card CSS: core-team0.css line 35-40, core-team.html line 14-17 -->
     <div class="grid-container-3-col">
         <!-- Card -->
         <div class="flip-card">

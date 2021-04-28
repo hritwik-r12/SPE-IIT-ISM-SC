@@ -11,17 +11,18 @@
 <br><br><br><br><br><br><br>
 
     <div class="container" style="overflow: auto;">
+        <!-- CSS: contact-us.css line 1-11 -->
         <h1 class="d-flex justify-content-center" id="PageTitle">Contact Us</h1>
         <hr class="d-flex justify-content-center" id="UnderlineTitle">
 
-        <!-- Map -->
+        <!-- Map  CSS: contact-us.css line 13-16 -->
             <iframe class="campus-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.050993378705!2d86.44052288742586!3d23.816785667484353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f6bc9e686d5683%3A0x86d9a087075f347b!2sDepartment%20of%20Petroleum%20Engineering!5e0!3m2!1sen!2sin!4v1606394674410!5m2!1sen!2sin"
                 width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         <!-- Map -->
 
         <div class="container" style="margin-top: 150px;">
 
-            <!-- Address -->
+            <!-- Address  CSS: contact-us.css line 24-26, 18-22 -->
             <p class="contact-info"><i class="fas fa-map-marker-alt"></i>
                 Department of Petroleum Engineering, IIT (ISM) Dhanbad, Hirapur, Sardar Patel Nagar, Dhanbad, Jharkhand 826004</p>
             <br>
@@ -36,7 +37,7 @@
             <p class="contact-info"><i class="fas fa-envelope"></i> Email: speiitism@gmail.com</p>
             <!-- Email -->
 
-            <!-- Query Form-->
+            <!-- Query Form  CSS: contact-us.css line 28-31, 33-36, 38-43 -->
             <div class="query">
                 <form method="POST">
                     {% csrf_token %}
@@ -50,7 +51,7 @@
                         {{ form|crispy }}
                     </fieldset>
 
-                    <!-- Sign Up Button -->
+                    <!-- Sign Up Button  CSS: contact-us.css line 45-51 -->
                     <div class="form-group">
                         <button type="submit" id="SignUpBtn" class="btn btn-outline-primary waves-effect"
                         style="margin-top: 0px; align-self: center;">Submit</button>
