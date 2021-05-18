@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Events(models.Model):
     objects = None
     title = models.CharField(max_length=300)
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=400)
     reg_date = models.DateField()
     content = models.TextField()
     google_doc_url = models.URLField(max_length=500)
