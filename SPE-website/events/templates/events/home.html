@@ -56,9 +56,17 @@
                 {% if event.has_happened %}
                 <p></p>
                 {% else %}
-                <a href="{{event.google_doc_url}}">
-                    <button type="button" class="btn btn-primary" style="float: left;">Register</button>
-                </a>
+
+                {% if user.is_authenticated %}
+                    <a href="{{event.google_doc_url}}">
+                        <button type="button" class="btn btn-primary" style="float: left;">Register</button>
+                    </a>
+                {% else %}
+                    <a href="{% url 'signin-page' %}">
+                        <button type="button" class="btn btn-primary" style="float: left;">Sign In First</button>
+                    </a>
+                {% endif %}
+
                 {% endif %}
             </div>
         </div>
