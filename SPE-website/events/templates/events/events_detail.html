@@ -40,11 +40,19 @@
                         <p></p>
                     {% else %}
 
+<!--                    {% if user.is_authenticated %}-->
                         <a href="{{ object.google_doc_url }}">
                             <button type="button" class="btn btn-primary" style="width: 150px; height: 50px; font-size: 20px;">
                                 Register
                             </button>
                         </a>
+<!--                    {% else %}-->
+<!--                        <a href="{% url 'signin-page' %}">-->
+<!--                            <button type="button" class="btn btn-primary" style="width: 300px; height: 50px; font-size: 20px;">-->
+<!--                                Sign In to Register-->
+<!--                            </button>-->
+<!--                        </a>-->
+<!--                    {% endif %}-->
 
                     {% endif %}
 
