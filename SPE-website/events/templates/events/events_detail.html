@@ -11,7 +11,7 @@
 
     {% block content %}
 
-        <br><br><br><br><br><br><br>
+        <br><br><br><br><br><br>
 
         <div class="d-flex justify-content-center">
             <div id="PostContainer" class="col-md-10">
@@ -21,6 +21,7 @@
                     <h1 id="PostTitle" class="article-title d-flex justify-content-center">{{ object.title }}</h1>
                     <!-- Post Title -->
                     <hr id="PostUnderline" class="d-flex justify-content-center" style="width: 330px;">
+                    <br><br>
 
                     <!-- Event Poster -->
                     {% if object.img_url %}
