@@ -25,7 +25,13 @@
 
                     <!-- Event Poster -->
                     {% if object.img_url %}
-                        <img id="PostImage" src ="{{ object.img_url }}" style="width: 500px; float: right;">
+                        <img id="PostImage" src ="{{ object.img_url }}"
+                             style="width: 500px; float: right;
+                                @media screen and (max-width: 770px) {
+                                    #PostImage {
+                                    width: 320px;
+                                    margin: 5px;
+                                }">
                     {% endif %}
                     <!-- Event Poster -->
 
